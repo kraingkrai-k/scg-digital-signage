@@ -11,7 +11,7 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
     let interval: any
 
     const [isNoInteractive, setIsNoInteractive] = useState<boolean>(true)
-    const matches = useMediaQuery('(min-width:1024px)');
+    const matches = useMediaQuery('(min-width:1200px)');
 
     useEffect(() => {
         if (isNoInteractive) {
@@ -21,6 +21,10 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
         }
         // eslint-disable-next-line
     }, [isNoInteractive])
+
+    if (!matches) {
+        return <>start 1200px</>
+    }
 
     return (
         <Switch>

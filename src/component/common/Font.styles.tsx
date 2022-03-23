@@ -14,15 +14,6 @@ export const Title1 = styled('span')(({theme}) => ({
     [theme.breakpoints.only('lg')]: {
         fontSize: '1.5vw'
     },
-    [theme.breakpoints.only('md')]: {
-        fontSize: '1.5vw'
-    },
-    [theme.breakpoints.only('tablet')]: {
-        fontSize: '1.5vw'
-    },
-    [theme.breakpoints.only('md')]: {
-        fontSize: '1.5vw'
-    },
 }));
 
 export const Title2 = styled('span')(({theme}) => ({
@@ -40,15 +31,6 @@ export const Title2 = styled('span')(({theme}) => ({
     },
     [theme.breakpoints.only('lg')]: {
         fontSize: '1.8vw'
-    },
-    [theme.breakpoints.only('md')]: {
-        fontSize: '1.8vw'
-    },
-    [theme.breakpoints.only('tablet')]: {
-        fontSize: '1.8vw'
-    },
-    [theme.breakpoints.only('md')]: {
-        fontSize: '1.4vw'
     },
 }));
 
@@ -71,15 +53,6 @@ export const Title3 = styled('span')(({theme}) => ({
         fontSize: '1.15vw'
     },
     [theme.breakpoints.only('lg')]: {
-        fontSize: '1.15vw'
-    },
-    [theme.breakpoints.only('md')]: {
-        fontSize: '1.15vw'
-    },
-    [theme.breakpoints.only('tablet')]: {
-        fontSize: '1.2vw'
-    },
-    [theme.breakpoints.only('md')]: {
         fontSize: '1.15vw'
     },
 }));
