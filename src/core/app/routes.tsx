@@ -5,19 +5,19 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Template1Route from "pages/template1/Template1Route";
 import Template2Routes from "pages/template2/Template2Route";
 
-const TIME_OUT = 10000
+// const TIME_OUT = 10000
 
 const Routes: React.FunctionComponent = (): React.ReactElement => {
-    let interval: any
+    // let interval: any
 
     const [isNoInteractive, setIsNoInteractive] = useState<boolean>(true)
     const matches = useMediaQuery('(min-width:1200px)');
 
     useEffect(() => {
         if (isNoInteractive) {
-            interval = setTimeout(() => {
-                setIsNoInteractive(false)
-            }, TIME_OUT)
+            // interval = setTimeout(() => {
+            setIsNoInteractive(false)
+            // }, TIME_OUT)
         }
         // eslint-disable-next-line
     }, [isNoInteractive])

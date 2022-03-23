@@ -5,13 +5,13 @@
 
 @font-face {
     font-family: 'Kanit';
-    /* font-weight: 00; */
     font-style: normal;
     src: url('../src/assets/fonts/Kanit-Light.ttf');
 }
 
 body {
     margin: 0;
+    padding: 0;
     /*font-family: -apple-system, BlinkMacSystemFont, 'Kanit', 'Segoe UI', 'Roboto', 'Oxygen',*/
     /*'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',*/
     /*sans-serif;*/
@@ -20,3 +20,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    padding: 0;
+}
+
+/* height template 1 = 1974px */

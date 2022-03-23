@@ -1,18 +1,19 @@
 import {styled} from '@mui/material/styles';
 
-export const Title1 = styled('span')(({theme}) => ({
+export const Title35 = styled('span')(({theme}) => ({
     fontWeight: 700,
+    fontSize: '35px',
     [theme.breakpoints.only('monitor43')]: {
-        fontSize: '1.5vw'
+        
     },
     [theme.breakpoints.only('desktop')]: {
-        fontSize: '1.5vw'
+        
     },
     [theme.breakpoints.only('xl')]: {
-        fontSize: '1.5vw'
+        
     },
     [theme.breakpoints.only('lg')]: {
-        fontSize: '1.5vw'
+        
     },
 }));
 
