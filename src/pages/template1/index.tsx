@@ -32,9 +32,40 @@ const Template1: React.FC = (): React.ReactElement => {
                 sx={{
                     width: '100%',
                     height: '130%',
+                    position: 'relative'
                 }}
                 viewBox={`0 0 ${width} ${adjustedHeight}`}
             />
+
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: {
+                        lg: '14%',
+                        xl: '14%',
+                        desktop: '14%',
+                        monitor43: '14%',
+                    },
+                }}
+            >
+                <Box sx={{
+                    height: {
+                        lg: '630px',
+                        xl: '630px',
+                        desktop: '840px',
+                        monitor43: '1681px',
+                    },
+                }}
+                >
+                    <video
+                        muted
+                        loop
+                        style={{width: '100vw', height: 'inherit', objectFit: 'fill'}}
+                        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                        autoPlay={true}
+                    />
+                </Box>
+            </Box>
         </Box>
     )
 };
