@@ -1,14 +1,14 @@
 import React from "react";
 import {Route} from "react-router-dom";
 
-import Home from ".";
+import Template2 from ".";
 
 const Template2Routes = ({baseURL}: {baseURL: string}): React.ReactElement => {
 
     const routes = [
         {
             path: `${baseURL}`,
-            Component: <Home />,
+            Component: <Template2 />,
             exact: true
         },
         {

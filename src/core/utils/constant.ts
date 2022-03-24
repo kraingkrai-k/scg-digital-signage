@@ -6,6 +6,7 @@ export const COLORS = {
     holder: '#938F8F',
     balck: '#000000',
     black1: '#121212',
+    black2: '#202020',
     gold: '#D5AF26'
 }
 

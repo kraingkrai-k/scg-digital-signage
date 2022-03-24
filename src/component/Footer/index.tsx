@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 
-import footer from 'assets/images/test.png'
+import footer from 'assets/images/footer.png'
 
 // interface IFooter {}
 

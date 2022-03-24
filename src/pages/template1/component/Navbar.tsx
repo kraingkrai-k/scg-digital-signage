@@ -1,9 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 
-import {Text} from "component/NavbarText";
-import {COLORS} from "core/utils/constant";
+import NavbarText from "component/NavbarText";
 
 const Navbar: React.FC = (): React.ReactElement => {
     return (
@@ -18,39 +16,7 @@ const Navbar: React.FC = (): React.ReactElement => {
                 alignItems: 'center'
             }}
         >
-            <div>
-                <Grid container justifyContent="center">
-                    <Grid item>
-                        <Text style={{color: COLORS.red}}>
-                            ครบ
-                        </Text>
-                    </Grid>
-                    <Grid item>
-                        <Text style={{color: COLORS.red}}>
-                            <span className="italic">
-                                ทุกโซโลชัน
-                            </span>
-                        </Text>
-                    </Grid>
-                    <Grid item>
-                        <Text style={{marginLeft: '1rem', color: COLORS.white}}>
-                            <span className="sub-italic">
-                                เรื่องบ้าน ที่เดียวจบ...
-                            </span>
-                        </Text>
-                    </Grid>
-                </Grid>
-
-                <Grid container justifyContent="center" alignItems="flex-start">
-                    <Grid item>
-                        <Text sx={{color: COLORS.white}}>
-                            <span className="sub-italic">
-                                ที่ SCG HOME Experience
-                            </span>
-                        </Text>
-                    </Grid>
-                </Grid>
-            </div>
+            <NavbarText />
         </Box>
     )
 };

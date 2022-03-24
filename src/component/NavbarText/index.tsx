@@ -1,6 +1,8 @@
 import React from "react";
-import Box from "@mui/material/Box";
 import {styled} from '@mui/material/styles';
+import Grid from "@mui/material/Grid";
+
+import {COLORS} from "core/utils/constant";
 
 export const Text = styled('span')(({theme}) => `
 font-size: 48px;
@@ -32,12 +34,47 @@ ${theme.breakpoints.only('lg')}{
 };
 `);
 
-const NavbarContainer: React.FC = (props): React.ReactElement => {
+interface INavbarText {
+    isTemplate1?: boolean
+}
+
+const NavbarText: React.FC<INavbarText> = ({isTemplate1 = true}): React.ReactElement => {
+
     return (
-        <Box sx={{display: 'inline'}}>
-            <Text {...props}>ครบ</Text>
-        </Box>
+        <div>
+            <Grid container justifyContent={isTemplate1 ? "center" : "start"}>
+                <Grid item>
+                    <Text style={{color: isTemplate1 ? COLORS.red : COLORS.black2}}>
+                        ครบ
+                    </Text>
+                </Grid>
+                <Grid item>
+                    <Text style={{color: isTemplate1 ? COLORS.red : COLORS.black2}}>
+                        <span className="italic">
+                            ทุกโซโลชัน
+                        </span>
+                    </Text>
+                </Grid>
+                <Grid item>
+                    <Text style={{marginLeft: '1rem', color: COLORS.white}}>
+                        <span className="sub-italic">
+                            เรื่องบ้าน ที่เดียวจบ...
+                        </span>
+                    </Text>
+                </Grid>
+            </Grid>
+
+            <Grid container justifyContent={isTemplate1 ? "center" : "start"} alignItems="flex-start">
+                <Grid item>
+                    <Text sx={{color: COLORS.white}}>
+                        <span className="sub-italic">
+                            ที่ SCG HOME Experience
+                        </span>
+                    </Text>
+                </Grid>
+            </Grid>
+        </div>
     )
 };
 
-export default NavbarContainer;
+export default NavbarText;

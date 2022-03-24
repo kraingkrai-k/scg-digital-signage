@@ -17,21 +17,20 @@ export const Title35 = styled('span')(({theme}) => ({
     },
 }));
 
-export const Title2 = styled('span')(({theme}) => ({
+export const Title45 = styled('span')(({theme}) => ({
     fontWeight: 700,
-    fontSize: '1.4vw',
-
+    fontSize: '45px',
     [theme.breakpoints.only('monitor43')]: {
-        fontSize: '1.8vw'
+        
     },
     [theme.breakpoints.only('desktop')]: {
-        fontSize: '1.4vw'
+        
     },
     [theme.breakpoints.only('xl')]: {
-        fontSize: '1.4vw'
+        
     },
     [theme.breakpoints.only('lg')]: {
-        fontSize: '1.8vw'
+        fontSize: '24px',
     },
 }));
 
