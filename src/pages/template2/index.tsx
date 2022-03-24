@@ -5,8 +5,8 @@ import {COLORS} from "core/utils/constant";
 import Footer from "component/Footer";
 import Navbar from "component/Navbar";
 // import BGFooter from "assets/images/bg-footer.png";
-import {ReactComponent as StarIcon} from "assets/images/test.svg";
-// import StarIcon from "assets/images/test.png";
+import {ReactComponent as Template2svg} from "assets/images/template2.svg";
+// import Template2svg from "assets/images/test.png";
 
 import {NavbarShape} from "assets/icon/Icon";
 import XPCaption from "component/XPCaption";
@@ -25,19 +25,25 @@ const Template2: React.FC = (): React.ReactElement => {
 
     return (
         <>
-            {/* @ts-ignore */}
-            <SvgIcon component={StarIcon}
-                inheritViewBox
-                sx={{width: '100vw', height: '100%'}}
-                viewBox={`0 0 ${width} ${adjustedHeight}`}
-            />
-
+            <div style={{width: '100%', height: '100%'}}>
+                <div>
+                    {/* @ts-ignore */}
+                    <SvgIcon component={Template2svg}
+                        inheritViewBox
+                        sx={{width: '100vw', height: '100vh'
+                        , objectFit: 'contain'
+                    }}
+                        // sx={{width: '216rem'}}
+                        viewBox={`0 0 ${width} ${adjustedHeight}`}
+                    />
+                </div>
+            </div>
 
             {/* <Box
                 sx={{
                     width: 'auto',
                     height: '100vh',
-                    backgroundImage: `url(${StarIcon})`,
+                    backgroundImage: `url(${Template2svg})`,
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat'
                 }}
