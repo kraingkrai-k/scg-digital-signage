@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import {styled} from '@mui/material/styles';
 
 export const Text = styled('span')(({theme}) => `
-font-size: 50px;
+font-size: 48px;
     .italic {
         font-size: 36px;
     }
@@ -21,7 +21,14 @@ ${theme.breakpoints.only('xl')}{
   
 };
 ${theme.breakpoints.only('lg')}{
-   
+    font-size: 42px;
+    .italic {
+        font-size: 30px;
+    }
+    .sub-italic {
+        font-size: 22px;
+    }
+
 };
 `);
 

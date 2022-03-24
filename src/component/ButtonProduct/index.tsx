@@ -18,17 +18,23 @@ const ButtonProduct: React.FC<IButtonProduct> = ({onClick}): React.ReactElement 
                 boxShadow: '0px 7px 24px rgba(0, 0, 0, 0.25)',
                 borderRadius: '10px',
                 cursor: 'pointer',
-                marginTop: '12px'
+                marginBottom: '24px'
             }}
             onClick={onClick}
         >
-            <Box sx={{height: '58px', display: 'flex'}}>
+            <Box sx={{
+                display: 'flex', padding: {
+                    xl: '14px 16px 14px 16px',
+                    lg: '10px 12px 10px 12px'
+                }
+            }}>
                 <Grid
                     direction="row"
                     container
                     justifyContent="center"
                     alignItems="center"
-                    sx={{margin: '0 12px 0 12px'}}
+                // sx={{}}
+                // sx={{padding: 12}}
                 >
                     <Grid item>
                         <Title35>
@@ -40,8 +46,14 @@ const ButtonProduct: React.FC<IButtonProduct> = ({onClick}): React.ReactElement 
                             sx={{
                                 backgroundImage: `url(${IconTouchApp})`,
                                 backgroundSize: 'contain',
-                                width: '32px',
-                                height: '32px',
+                                width: {
+                                    xl: '48px',
+                                    lg: '32px',
+                                },
+                                height: {
+                                    xl: '48px',
+                                    lg: '32px',
+                                },
                             }}
                         />
                     </Grid>
