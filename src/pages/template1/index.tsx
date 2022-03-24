@@ -1,5 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
+import SvgIcon from "@mui/material/SvgIcon";
 
 import Navbar from "./component/Navbar";
 import Section4 from "./component/Section4";
@@ -7,29 +8,28 @@ import Section2 from "./component/Section2";
 import {COLORS} from "core/utils/constant";
 import Footer from "component/Footer";
 
-const Template1: React.FC = (): React.ReactElement => {
-    return (
-        <Box sx={{height: '100vh', width: '100%'}}>
-            <Box sx={{height: '11.1%'}}>
-                <Navbar />
-            </Box>
-            <Box sx={{height: '59.9%', backgroundColor: COLORS.red}}>
-                <Box sx={{height: '90%'}}>
-                    <Section2 />
-                </Box>
-                <Box sx={{height: '10%'}}>
-                    <Section4 />
-                </Box>
-            </Box>
+import {ReactComponent as Template1svg} from "assets/images/template1.svg";
 
-            <Box sx={{
-                height: {
-                    xl: '29%',
-                    lg: '29%'
-                }, backgroundColor: COLORS.red
-            }}>
-                <Footer />
-            </Box>
+import './template1.css'
+
+const Template1: React.FC = (): React.ReactElement => {
+
+    const width = window.screen.width
+    const height = window.screen.height
+
+    const aspect = width / height;
+    const adjustedHeight = Math.ceil(width / aspect);
+
+    return (
+        <Box sx={{width: '100%', height: '100vh'}}>
+            <SvgIcon component={Template1svg}
+                inheritViewBox
+                sx={{
+                    width: '100%',
+                    height: '130%',
+                }}
+                viewBox={`0 0 ${width} ${adjustedHeight}`}
+            />
         </Box>
     )
 };

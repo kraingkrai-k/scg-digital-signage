@@ -1,0 +1,10 @@
+/* rect:hover, rect:active {
+    outline: 1px solid red;
+} */
+
+#button:hover, #button:active {
+    /* outline: 1px solid red; */
+    cursor: pointer;
+
+    /* background-image: url("https://via.placeholder.com/150"); */
+}
