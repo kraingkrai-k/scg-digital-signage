@@ -1,32 +1,38 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Box from "@mui/material/Box";
 import SvgIcon from "@mui/material/SvgIcon";
 import {useHistory} from "react-router-dom";
 
+// TODO - use SVG instead
 // import Navbar from "./component/Navbar";
 // import Section4 from "./component/Section4";
 // import Section2 from "./component/Section2";
 // import {COLORS} from "core/utils/constant";
 // import Footer from "component/Footer";
 
+import useDimension from "hooks/useDimension";
 import {ReactComponent as Template1svg} from "assets/images/template1.svg";
 
 import './template1.css'
 
 const Template1: React.FC = (): React.ReactElement => {
     const {push} = useHistory()
+    const {width, adjustedHeight} = useDimension()
 
-    const width = window.screen.width
-    const height = window.screen.height
+    const handlerClick = () => push('/template2')
 
-    const aspect = width / height;
-    const adjustedHeight = Math.ceil(width / aspect);
+    useEffect(() => {
+        const btnControl = document.getElementById('button')
+
+        btnControl?.addEventListener('click', handlerClick)
+
+        return () => {
+            btnControl?.removeEventListener('click', handlerClick)
+        }
+    }, [])
 
     return (
-        <Box
-            sx={{width: '100%', height: '100vh'}}
-            onClick={() => push('/template2')}
-        >
+        <Box sx={{width: '100%', height: '100vh'}}>
             <SvgIcon component={Template1svg}
                 inheritViewBox
                 sx={{

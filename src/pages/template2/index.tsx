@@ -25,13 +25,34 @@ const Template2: React.FC = (): React.ReactElement => {
     useEffect(() => {
         clearTimeout(timeout)
         timeout = setTimeout(() => {
-            push('/')
+            // push('/')
         }, TIME_OUT)
 
         return () => {
             clearTimeout(timeout)
         }
     }, [isStillActive])
+
+    const handlerPromotionClick = () => {
+        console.log('promotion !!')
+    }
+
+    const handlerFindPromotionClick = () => {
+        console.log('find promotion click !!')
+    }
+
+    useEffect(() => {
+        const btnEle1 = document.getElementById('find-promotion')
+        const btnEle2 = document.getElementById('promotion')
+        
+        btnEle1?.addEventListener('click', handlerFindPromotionClick)
+        btnEle2?.addEventListener('click', handlerPromotionClick)
+
+        return () => {
+            btnEle1?.removeEventListener('click', handlerFindPromotionClick)
+            btnEle2?.removeEventListener('click', handlerPromotionClick)
+        }
+    }, [])
 
     const handlerStillActive = () => {
         setIsStillActive(isStillActive + 1)
