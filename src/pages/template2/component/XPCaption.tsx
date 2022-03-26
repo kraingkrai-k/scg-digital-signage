@@ -2,10 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 
 import {COLORS} from "core/utils/constant";
-import Footer from "component/Footer";
 import Navbar from "component/Navbar";
-import BGFooter from "assets/images/bg-footer.png";
-import {NavbarShape} from "assets/icon/Icon";
 
 const XPCaption: React.FC = (): React.ReactElement => {
 

@@ -5,7 +5,6 @@ import {COLORS} from "core/utils/constant";
 import Footer from "component/Footer";
 import Navbar from "component/Navbar";
 import BGFooter from "assets/images/bg-footer.png";
-import {NavbarShape} from "assets/icon/Icon";
 import XPRecommend from "component/XPRecommend";
 import Promotion from "component/Promotion";
 
@@ -16,21 +15,17 @@ const Template2: React.FC = (): React.ReactElement => {
             <Box
                 sx={{
                     height: '14%',
-                    bgcolor: 'green',
                     position: 'relative',
                     zIndex: -1
                 }}>
-                {/* <Navbar />
+                <Navbar />
 
                 <Box sx={{
                     width: '35%',
-                    // background: 'linear-gradient(180deg, #EC1C24 0%, #CA060D 100%)',
-                    borderImage: 'linear-gradient(to left, #EC1C24, #CA060D)',
-                    borderTop: '35px solid',
+                    borderTop: `4vh solid ${COLORS.redBorder}`,
                     borderLeft: '100px solid transparent',
-                    // background: 'green',
                     float: 'right',
-                }} /> */}
+                }} />
             </Box>
 
             <Box>
@@ -44,17 +39,15 @@ const Template2: React.FC = (): React.ReactElement => {
                     backgroundRepeat: 'no-repeat',
                     objectFit: 'fill',
                     width: '100vw',
-                    height: '50%'
+                    height: '60%'
                 }}
             >
                 <Promotion />
             </Box>
 
-
-            <Box sx={{marginTop: '-10%'}}>
+            <Box sx={{marginTop: '-15%'}}>
                 <Footer />
             </Box>
-
         </Box>
     )
 };

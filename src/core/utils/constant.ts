@@ -1,6 +1,7 @@
 export const COLORS = {
     red: '#EC1C24',
     red1: '#D81A23',
+    redBorder: '#CB070E',
     white: '#FFFFFF',
     greyText: '#231F20',
     holder: '#938F8F',

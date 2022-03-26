@@ -17,14 +17,6 @@ export const IconBallLoon = (props: SvgIconProps) => (
     </SvgIcon>
 )
 
-export const NavbarShape = (props: SvgIconProps) => (
-    <SvgIcon {...props}>
-        <svg width="100%" height="100%" viewBox="0 0 434 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M73.7449 60L0 0H434V60H73.7449Z" fill="#CB070E" />
-        </svg>
-    </SvgIcon>
-)
-
 export const FooterShape = (props: SvgIconProps) => (
     <SvgIcon {...props}>
         <svg width="100%" height="100%" viewBox="0 0 1080 348" fill="none" xmlns="http://www.w3.org/2000/svg">

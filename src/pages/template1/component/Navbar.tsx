@@ -7,7 +7,8 @@ const Navbar: React.FC = (): React.ReactElement => {
     return (
         <Box
             sx={{
-                height: '100%', width: '100%', lineHeight: {
+                height: '100%', width: '100%',
+                lineHeight: {
                     xl: '1',
                     lg: '0.7',
                 },
