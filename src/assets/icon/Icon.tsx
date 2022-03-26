@@ -25,6 +25,50 @@ export const NavbarShape = (props: SvgIconProps) => (
     </SvgIcon>
 )
 
+export const FooterShape = (props: SvgIconProps) => (
+    <SvgIcon {...props}>
+        <svg width="100%" height="100%" viewBox="0 0 1080 348" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1090.12 0L201 224L191.684 348H1090.12V0Z" fill="url(#paint0_linear_877_38643)" />
+            <path d="M130.421 111L0.121212 188.211L0.121094 348H463.263L130.421 111Z" fill="url(#paint1_linear_877_38643)" />
+            <defs>
+                <linearGradient id="paint0_linear_877_38643" x1="616.247" y1="-83.6219" x2="768.056" y2="315.313" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#CFCFCF" />
+                    <stop offset="0.888469" stop-color="white" />
+                </linearGradient>
+                <linearGradient id="paint1_linear_877_38643" x1="2.26065e-06" y1="155" x2="80.2642" y2="444.927" gradientUnits="userSpaceOnUse">
+                    <stop offset="0.625" stop-color="white" />
+                    <stop offset="1" stop-color="#E3E3E3" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </SvgIcon>
+)
+
+export const TouchAppWhite = (props: SvgIconProps & {invert: boolean}) => (
+    <SvgIcon {...props}>
+        <svg width="100%" height="100%" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d_877_58060)">
+                <path d="M43.959 30.0634L36.129 26.1484C39.2465 23.7317 41.2523 19.9617 41.2523 15.7084C41.2523 8.38591 35.2832 2.41675 27.9607 2.41675C20.6382 2.41675 14.669 8.38591 14.669 15.7084C14.669 20.8559 17.6173 25.3267 21.919 27.5259V35.4042C16.7232 34.2926 17.0373 34.3409 16.4573 34.3409C15.1765 34.3409 13.9682 34.8484 13.0498 35.7668L9.6665 39.1984L21.9673 51.4992C23.0065 52.5626 24.4565 53.1667 25.9548 53.1667H41.1798C43.5482 53.1667 45.554 51.4751 45.9407 49.1309L47.874 37.7484C48.4057 34.6068 46.8348 31.5134 43.959 30.0634ZM43.1132 36.9509L41.1798 48.3334H25.9548C25.7373 48.3334 25.544 48.2367 25.3748 48.0917L16.4815 39.1984L26.7523 41.3493V15.7084C26.7523 15.0317 27.284 14.5001 27.9607 14.5001C28.6373 14.5001 29.169 15.0317 29.169 15.7084V30.2084H33.4223L41.784 34.3892C42.7507 34.8726 43.2823 35.9118 43.1132 36.9509ZM19.5023 15.7084C19.5023 11.0442 23.2965 7.25008 27.9607 7.25008C32.6248 7.25008 36.419 11.0442 36.419 15.7084C36.419 18.0042 35.5007 20.0826 34.0023 21.6051V15.7084C34.0023 12.3734 31.2957 9.66675 27.9607 9.66675C24.6257 9.66675 21.919 12.3734 21.919 15.7084V21.6051C20.4207 20.0826 19.5023 18.0042 19.5023 15.7084Z"
+                    fill={props.invert ? "white" : '#231F20'}
+                />
+            </g>
+            <defs>
+                <filter id="filter0_d_877_58060" x="7.6665" y="2.41675" width="42.3101" height="54.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                    <feOffset dy="2" />
+                    <feGaussianBlur stdDeviation="1" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_877_58060" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_877_58060" result="shape" />
+                </filter>
+            </defs>
+        </svg>
+    </SvgIcon>
+)
+
+
 export const IconXP = (props: SvgIconProps) => (
     <SvgIcon {...props}>
         <svg width="100%" height="100%" viewBox="0 0 390 1195" fill="none" xmlns="http://www.w3.org/2000/svg">

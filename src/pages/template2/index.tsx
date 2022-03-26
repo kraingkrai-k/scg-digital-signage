@@ -1,6 +1,5 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import SvgIcon from "@mui/material/SvgIcon";
 
 import {COLORS} from "core/utils/constant";
 import Footer from "component/Footer";
@@ -11,16 +10,16 @@ import XPRecommend from "component/XPRecommend";
 import Promotion from "component/Promotion";
 
 const Template2: React.FC = (): React.ReactElement => {
-    // start ipad only
-    // const matches = useMediaQuery('(min-width:1024px)');
-
-    // if (!matches) {
-    //     return <>Not Supported</>
-    // }
 
     return (
         <Box sx={{height: '100vh', width: '100%'}}>
-            <Box sx={{height: '11.1%', bgcolor: 'green'}}>
+            <Box
+                sx={{
+                    height: '14%',
+                    bgcolor: 'green',
+                    position: 'relative',
+                    zIndex: -1
+                }}>
                 {/* <Navbar />
 
                 <Box sx={{
@@ -39,48 +38,23 @@ const Template2: React.FC = (): React.ReactElement => {
             </Box>
 
             <Box
-                // sx={{
-                //     height: '100%',
-                //     width: '100%',
-                // }}
+                sx={{
+                    backgroundImage: `url(${BGFooter})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    objectFit: 'fill',
+                    width: '100vw',
+                    height: '50%'
+                }}
             >
                 <Promotion />
             </Box>
 
 
-            {/* <Box sx={{height: '100%'}}>
-                <Promotion />
-            </Box> */}
-
-            {/* <Box sx={{height: '59.9%'}}>
-                <Box sx={{height: '90%'}}>
-                    Section2
-                </Box>
-                <Box sx={{height: '10%'}}>
-                    Section4
-                </Box>
+            <Box sx={{marginTop: '-10%'}}>
+                <Footer />
             </Box>
 
-            <Box sx={{
-                height: {
-                    xl: '29%',
-                    lg: '29%'
-                },
-            }}>
-                <Box
-                    sx={{
-                        backgroundImage: `url(${BGFooter})`,
-                        backgroundSize: 'contain',
-                        position: 'absolute',
-                        width: {
-                            xl: '100%',
-                            lg: '100%',
-                        },
-                    }}
-                >
-                    <Footer />
-                </Box>
-            </Box> */}
         </Box>
     )
 };

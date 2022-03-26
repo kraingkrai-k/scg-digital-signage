@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 
-import ButtonProduct from "component/ButtonProduct";
+import Button from "component/Button";
 
 const Section4: React.FC = (): React.ReactElement => {
 
@@ -20,7 +20,7 @@ const Section4: React.FC = (): React.ReactElement => {
                 }}
             >
                 <Box>
-                    <ButtonProduct onClick={handlerOnClick} />
+                    <Button onClick={handlerOnClick} />
                 </Box>
             </Box>
         </>

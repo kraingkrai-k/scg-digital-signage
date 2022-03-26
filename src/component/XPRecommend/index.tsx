@@ -11,15 +11,18 @@ const XPRecommend: React.FC = (): React.ReactElement => {
 
     return (
         <Box sx={{
-            height: '100%', width: '100%',
-            paddingTop: '24px',
-            paddingBottom: '24px',
+            // height: '100%', 
+            // width: '100%',
+            // paddingTop: '24px',
+            // paddingBottom: '24px',
             position: 'relative',
         }}>
             <Box sx={{
                 display: 'grid',
                 marginLeft: '15%',
                 position: 'relative',
+                paddingTop: '24px',
+                paddingBottom: '24px',
             }}>
 
                 <Title45>
@@ -42,26 +45,23 @@ const XPRecommend: React.FC = (): React.ReactElement => {
                 height: '300px',
                 position: 'absolute',
                 right: 0,
-                top: '-40%',
+                top: '-15%',
+                zIndex: -1
             }}>
                 <SvgIcon
                     component={IconXPCaption}
                     inheritViewBox
-                    sx={{
-                        width: '100%',
-                        height: '100%',
-
-                    }}
+                    sx={{width: '100%', height: '100%'}}
                 />
             </Box>
             <Box
                 sx={{
                     bgcolor: 'green',
-                    position: 'absolute',
-                    top: '100%',
+                    // position: 'absolute',
+                    // top: '100%',
                     width: '100%',
-                    height: '300px',
-                    opacity: 0.5
+                    height: '36vh',
+                    // opacity: 0.5
                 }}>
                 Video
             </Box>
