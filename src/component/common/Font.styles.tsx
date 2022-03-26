@@ -30,7 +30,7 @@ export const Title45 = styled('span')(({theme}) => ({
         
     },
     [theme.breakpoints.only('lg')]: {
-        fontSize: '24px',
+        fontSize: '42px',
     },
 }));
 

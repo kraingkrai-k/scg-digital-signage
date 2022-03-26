@@ -1,116 +1,86 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import Box from "@mui/material/Box";
-
-// import {COLORS} from "core/utils/constant";
-// import Footer from "component/Footer";
-// import Navbar from "component/Navbar";
-// import BGFooter from "assets/images/bg-footer.png";
-import {ReactComponent as Template2svg} from "assets/images/template2.svg";
-// import Template2svg from "assets/images/test.png";
-
-// import {NavbarShape} from "assets/icon/Icon";
-// import XPCaption from "component/XPCaption";
 import SvgIcon from "@mui/material/SvgIcon";
 
-import './template2.css'
-import {useHistory} from "react-router-dom";
-
-const TIME_OUT = 10000
+import {COLORS} from "core/utils/constant";
+import Footer from "component/Footer";
+import Navbar from "component/Navbar";
+import BGFooter from "assets/images/bg-footer.png";
+import {NavbarShape} from "assets/icon/Icon";
+import XPRecommend from "component/XPRecommend";
+import Promotion from "component/Promotion";
 
 const Template2: React.FC = (): React.ReactElement => {
-    const [isStillActive, setIsStillActive] = useState<number>(0)
-    const {push} = useHistory()
-    let timeout: any
+    // start ipad only
+    // const matches = useMediaQuery('(min-width:1024px)');
 
-    useEffect(() => {
-        clearTimeout(timeout)
-        timeout = setTimeout(() => {
-            // push('/')
-        }, TIME_OUT)
-
-        return () => {
-            clearTimeout(timeout)
-        }
-    }, [isStillActive])
-
-    const handlerPromotionClick = () => {
-        console.log('promotion !!')
-    }
-
-    const handlerFindPromotionClick = () => {
-        console.log('find promotion click !!')
-    }
-
-    useEffect(() => {
-        const btnEle1 = document.getElementById('find-promotion')
-        const btnEle2 = document.getElementById('promotion')
-        
-        btnEle1?.addEventListener('click', handlerFindPromotionClick)
-        btnEle2?.addEventListener('click', handlerPromotionClick)
-
-        return () => {
-            btnEle1?.removeEventListener('click', handlerFindPromotionClick)
-            btnEle2?.removeEventListener('click', handlerPromotionClick)
-        }
-    }, [])
-
-    const handlerStillActive = () => {
-        setIsStillActive(isStillActive + 1)
-    }
-
-    const width = window.screen.width
-    const height = window.screen.height
-
-    const aspect = width / height;
-
-    const adjustedHeight = Math.ceil(width / aspect);
+    // if (!matches) {
+    //     return <>Not Supported</>
+    // }
 
     return (
-        <Box
-            sx={{width: '100%', height: '100vh', position: 'relative'}}
-            onClick={handlerStillActive}
-        >
-            <SvgIcon
-                component={Template2svg}
-                inheritViewBox
-                sx={{
-                    width: '100%',
-                    height: '130%',
-                }}
-                viewBox={`0 0 ${width} ${adjustedHeight}`}
-            />
+        <Box sx={{height: '100vh', width: '100%'}}>
+            <Box sx={{height: '11.1%', bgcolor: 'green'}}>
+                {/* <Navbar />
+
+                <Box sx={{
+                    width: '35%',
+                    // background: 'linear-gradient(180deg, #EC1C24 0%, #CA060D 100%)',
+                    borderImage: 'linear-gradient(to left, #EC1C24, #CA060D)',
+                    borderTop: '35px solid',
+                    borderLeft: '100px solid transparent',
+                    // background: 'green',
+                    float: 'right',
+                }} /> */}
+            </Box>
+
+            <Box>
+                <XPRecommend />
+            </Box>
 
             <Box
-                sx={{
-                    position: 'absolute',
-                    top: {
-                        lg: '30.4%',
-                        xl: '30.5%',
-                        desktop: '30.5%',
-                        monitor43: '30.5%',
-                    }
-                }}
+                // sx={{
+                //     height: '100%',
+                //     width: '100%',
+                // }}
             >
-                <Box sx={{
-                    height: {
-                        lg: '335px',
-                        xl: '875px',
-                        desktop: '437px',
-                        monitor43: '875px',
-                    },
-                    width: '100vw',
-                }}
-                >
-                    <video
-                        muted
-                        loop
-                        style={{width: '100vw', height: 'inherit', objectFit: 'fill'}}
-                        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-                        autoPlay={true}
-                    />
+                <Promotion />
+            </Box>
+
+
+            {/* <Box sx={{height: '100%'}}>
+                <Promotion />
+            </Box> */}
+
+            {/* <Box sx={{height: '59.9%'}}>
+                <Box sx={{height: '90%'}}>
+                    Section2
+                </Box>
+                <Box sx={{height: '10%'}}>
+                    Section4
                 </Box>
             </Box>
 
+            <Box sx={{
+                height: {
+                    xl: '29%',
+                    lg: '29%'
+                },
+            }}>
+                <Box
+                    sx={{
+                        backgroundImage: `url(${BGFooter})`,
+                        backgroundSize: 'contain',
+                        position: 'absolute',
+                        width: {
+                            xl: '100%',
+                            lg: '100%',
+                        },
+                    }}
+                >
+                    <Footer />
+                </Box>
+            </Box> */}
         </Box>
     )
 };
