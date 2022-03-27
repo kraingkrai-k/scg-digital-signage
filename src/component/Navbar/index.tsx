@@ -6,11 +6,17 @@ import NavbarText from "component/NavbarText";
 const NavbarBG: React.FC = (): React.ReactElement => {
     return (
         <Box sx={{
-            height: '100%', width: '100%',
-            lineHeight: '1',
+            height: '100%', 
+            width: '100%',
+            lineHeight: '0.8',
             background: 'linear-gradient(180deg, #EC1C24 0%, #CA060D 100%)',
+            display: 'flex',
         }}>
-            <Box sx={{marginLeft: '7%' }}>
+            <Box sx={{
+                display: 'flex',
+                alignItems: 'center',
+                marginLeft: '7%',
+            }}>
                 <NavbarText isTemplate1={false} />
             </Box>
         </Box>

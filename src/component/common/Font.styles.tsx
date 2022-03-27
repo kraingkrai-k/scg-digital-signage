@@ -34,6 +34,23 @@ export const Title45 = styled('span')(({theme}) => ({
     },
 }));
 
+export const Title30 = styled('span')(({theme}) => ({
+    fontWeight: 700,
+    fontSize: '30px',
+    [theme.breakpoints.only('monitor43')]: {
+        
+    },
+    [theme.breakpoints.only('desktop')]: {
+        
+    },
+    [theme.breakpoints.only('xl')]: {
+        
+    },
+    [theme.breakpoints.only('lg')]: {
+        fontSize: '30px',
+    },
+}));
+
 export const Title3 = styled('span')(({theme}) => ({
     fontWeight: 400,
     fontSize: '1.15vw',

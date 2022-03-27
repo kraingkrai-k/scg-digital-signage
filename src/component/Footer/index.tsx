@@ -5,35 +5,59 @@ import SvgIcon from "@mui/material/SvgIcon";
 import {ReactComponent as FooterShape} from "assets/icon/footerShape.svg";
 import {ReactComponent as Social} from "assets/icon/social.svg";
 import Logo from "assets/icon/logo.png";
+import {Title30} from "component/common/Font.styles";
 
 const Footer: React.FC<{}> = (): React.ReactElement => {
 
     return (
-        <Box>
+        <Box
+            sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+            }}
+        >
             <Box
                 sx={{
                     backgroundImage: `url(${Logo})`,
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
                     position: 'absolute',
-                    width: '150px',
-                    height: '150px',
-                    mt: '6.5%',
+                    width: '120px',
+                    height: '120px',
+                    mt: '8%',
                     ml: '5%',
                 }}
             />
 
-            <SvgIcon
-                component={Social}
-                inheritViewBox
-                sx={{
-                    width: '300px',
-                    height: '120px',
+            <Box sx={{
+                textAlign: 'end',
+            }}>
+                <SvgIcon
+                    component={Social}
+                    inheritViewBox
+                    sx={{
+                        width: '300px',
+                        height: '120px',
+                        position: 'absolute',
+                        mt: '-10%',
+                        right: 15,
+                    }}
+                />
+                <Box sx={{
                     position: 'absolute',
-                    // mt: '1%',
+                    display: 'grid',
                     right: 15,
-                }}
-            />
+                }}>
+                    <Title30>
+                        รับข่าวสารและโปรโมชั่นก่อนใคร
+                    </Title30>
+
+                    <Title30>
+                        ผ่านช่องทาง Social Media SCGHOMEExperience
+                    </Title30>
+                </Box>
+            </Box>
 
             <SvgIcon
                 component={FooterShape}
