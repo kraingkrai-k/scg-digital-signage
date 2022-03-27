@@ -39,7 +39,14 @@ const Template2: React.FC = (): React.ReactElement => {
                 <XPRecommend />
             </Box>
 
-            <Box sx={{position: 'absolute', width: '100%'}}>
+            <Box sx={{
+                position: 'absolute',
+                width: '100%',
+                backgroundImage: `url(${BGFooter})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                objectFit: 'fill',
+            }}>
                 <Box
                     sx={{
                         bgcolor: 'green',
@@ -52,44 +59,6 @@ const Template2: React.FC = (): React.ReactElement => {
                 </Box>
 
                 <Promotion />
-            </Box>
-
-            {/* <Box> */}
-                <Box
-                    sx={{
-                        backgroundImage: `url(${BGFooter})`,
-                        backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat',
-                        objectFit: 'fill',
-                        width: '100vw',
-                        height: '100%'
-                    }}
-                >
-                    <Promotion />
-
-                
-            {/* <Box
-                sx={{
-                    // marginTop: '-15%',
-                    position: 'absolute',
-                    bottom: 0,
-                    width: '100%'
-                }}
-            >
-                <Footer />
-            </Box> */}
-
-                </Box>
-            {/* </Box> */}
-
-            <Box
-                sx={{
-                    // marginTop: '-15%',
-                    position: 'absolute',
-                    // bottom: 0,
-                    width: '100%'
-                }}
-            >
                 <Footer />
             </Box>
         </Box>
