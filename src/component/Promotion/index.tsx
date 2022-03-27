@@ -17,7 +17,7 @@ const Promotion: React.FC = (): React.ReactElement => {
                     height: '16vh',
                     bgcolor: 'red',
                     m: '24px',
-                    mb: '14px',
+                    // mb: '14px',
                 }}
             >
                 Promotion

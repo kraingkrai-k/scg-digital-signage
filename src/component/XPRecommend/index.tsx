@@ -1,29 +1,21 @@
 import React from "react";
 import Box from "@mui/material/Box";
+import SvgIcon from "@mui/material/SvgIcon";
 
 import {COLORS} from "core/utils/constant";
 import {ReactComponent as IconXPCaption} from "assets/icon/bodyXP.svg";
-
 import {Title45} from "component/common/Font.styles";
-import SvgIcon from "@mui/material/SvgIcon";
 
 const XPRecommend: React.FC = (): React.ReactElement => {
 
     return (
         <Box sx={{
-            // height: '100%', 
-            // width: '100%',
-            // paddingTop: '24px',
-            // paddingBottom: '24px',
-            position: 'relative',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 'inherit',
         }}>
-            <Box sx={{
-                display: 'grid',
-                marginLeft: '15%',
-                position: 'relative',
-                paddingTop: '24px',
-                paddingBottom: '24px',
-            }}>
+            <Box sx={{display: 'grid'}}>
 
                 <Title45>
                     “ มาตรงนี้ให้ <span style={{color: COLORS.red}}>น้อง XP</span>
@@ -33,37 +25,26 @@ const XPRecommend: React.FC = (): React.ReactElement => {
                     ช่วยแนะนำบริการได้ค่ะ ”
                 </Title45>
             </Box>
-            {/* <IconXPCaption sx={{
-                // height: '100%',
-                // width: '100%',
-                position: 'absolute',
-                right: 0,
-            }} /> */}
 
             <Box sx={{
-                width: '300px',
-                height: '300px',
+                width: {
+                    monitor43: '30%',
+                    lg: '300px',
+                },
+                height: {
+                    monitor43: '35%',
+                    lg: '300px',
+                },
                 position: 'absolute',
                 right: 0,
-                top: '-15%',
-                zIndex: -1
+                top: '5%',
+                zIndex: 1
             }}>
                 <SvgIcon
                     component={IconXPCaption}
                     inheritViewBox
                     sx={{width: '100%', height: '100%'}}
                 />
-            </Box>
-            <Box
-                sx={{
-                    bgcolor: 'green',
-                    // position: 'absolute',
-                    // top: '100%',
-                    width: '100%',
-                    height: '36vh',
-                    // opacity: 0.5
-                }}>
-                Video
             </Box>
         </Box>
     )

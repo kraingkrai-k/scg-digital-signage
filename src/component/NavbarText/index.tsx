@@ -3,18 +3,23 @@ import {styled} from '@mui/material/styles';
 import Grid from "@mui/material/Grid";
 
 import {COLORS} from "core/utils/constant";
+import {Title45} from "component/common/Font.styles";
 
-export const Text = styled('span')(({theme}) => `
-font-size: 48px;
+export const Text = styled(Title45)(({theme}) => `
     .italic {
         font-size: 36px;
     }
     .sub-italic {
         font-size: 30px;
     }
-
 ${theme.breakpoints.only('monitor43')}{
- 
+    line-height: 1.2;
+    .italic {
+        font-size: 84px;
+    }
+    .sub-italic {
+        font-size: 84px;
+    }
 };
 ${theme.breakpoints.only('desktop')}{
   
@@ -23,14 +28,12 @@ ${theme.breakpoints.only('xl')}{
   
 };
 ${theme.breakpoints.only('lg')}{
-    font-size: 42px;
     .italic {
         font-size: 30px;
     }
     .sub-italic {
         font-size: 22px;
     }
-
 };
 `);
 

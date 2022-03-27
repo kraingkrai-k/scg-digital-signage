@@ -1,11 +1,12 @@
 import React from "react";
 import Box from "@mui/material/Box";
-
 import SvgIcon from "@mui/material/SvgIcon";
+
 import {ReactComponent as FooterShape} from "assets/icon/footerShape.svg";
 import {ReactComponent as Social} from "assets/icon/social.svg";
 import Logo from "assets/icon/logo.png";
 import {Title30} from "component/common/Font.styles";
+import {COLORS} from "core/utils/constant";
 
 const Footer: React.FC<{}> = (): React.ReactElement => {
 
@@ -23,10 +24,17 @@ const Footer: React.FC<{}> = (): React.ReactElement => {
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
                     position: 'absolute',
-                    width: '120px',
-                    height: '120px',
-                    mt: '8%',
+                    width: {
+                        monitor43: '400px',
+                        lg: '120px',
+                    },
+                    height: {
+                        monitor43: '400px',
+                        lg: '120px',
+                    },
+                    mt: '5%',
                     ml: '5%',
+                    bottom: 0
                 }}
             />
 
@@ -37,8 +45,14 @@ const Footer: React.FC<{}> = (): React.ReactElement => {
                     component={Social}
                     inheritViewBox
                     sx={{
-                        width: '300px',
-                        height: '120px',
+                        width: {
+                            monitor43: '1040px',
+                            lg: '300px',
+                        },
+                        height: {
+                            monitor43: '440px',
+                            lg: '120px',
+                        },
                         position: 'absolute',
                         mt: '-10%',
                         right: 15,
@@ -47,14 +61,15 @@ const Footer: React.FC<{}> = (): React.ReactElement => {
                 <Box sx={{
                     position: 'absolute',
                     display: 'grid',
-                    right: 15,
+                    right: '3%',
+                    bottom: 40
                 }}>
                     <Title30>
                         รับข่าวสารและโปรโมชั่นก่อนใคร
                     </Title30>
 
                     <Title30>
-                        ผ่านช่องทาง Social Media SCGHOMEExperience
+                        ผ่านช่องทาง Social Media <span style={{color: COLORS.red}}>SCGHOMEExperience</span>
                     </Title30>
                 </Box>
             </Box>
