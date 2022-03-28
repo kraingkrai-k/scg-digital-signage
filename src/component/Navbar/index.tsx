@@ -18,13 +18,13 @@ const Navbar: React.FC<INavbar> = ({center = false, template1 = false}): React.R
             },
             background: 'linear-gradient(180deg, #EC1C24 0%, #CA060D 100%)',
             display: 'flex',
-            pl: center ? '0%' : '7%',
             justifyContent: center ? 'center' : 'stretch',
         }}>
             <Box sx={{
                 display: 'flex',
                 alignItems: 'center',
-                textAlign: 'center'
+                textAlign: 'center',
+                ml: center ? '0%' : '7%',
             }}>
                 <NavbarText isTemplate1={template1} />
             </Box>

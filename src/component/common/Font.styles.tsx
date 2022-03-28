@@ -60,7 +60,7 @@ export const Title20 = styled('span')(({theme}) => ({
         fontSize: '48px',
     },
     [theme.breakpoints.only('desktop')]: {
-
+        fontSize: '26px',
     },
     [theme.breakpoints.only('xl')]: {
 

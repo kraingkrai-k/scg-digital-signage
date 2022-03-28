@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Box from "@mui/material/Box";
 
 import BGFooter from "assets/images/bg-footer.png";
@@ -10,11 +10,38 @@ import {XPTemplate} from "component/XPRecommend";
 import Promotion from "component/Promotion";
 import {Title45} from "component/common/Font.styles";
 import {COLORS} from "core/utils/constant";
+import MyModal from "component/Modal";
+import ModalPromotion from "component/ModalPromotion";
 
 const Template3: React.FC = (): React.ReactElement => {
+    const [visible, setVisible] = useState<boolean>(false)
+
+    const handlerPromotionClick = () => {
+        handlerOpenModal()
+    }
+
+    const handlerProductClick = () => {
+        console.log('product !!')
+    }
+
+    const handlerCloseModal = () => {
+        setVisible(false)
+    }
+
+    const handlerOpenModal = () => {
+        setVisible(true)
+    }
 
     return (
         <Box sx={{height: '100vh', width: '100%'}}>
+            <MyModal
+                onCancel={handlerCloseModal}
+                onOK={handlerOpenModal}
+                visible={visible}
+            >
+                <ModalPromotion />
+            </MyModal>
+
             <Box sx={{height: '14%', position: 'relative'}}>
                 <Navbar />
                 <NavbarShape />
@@ -48,7 +75,10 @@ const Template3: React.FC = (): React.ReactElement => {
                     Personal Consent
                 </Box>
 
-                <Promotion />
+                <Promotion
+                    onPromotionClick={handlerPromotionClick}
+                    onProductClick={handlerProductClick}
+                />
                 <Footer />
             </Box>
         </Box>

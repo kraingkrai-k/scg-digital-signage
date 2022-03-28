@@ -51,7 +51,7 @@ const Interactive: React.FC = (): React.ReactElement => {
                     <Box sx={{width: '100%'}}>
                         <SmartSolution />
                     </Box>
-                    <Box sx={{ml: '1%', width: '50%', height: '65%'}}>
+                    <Box sx={{ml: '1%', width: '55%', height: '65%'}}>
                         <Directory />
                     </Box>
                 </Box>

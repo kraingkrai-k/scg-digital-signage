@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import Box from "@mui/material/Box";
+import {useHistory} from "react-router-dom";
 
 import BGFooter from "assets/images/bg-footer.png";
 import {COLORS} from "core/utils/constant";
@@ -10,11 +11,39 @@ import NavbarShape from "component/NavbarShape";
 import {XPTemplate} from "component/XPRecommend";
 import Promotion from "component/Promotion";
 import {Title45} from "component/common/Font.styles";
+import ModalPromotion from "component/ModalPromotion";
+import MyModal from "component/Modal";
 
+// TODO - polling personal, go to template 3
 const Template2: React.FC = (): React.ReactElement => {
+    const {push} = useHistory()
+    const [visible, setVisible] = useState<boolean>(false)
+
+
+    const handlerPromotionClick = () => {
+        handlerOpenModal()
+    }
+
+    const handlerProductClick = () => push('/interactive')
+
+    const handlerCloseModal = () => {
+        setVisible(false)
+    }
+
+    const handlerOpenModal = () => {
+        setVisible(true)
+    }
 
     return (
         <Box sx={{height: '100vh', width: '100%'}}>
+            <MyModal
+                onCancel={handlerCloseModal}
+                onOK={handlerOpenModal}
+                visible={visible}
+            >
+                <ModalPromotion />
+            </MyModal>
+
             <Box sx={{height: '14%', position: 'relative'}}>
                 <Navbar />
                 <NavbarShape />
@@ -55,7 +84,10 @@ const Template2: React.FC = (): React.ReactElement => {
                     </Title45>
                 </Box>
 
-                <Promotion />
+                <Promotion
+                    onPromotionClick={handlerPromotionClick}
+                    onProductClick={handlerProductClick}
+                />
                 <Footer />
             </Box>
         </Box>

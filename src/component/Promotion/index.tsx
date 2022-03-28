@@ -5,19 +5,20 @@ import {COLORS} from "core/utils/constant";
 import Button from "component/Button";
 import {Title45} from "component/common/Font.styles";
 
-const Promotion: React.FC = (): React.ReactElement => {
+interface IPromotion {
+    onPromotionClick: () => void
+    onProductClick: () => void
+}
 
-    const handlerProductClick = () => {
-        console.log('product')
-    }
-
+const Promotion: React.FC<IPromotion> = ({onPromotionClick, onProductClick}): React.ReactElement => {
     return (
         <Box>
             <Box
+                onClick={onPromotionClick}
                 sx={{
                     height: {
                         monitor43: '20vh',
-                        desktop: '16vh',
+                        desktop: '20vh',
                         lg: '16vh',
                     },
                     bgcolor: COLORS.holder,
@@ -41,7 +42,7 @@ const Promotion: React.FC = (): React.ReactElement => {
                     justifyContent: 'center',
                 }}
             >
-                <Button invert={true} onClick={handlerProductClick} />
+                <Button invert={true} onClick={onProductClick} />
             </Box>
         </Box>
     )

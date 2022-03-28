@@ -105,11 +105,11 @@ const SmartSolution: React.FC = (): React.ReactElement => {
             <WrapTag sx={{
                 width: {
                     monitor43: '30%',
-                    desktop: '30%',
+                    desktop: '23%',
                 },
                 borderTop: {
                     monitor43: `7vh solid ${COLORS.gold}`,
-                    desktop: `7vh solid ${COLORS.gold}`,
+                    desktop: `6vh solid ${COLORS.gold}`,
                 },
                 borderRight: {
                     monitor43: '80px solid transparent',

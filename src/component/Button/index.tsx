@@ -51,13 +51,13 @@ const Button: React.FC<IButton> = ({onClick, invert = false}): React.ReactElemen
                                     width: {
                                         monitor43: '72px',
                                         xl: '72px',
-                                        desktop: '32px',
+                                        desktop: '42px',
                                         lg: '32px',
                                     },
                                     height: {
                                         monitor43: '72px',
                                         xl: '72px',
-                                        desktop: '32px',
+                                        desktop: '42px',
                                         lg: '32px',
                                     },
                                 }}
