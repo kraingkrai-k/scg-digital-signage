@@ -4,6 +4,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 import Template1Route from "pages/template1/Template1Route";
 import Template2Routes from "pages/template2/Template2Route";
+import Template3Routes from "pages/template3/Template3Route";
 
 const Routes: React.FunctionComponent = (): React.ReactElement => {
     const matches = useMediaQuery('(min-width:1200px)');
@@ -20,6 +21,10 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
 
             <Route path="/template2">
                 <Template2Routes baseURL="/template2" />
+            </Route>
+
+            <Route path="/template3">
+                <Template3Routes baseURL="/template3" />
             </Route>
 
             <Route path="*">

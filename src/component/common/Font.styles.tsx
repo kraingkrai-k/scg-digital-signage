@@ -3,17 +3,18 @@ import {styled} from '@mui/material/styles';
 export const Title35 = styled('span')(({theme}) => ({
     fontWeight: 700,
     fontSize: '35px',
+    letterSpacing: 1.1,
     [theme.breakpoints.only('monitor43')]: {
-        
+        fontSize: '45px',
     },
     [theme.breakpoints.only('desktop')]: {
-        
+        fontSize: '24px',
     },
     [theme.breakpoints.only('xl')]: {
-        
+        fontSize: '24px',
     },
     [theme.breakpoints.only('lg')]: {
-        fontSize: '24px',
+        fontSize: '20px',
     },
 }));
 
@@ -24,10 +25,10 @@ export const Title45 = styled('span')(({theme}) => ({
         fontSize: '84px',
     },
     [theme.breakpoints.only('desktop')]: {
-        
+
     },
     [theme.breakpoints.only('xl')]: {
-        
+
     },
     [theme.breakpoints.only('lg')]: {
         fontSize: '42px',
@@ -41,10 +42,10 @@ export const Title30 = styled('span')(({theme}) => ({
         fontSize: '72px',
     },
     [theme.breakpoints.only('desktop')]: {
-        
+
     },
     [theme.breakpoints.only('xl')]: {
-        
+
     },
     [theme.breakpoints.only('lg')]: {
         fontSize: '30px',

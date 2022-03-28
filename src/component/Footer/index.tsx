@@ -25,15 +25,21 @@ const Footer: React.FC<{}> = (): React.ReactElement => {
                     backgroundRepeat: 'no-repeat',
                     position: 'absolute',
                     width: {
-                        monitor43: '400px',
-                        lg: '120px',
+                        monitor43: '360px',
+                        lg: '180px',
                     },
                     height: {
-                        monitor43: '400px',
-                        lg: '120px',
+                        monitor43: '360px',
+                        lg: '180px',
                     },
-                    mt: '5%',
-                    ml: '5%',
+                    mt: {
+                        monitorr43: '7%',
+                        lg: '8%',
+                    },
+                    ml: {
+                        monitorr43: '2%',
+                        lg: '8%',
+                    },
                     bottom: 0
                 }}
             />
@@ -47,15 +53,21 @@ const Footer: React.FC<{}> = (): React.ReactElement => {
                     sx={{
                         width: {
                             monitor43: '1040px',
-                            lg: '300px',
+                            lg: '400px',
                         },
                         height: {
                             monitor43: '440px',
-                            lg: '120px',
+                            lg: '150px',
                         },
                         position: 'absolute',
-                        mt: '-10%',
-                        right: 15,
+                        mt: {
+                            monitor43: '-9%',
+                            lg: '-7%',
+                        },
+                        right: {
+                            monitor43: 35,
+                            lg: 45,
+                        },
                     }}
                 />
                 <Box sx={{
@@ -79,7 +91,10 @@ const Footer: React.FC<{}> = (): React.ReactElement => {
                 inheritViewBox
                 sx={{
                     width: '100%',
-                    height: '30vh',
+                    height: {
+                        monitor43: '30vh',
+                        lg: '25vh',
+                    },
                 }}
             />
         </Box>

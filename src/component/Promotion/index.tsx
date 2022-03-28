@@ -1,8 +1,9 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Button from "component/Button";
 
-// import SvgIcon from "@mui/material/SvgIcon";
+import {COLORS} from "core/utils/constant";
+import Button from "component/Button";
+import {Title45} from "component/common/Font.styles";
 
 const Promotion: React.FC = (): React.ReactElement => {
 
@@ -15,12 +16,16 @@ const Promotion: React.FC = (): React.ReactElement => {
             <Box
                 sx={{
                     height: '16vh',
-                    bgcolor: 'red',
+                    bgcolor: COLORS.holder,
                     m: '24px',
-                    // mb: '14px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                 }}
             >
-                Promotion
+                <Title45 sx={{color : COLORS.white}}>
+                    Promotion
+                </Title45>
             </Box>
 
             <Box
@@ -31,7 +36,6 @@ const Promotion: React.FC = (): React.ReactElement => {
                     justifyContent: 'center',
                 }}
             >
-
                 <Button invert={true} onClick={handlerProductClick} />
             </Box>
         </Box>

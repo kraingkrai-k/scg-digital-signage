@@ -6,9 +6,12 @@ import NavbarText from "component/NavbarText";
 const NavbarBG: React.FC = (): React.ReactElement => {
     return (
         <Box sx={{
-            height: '100%', 
+            height: '100%',
             width: '100%',
-            lineHeight: '0.8',
+            lineHeight: {
+                monitor43: '0.8',
+                lg: '1.2',
+            },
             background: 'linear-gradient(180deg, #EC1C24 0%, #CA060D 100%)',
             display: 'flex',
         }}>

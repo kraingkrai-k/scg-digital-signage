@@ -47,11 +47,11 @@ const Button: React.FC<IButton> = ({onClick, invert = false}): React.ReactElemen
                             <TouchAppWhite
                                 sx={{
                                     width: {
-                                        xl: '48px',
+                                        xl: '72px',
                                         lg: '32px',
                                     },
                                     height: {
-                                        xl: '48px',
+                                        xl: '72px',
                                         lg: '32px',
                                     },
                                 }}

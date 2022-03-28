@@ -2,16 +2,14 @@ import React from "react";
 import Box from "@mui/material/Box";
 
 import BGFooter from "assets/images/bg-footer.png";
-import {COLORS} from "core/utils/constant";
 
 import Footer from "component/Footer";
 import Navbar from "component/Navbar";
 import NavbarShape from "component/NavbarShape";
-import XPRecommend from "component/XPRecommend";
+import {XPRecommendTemp3} from "component/XPRecommend";
 import Promotion from "component/Promotion";
-import {Title45} from "component/common/Font.styles";
 
-const Template2: React.FC = (): React.ReactElement => {
+const Template3: React.FC = (): React.ReactElement => {
 
     return (
         <Box sx={{height: '100vh', width: '100%'}}>
@@ -20,7 +18,7 @@ const Template2: React.FC = (): React.ReactElement => {
                 <NavbarShape />
             </Box>
 
-            <XPRecommend />
+            <XPRecommendTemp3 />
 
             <Box sx={{
                 position: 'absolute',
@@ -32,19 +30,13 @@ const Template2: React.FC = (): React.ReactElement => {
             }}>
                 <Box
                     sx={{
-                        bgcolor: COLORS.holder,
+                        bgcolor: 'green',
                         width: '100%',
                         height: '36vh',
                         position: 'relative',
                         zIndex: 1,
-
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
                     }}>
-                    <Title45 sx={{color: COLORS.white}}>
-                        Video Consent
-                    </Title45>
+                    Personal Consent
                 </Box>
 
                 <Promotion />
@@ -54,4 +46,4 @@ const Template2: React.FC = (): React.ReactElement => {
     )
 };
 
-export default Template2;
+export default Template3;
