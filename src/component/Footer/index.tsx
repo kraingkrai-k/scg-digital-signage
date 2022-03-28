@@ -36,7 +36,7 @@ const Footer: React.FC<{}> = (): React.ReactElement => {
                     },
                     ml: {
                         monitorr43: '2%',
-                        desktop: '5%',
+                        desktop: '7.5%',
                         lg: '8%',
                     },
                     bottom: {
@@ -60,7 +60,7 @@ const Footer: React.FC<{}> = (): React.ReactElement => {
                             lg: '400px',
                         },
                         height: {
-                            monitor43: '440px',
+                            monitor43: '400px',
                             desktop: '200px',
                             lg: '150px',
                         },

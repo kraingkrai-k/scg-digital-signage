@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Box from "@mui/material/Box";
 
 import BGFooter from "assets/images/bg-footer.png";
@@ -9,8 +9,23 @@ import NavbarShape from "component/NavbarShape";
 import {XPDirectory} from "component/XPRecommend";
 import {Title45} from "component/common/Font.styles";
 import {COLORS} from "core/utils/constant";
+import Tabs from "./component/Tabs";
+import Content from "./component/Content";
 
 const Directory: React.FC = (): React.ReactElement => {
+    const [floor, setFloor] = useState<number>(1)
+    const [zone, setZone] = useState<number>(1)
+
+
+    const handlerSetZone = (x: number) => {
+        console.log('zone:', x)
+        setZone(x)
+    }
+
+    const handlerSetFloor = (x: number) => {
+        console.log('floor:', x)
+        setFloor(x)
+    }
 
     return (
         <Box sx={{height: '100vh', width: '100%'}}>
@@ -39,20 +54,46 @@ const Directory: React.FC = (): React.ReactElement => {
                 <Box
                     sx={{
                         width: '100%',
-                        height: '70vh',
+                        height: {
+                            monitor43: '85vh',
+                            desktop: '85vh',
+                        },
                         position: 'relative',
                         zIndex: 1,
                         display: 'flex',
                         direction: 'row',
                     }}>
 
-                    <Box sx={{width: '100%'}}>
-                    </Box>
-                    <Box sx={{ml: '1%', width: '50%', height: '65%'}}>
-                        {/* <Directory /> */}
+                    <Box sx={{
+                        width: '100%',
+                        height: '100%',
+                        background: 'linear-gradient(137.79deg, #FFFFFF 3.68%, #E1E1E1 87.1%)',
+                        boxShadow: '0px 4px 40px rgba(0, 0, 0, 0.12)',
+                        borderRadius: '0px 0px 4px 4px',
+                        ml: '2%',
+                        mr: '2%',
+                    }}>
+                        <Box
+                            sx={{
+                                width: '100%',
+                                height: '50px',
+                            }}
+                        >
+                            <Tabs
+                                floor={floor}
+                                setFloor={handlerSetFloor}
+                            />
+                            <Content
+                                floor={floor}
+                                zone={zone}
+                                setZone={handlerSetZone}
+                            />
+                        </Box>
                     </Box>
                 </Box>
-                <Footer />
+                <Box sx={{pt: '5%'}}>
+                    <Footer />
+                </Box>
             </Box>
         </Box>
     )

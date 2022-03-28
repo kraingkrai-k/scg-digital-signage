@@ -39,7 +39,7 @@ export const Title30 = styled('span')(({theme}) => ({
     fontWeight: 700,
     fontSize: '30px',
     [theme.breakpoints.only('monitor43')]: {
-        fontSize: '72px',
+        fontSize: '62px',
     },
     [theme.breakpoints.only('desktop')]: {
         fontSize: '42px',
@@ -57,7 +57,7 @@ export const Title20 = styled('span')(({theme}) => ({
     fontWeight: 700,
     fontSize: '32px',
     [theme.breakpoints.only('monitor43')]: {
-        fontSize: '42px',
+        fontSize: '48px',
     },
     [theme.breakpoints.only('desktop')]: {
 
@@ -90,7 +90,7 @@ export const Title14 = styled('span')(({theme}) => ({
     fontWeight: 400,
     fontSize: '14px',
     [theme.breakpoints.only('monitor43')]: {
-        fontSize: '32px',
+        fontSize: '42px',
     },
     [theme.breakpoints.only('desktop')]: {
         fontSize: '24px',

@@ -4,6 +4,7 @@ export const COLORS = {
     redBorder: '#CB070E',
     white: '#FFFFFF',
     greyText: '#231F20',
+    grey: '#575757',
     holder: '#938F8F',
     balck: '#000000',
     black1: '#121212',
