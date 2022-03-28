@@ -11,14 +11,12 @@ import Tag, {WrapTag} from "./Tag";
 interface IBoxSolution {
     children: React.ReactNode
     text: string
-    id: any
     onClick: (x: any) => void
 }
 
-const BoxSolution = ({children, text, id, onClick}: IBoxSolution) => {
+const BoxSolution = ({children, text, onClick}: IBoxSolution) => {
     return (
         <Box
-            id={id}
             onClick={onClick}
             sx={{
                 width: {
@@ -150,9 +148,11 @@ const SmartSolution: React.FC = (): React.ReactElement => {
                     }}
                 >
                     {listSolution.map(x => (
-                        <BoxSolution id={x.id} text={x.text} onClick={() => handlerOpenModal(x)}>
-                            {x.icon}
-                        </BoxSolution>
+                        <React.Fragment key={x.id}>
+                            <BoxSolution text={x.text} onClick={() => handlerOpenModal(x)}>
+                                {x.icon}
+                            </BoxSolution>
+                        </React.Fragment>
                     ))}
                 </Box>
             </Box>

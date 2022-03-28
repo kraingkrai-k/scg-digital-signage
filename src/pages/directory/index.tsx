@@ -7,7 +7,6 @@ import Footer from "component/Footer";
 import Navbar from "component/Navbar";
 import NavbarShape from "component/NavbarShape";
 import {XPRecommendDirectory} from "component/XPRecommend";
-import SmartSolution from "./component/SmartSolution";
 
 const Directory: React.FC = (): React.ReactElement => {
 
@@ -39,7 +38,6 @@ const Directory: React.FC = (): React.ReactElement => {
                     }}>
 
                     <Box sx={{width: '100%'}}>
-                        <SmartSolution />
                     </Box>
                     <Box sx={{ml: '1%', width: '50%', height: '65%'}}>
                         <Directory />
