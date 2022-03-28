@@ -53,6 +53,21 @@ export const IconPin = (props: SvgIconProps) => (
     </SvgIcon>
 )
 
+export const IconDirectoryNavigator = (props: SvgIconProps) => (
+    <SvgIcon {...props}>
+        <svg width="100%" height="100%" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1259_10908)">
+                <path d="M4.86762 15.0973L6.20262 16.4248L13.6201 8.99981L6.19512 1.57481L4.86762 2.90231L10.9651 8.99981L4.86762 15.0973Z" fill="white" />
+            </g>
+            <defs>
+                <clipPath id="clip0_1259_10908">
+                    <rect width="18" height="18" fill="white" transform="translate(18 18) rotate(-180)" />
+                </clipPath>
+            </defs>
+        </svg>
+    </SvgIcon>
+)
+
 export const IconMetaToilet = (props: SvgIconProps) => (
     <SvgIcon {...props}>
         <svg width="100%" height="100%" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">

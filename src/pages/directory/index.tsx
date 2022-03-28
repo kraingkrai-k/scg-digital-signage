@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Box from "@mui/material/Box";
+import {useLocation} from "react-router-dom";
 
 import BGFooter from "assets/images/bg-footer.png";
 
@@ -13,17 +14,22 @@ import Tabs from "./component/Tabs";
 import Content from "./component/Content";
 
 const Directory: React.FC = (): React.ReactElement => {
+    const {state}: any = useLocation()
+
     const [floor, setFloor] = useState<number>(1)
     const [zone, setZone] = useState<number>(1)
 
+    useEffect(() => {
+        if (state?.tab) {
+            setFloor(state?.tab)
+        }
+    }, [state])
 
     const handlerSetZone = (x: number) => {
-        console.log('zone:', x)
         setZone(x)
     }
 
     const handlerSetFloor = (x: number) => {
-        console.log('floor:', x)
         setFloor(x)
     }
 

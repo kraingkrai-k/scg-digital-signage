@@ -8,7 +8,7 @@ export const Title35 = styled('span')(({theme}) => ({
         fontSize: '45px',
     },
     [theme.breakpoints.only('desktop')]: {
-        fontSize: '24px',
+        // fontSize: '24px',
     },
     [theme.breakpoints.only('xl')]: {
         fontSize: '24px',
@@ -90,7 +90,7 @@ export const Title14 = styled('span')(({theme}) => ({
     fontWeight: 400,
     fontSize: '14px',
     [theme.breakpoints.only('monitor43')]: {
-        fontSize: '42px',
+        fontSize: '28px',
     },
     [theme.breakpoints.only('desktop')]: {
         fontSize: '24px',

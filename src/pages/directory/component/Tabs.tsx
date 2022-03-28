@@ -29,15 +29,22 @@ export const Tab: React.FC<ITab> = ({active, floor, title, onClick}): React.Reac
             <Title14 sx={{
                 alignSelf: 'flex-start',
                 mt: {
-                    monitor43: "2%",
+                    monitor43: "1.5%",
                     desktop: "2%",
                 }
             }}>
                 ชั้น
             </Title14>
-            <Title45>
+
+            <Box sx={{
+                fontSize: {
+                    monitor43: '50px',
+                    desktop: '42px',
+                },
+                fontWeight: 700
+            }}>
                 {floor}
-            </Title45>
+            </Box>
 
             <Title17 sx={{
                 ml: {

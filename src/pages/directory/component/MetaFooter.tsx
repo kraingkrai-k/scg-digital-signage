@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 
-import {Title14} from "component/common/Font.styles";
+import {Title20} from "component/common/Font.styles";
 import {IconMetaToilet, IconMetaFireExits, IconMetaInfo} from "assets/icon/Icon";
 import SvgIcon from "@mui/material/SvgIcon";
 
@@ -32,18 +32,20 @@ const MetaIcon: React.FC<IMetaIcon> = ({icon, text}) => (
                 },
             }}
         />
-        <Title14 sx={{
+        <Title20 sx={{
             ml: {
+                monitor43: '5%',
                 desktop: '5%',
             },
             width: {
-                monitor43: '180px',
-                desktop: '100px',
+                monitor43: '200px',
+                desktop: '120px',
                 lg: '100px',
             },
+            fontWeight: 400
         }}>
             {text}
-        </Title14>
+        </Title20>
     </Box>
 )
 
@@ -78,9 +80,9 @@ const MetaFooter: React.FC = (): React.ReactElement => {
                     text="ประชาสัมพันธ์"
                 />
             </Box>
-            <Title14>
+            <Title20 sx={{fontWeight: 400}}>
                 หากไม่พบสินค้าหรือบริการ สามารถติดต่อพนักงานได้ตลอดเลยนะคะ
-            </Title14>
+            </Title20>
         </Box>
     )
 };
