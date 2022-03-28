@@ -6,6 +6,7 @@ import Template1Route from "pages/template1/Template1Route";
 import Template2Routes from "pages/template2/Template2Route";
 import Template3Routes from "pages/template3/Template3Route";
 import InteractiveRoutes from "pages/interactive/InteractiveRoute";
+import DirectoryRoutes from "pages/directory/DirectoryRoute";
 
 const Routes: React.FunctionComponent = (): React.ReactElement => {
     const matches = useMediaQuery('(min-width:1200px)');
@@ -30,6 +31,10 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
 
             <Route path="/interactive">
                 <InteractiveRoutes baseURL="/interactive" />
+            </Route>
+
+            <Route path="/directory">
+                <DirectoryRoutes baseURL="/directory" />
             </Route>
 
             <Route path="*">

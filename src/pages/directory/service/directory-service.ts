@@ -1,11 +1,11 @@
 import {AxiosInstance} from "axios";
 
-export interface IInteractiveService {
+export interface IDirectoryService {
     getTemp: () => Promise<any[]>
     getPm: () => Promise<any[]>
 }
 
-export const InteractiveService = (axiosInstance: AxiosInstance): IInteractiveService => {
+export const DirectoryService = (axiosInstance: AxiosInstance): IDirectoryService => {
     return {
         getTemp: async (): Promise<any[]> => {
             return Promise.resolve([])

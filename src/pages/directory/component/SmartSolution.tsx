@@ -7,18 +7,17 @@ import {COLORS} from "core/utils/constant";
 
 import {IListSolution, listSolution} from "../model/listSolution";
 import Tag, {WrapTag} from "./Tag";
-
 interface IBoxSolution {
     children: React.ReactNode
     text: string
-    id: any
+    key: any
     onClick: (x: any) => void
 }
 
-const BoxSolution = ({children, text, id, onClick}: IBoxSolution) => {
+const BoxSolution = ({children, text, key, onClick}: IBoxSolution) => {
     return (
         <Box
-            id={id}
+            key={key}
             onClick={onClick}
             sx={{
                 width: {
@@ -150,7 +149,7 @@ const SmartSolution: React.FC = (): React.ReactElement => {
                     }}
                 >
                     {listSolution.map(x => (
-                        <BoxSolution id={x.id} text={x.text} onClick={() => handlerOpenModal(x)}>
+                        <BoxSolution key={x.id} text={x.text} onClick={() => handlerOpenModal(x)}>
                             {x.icon}
                         </BoxSolution>
                     ))}
