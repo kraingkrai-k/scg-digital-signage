@@ -7,6 +7,7 @@ import {Title45} from "component/common/Font.styles";
 
 export const Text = styled(Title45)(({theme}) => `
 line-height: 1.4;
+font-style: italic;
 ${theme.breakpoints.only('monitor43')}{
     .extra {
         font-size: 110px;

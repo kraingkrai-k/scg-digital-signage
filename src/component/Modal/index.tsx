@@ -66,11 +66,11 @@ const MyModal: React.FC<IMyModal> = ({onCancel, onOK, visible, children}): React
                             inheritViewBox
                             sx={{
                                 width: {
-                                    monitor43: '80px',
+                                    monitor43: '50px',
                                     desktop: '40px',
                                 },
                                 height: {
-                                    monitor43: '80px',
+                                    monitor43: '50px',
                                     desktop: '40px',
                                 },
                             }}
@@ -128,16 +128,22 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
                                 backgroundSize: 'cover',
                                 backgroundRepeat: 'repeat',
                                 objectFit: 'contain',
-                                height: '300px',
-                                width: '100%',
+                                height: {
+                                    monitor43: '500px',
+                                    desktop: '300px',
+                                },
+                                width: {
+                                    monitor43: '100%',
+                                    desktop: '100%',
+                                },
                                 mt: '1.5%'
                             }}
                         />
 
                         <Box sx={{mt: '2%', letterSpacing: '0.1rem', lineHeight: '1.6'}}>
-                            <Title14>
+                            <Title17 sx={{fontWeight: 400}}>
                                 ถ้าคุณกำลังมีปัญหาเรื่องบ้านแต่ไม่รู้ว่าควรปรึกษาใคร เราขอแนะนำ <span style={{fontWeight: 700}}>"คลินิคหมอบ้าน"</span> ที่จะมาช่วยไขทุกข้อข้องใจเรื่องบ้านกับผู้เชี่ยวชาญจากเอสซีจีไม่ว่าจะเป็นสร้างบ้านใหม่ปรับปรุงหรือต่อเติมบ้านเก่า
-                            </Title14>
+                            </Title17>
                         </Box>
                     </Box>
                 </Box>
@@ -173,12 +179,12 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
                         />
 
                         <Box sx={{display: 'grid'}}>
-                            <Title14>
+                            <Title17 sx={{fontWeight: 400}}>
                                 สแกน QR
-                            </Title14>
-                            <Title14 >
+                            </Title17>
+                            <Title17 sx={{fontWeight: 400}}>
                                 เพื่อเปิดบนมือถือ
-                            </Title14>
+                            </Title17>
                         </Box>
                     </Box>
                 </Box>
@@ -189,9 +195,9 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
                 ml: '5%',
                 mt: '3%',
             }}>
-                <Title17>
+                <Title20>
                     สินค้าและบริการแนะนำ
-                </Title17>
+                </Title20>
 
                 <Box sx={{mt: '1%', display: 'flex'}}>
                     <Box sx={{
@@ -202,29 +208,29 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
                         }
                     }}>
                         <li>
-                            <Title14>
+                            <Title17 sx={{fontWeight: 400}}>
                                 ปรึกษาผู้เชี่ยวชาญสร้างบ้าน
-                            </Title14>
+                            </Title17>
                         </li>
 
                         <li>
-                            <Title14>
+                            <Title17 sx={{fontWeight: 400}}>
                                 ปรับปรุงบ้าน
-                            </Title14>
+                            </Title17>
                         </li>
                     </Box>
 
                     <Box>
                         <li>
-                            <Title14>
+                            <Title17 sx={{fontWeight: 400}}>
                                 ปรึกษาผู้เชี่ยวชาญสร้างบ้าน
-                            </Title14>
+                            </Title17>
                         </li>
 
                         <li>
-                            <Title14>
+                            <Title17 sx={{fontWeight: 400}}>
                                 ปรับปรุงบ้าน
-                            </Title14>
+                            </Title17>
                         </li>
                     </Box>
                 </Box>
