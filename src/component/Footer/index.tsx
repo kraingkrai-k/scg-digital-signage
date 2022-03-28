@@ -26,21 +26,24 @@ const Footer: React.FC<{}> = (): React.ReactElement => {
                     position: 'absolute',
                     width: {
                         monitor43: '360px',
+                        desktop: '240px',
                         lg: '180px',
                     },
                     height: {
                         monitor43: '360px',
+                        desktop: '240px',
                         lg: '180px',
-                    },
-                    mt: {
-                        monitorr43: '7%',
-                        lg: '8%',
                     },
                     ml: {
                         monitorr43: '2%',
+                        desktop: '5%',
                         lg: '8%',
                     },
-                    bottom: 0
+                    bottom: {
+                        monitorr43: 0,
+                        desktop: -15,
+                        lg: -10,
+                    }
                 }}
             />
 
@@ -53,19 +56,23 @@ const Footer: React.FC<{}> = (): React.ReactElement => {
                     sx={{
                         width: {
                             monitor43: '1040px',
+                            desktop: '520px',
                             lg: '400px',
                         },
                         height: {
                             monitor43: '440px',
+                            desktop: '200px',
                             lg: '150px',
                         },
                         position: 'absolute',
                         mt: {
                             monitor43: '-9%',
+                            desktop: '-7%',
                             lg: '-7%',
                         },
                         right: {
                             monitor43: 35,
+                            desktop: 45,
                             lg: 45,
                         },
                     }}
@@ -93,6 +100,7 @@ const Footer: React.FC<{}> = (): React.ReactElement => {
                     width: '100%',
                     height: {
                         monitor43: '30vh',
+                        desktop: '25vh',
                         lg: '25vh',
                     },
                 }}

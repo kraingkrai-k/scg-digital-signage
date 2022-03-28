@@ -27,9 +27,11 @@ const Button: React.FC<IButton> = ({onClick, invert = false}): React.ReactElemen
                 onClick={onClick}
             >
                 <Box sx={{
-                    display: 'flex', padding: {
+                    display: 'flex',
+                     padding: {
                         xl: '14px 16px 14px 16px',
-                        lg: '10px 12px 10px 12px'
+                        desktop: '12px 16px 12px 16px',
+                        lg: '10px 12px 10px 12px',
                     }
                 }}>
                     <Grid
@@ -48,10 +50,12 @@ const Button: React.FC<IButton> = ({onClick, invert = false}): React.ReactElemen
                                 sx={{
                                     width: {
                                         xl: '72px',
+                                        desktop: '32px',
                                         lg: '32px',
                                     },
                                     height: {
                                         xl: '72px',
+                                        desktop: '32px',
                                         lg: '32px',
                                     },
                                 }}

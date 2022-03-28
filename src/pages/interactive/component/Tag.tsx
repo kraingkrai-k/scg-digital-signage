@@ -1,22 +1,32 @@
-import React from "react";
+import React, {ReactNode} from "react";
 import Box from "@mui/material/Box";
+import {styled} from '@mui/material/styles';
+
 import {COLORS} from "core/utils/constant";
-import {Title30} from "component/common/Font.styles";
+
+export const WrapTag = styled(Box)(({theme}) => ({
+    height: 'auto',
+    position: 'relative',
+}));
 
 const Tag: React.FC = ({children}): React.ReactElement => {
 
     return (
         <Box sx={{
-            height: '100%',
-            width: '35%',
-            // p: '24px',
-            borderTop: `7vh solid ${COLORS.gold}`,
-            borderRight: '100px solid transparent',
             position: 'relative',
             display: 'flex',
-            justifyContent: 'center',
+            ml: '10%'
         }}>
-            {children}
+            <Box sx={{
+                position: 'absolute',
+                bottom: {
+                    monitor43: 0,
+                    desktop: 15,
+                },
+                color: COLORS.white
+            }}>
+                {children}
+            </Box>
         </Box>
     )
 };

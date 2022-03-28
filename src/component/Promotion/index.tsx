@@ -18,6 +18,7 @@ const Promotion: React.FC = (): React.ReactElement => {
                     height: '16vh',
                     bgcolor: COLORS.holder,
                     m: '24px',
+                    cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
