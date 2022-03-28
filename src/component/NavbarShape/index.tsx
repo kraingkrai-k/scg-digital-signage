@@ -10,6 +10,7 @@ const NavbarShape: React.FC = (): React.ReactElement => {
             borderTop: `4vh solid ${COLORS.redBorder}`,
             borderLeft: '100px solid transparent',
             float: 'right',
+            mt: '-0.1%'
         }}
         />
     )

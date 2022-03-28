@@ -6,17 +6,26 @@ import {COLORS} from "core/utils/constant";
 import {Title45} from "component/common/Font.styles";
 
 export const Text = styled(Title45)(({theme}) => `
+line-height: 1.4;
 ${theme.breakpoints.only('monitor43')}{
-    line-height: 1.2;
+    .extra {
+        font-size: 110px;
+    }
 };
 ${theme.breakpoints.only('desktop')}{
-
+    .extra {
+        font-size: 55px;
+    }
 };
 ${theme.breakpoints.only('xl')}{
-
+    .extra {
+        font-size: 55px;
+    }
 };
 ${theme.breakpoints.only('lg')}{
-
+    .extra {
+        font-size: 55px;
+    }
 };
 `);
 
@@ -28,10 +37,16 @@ const NavbarText: React.FC<INavbarText> = ({isTemplate1 = true}): React.ReactEle
 
     return (
         <div>
-            <Grid container justifyContent={isTemplate1 ? "center" : "start"}>
+            <Grid
+                container
+                justifyContent={isTemplate1 ? "center" : "start"}
+                alignItems="end"
+            >
                 <Grid item>
                     <Text style={{color: isTemplate1 ? COLORS.red : COLORS.black2}}>
-                        ครบ
+                        <span className="extra">
+                            ครบ
+                        </span>
                     </Text>
                 </Grid>
                 <Grid item>

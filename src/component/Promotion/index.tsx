@@ -15,7 +15,11 @@ const Promotion: React.FC = (): React.ReactElement => {
         <Box>
             <Box
                 sx={{
-                    height: '16vh',
+                    height: {
+                        monitor43: '20vh',
+                        desktop: '16vh',
+                        lg: '16vh',
+                    },
                     bgcolor: COLORS.holder,
                     m: '24px',
                     cursor: 'pointer',
@@ -24,7 +28,7 @@ const Promotion: React.FC = (): React.ReactElement => {
                     justifyContent: 'center'
                 }}
             >
-                <Title45 sx={{color : COLORS.white}}>
+                <Title45 sx={{color: COLORS.white}}>
                     Promotion
                 </Title45>
             </Box>

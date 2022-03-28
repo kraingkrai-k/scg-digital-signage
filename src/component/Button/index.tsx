@@ -27,7 +27,8 @@ const Button: React.FC<IButton> = ({onClick, invert = false}): React.ReactElemen
             >
                 <Box sx={{
                     display: 'flex',
-                     padding: {
+                    padding: {
+                        monitor43: '18px 20px 18px 20px',
                         xl: '14px 16px 14px 16px',
                         desktop: '12px 16px 12px 16px',
                         lg: '10px 12px 10px 12px',
@@ -48,11 +49,13 @@ const Button: React.FC<IButton> = ({onClick, invert = false}): React.ReactElemen
                             <TouchAppWhite
                                 sx={{
                                     width: {
+                                        monitor43: '72px',
                                         xl: '72px',
                                         desktop: '32px',
                                         lg: '32px',
                                     },
                                     height: {
+                                        monitor43: '72px',
                                         xl: '72px',
                                         desktop: '32px',
                                         lg: '32px',
