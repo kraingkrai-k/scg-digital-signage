@@ -52,6 +52,40 @@ export const Title30 = styled('span')(({theme}) => ({
     },
 }));
 
+
+export const Title20 = styled('span')(({theme}) => ({
+    fontWeight: 700,
+    fontSize: '20px',
+    [theme.breakpoints.only('monitor43')]: {
+        fontSize: '42px',
+    },
+    [theme.breakpoints.only('desktop')]: {
+
+    },
+    [theme.breakpoints.only('xl')]: {
+
+    },
+    [theme.breakpoints.only('lg')]: {
+    },
+}));
+
+
+export const Title17 = styled('span')(({theme}) => ({
+    fontWeight: 700,
+    fontSize: '17px',
+    [theme.breakpoints.only('monitor43')]: {
+        fontSize: '34px',
+    },
+    [theme.breakpoints.only('desktop')]: {
+
+    },
+    [theme.breakpoints.only('xl')]: {
+
+    },
+    [theme.breakpoints.only('lg')]: {
+    },
+}));
+
 export const Title3 = styled('span')(({theme}) => ({
     fontWeight: 400,
     fontSize: '1.15vw',
