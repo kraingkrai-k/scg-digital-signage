@@ -54,8 +54,8 @@ export const TouchAppWhite = (props: SvgIconProps & {invert: boolean}) => (
                 />
             </g>
             <defs>
-                <filter id="filter0_d_877_58060" x="7.6665" y="2.41675" width="42.3101" height="54.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <filter id="filter0_d_877_58060" x="7.6665" y="2.41675" width="42.3101" height="54.75" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset dy="2" />
                     <feGaussianBlur stdDeviation="1" />

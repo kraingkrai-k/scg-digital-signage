@@ -6,8 +6,10 @@ import BGFooter from "assets/images/bg-footer.png";
 import Footer from "component/Footer";
 import Navbar from "component/Navbar";
 import NavbarShape from "component/NavbarShape";
-import {XPRecommendTemp3} from "component/XPRecommend";
+import {XPTemplate} from "component/XPRecommend";
 import Promotion from "component/Promotion";
+import {Title45} from "component/common/Font.styles";
+import {COLORS} from "core/utils/constant";
 
 const Template3: React.FC = (): React.ReactElement => {
 
@@ -18,7 +20,14 @@ const Template3: React.FC = (): React.ReactElement => {
                 <NavbarShape />
             </Box>
 
-            <XPRecommendTemp3 />
+            <XPTemplate>
+                <Title45>
+                    “ น้อง XP <span style={{color: COLORS.red}}>เลือกสินค้าและบริการ</span>
+                </Title45>
+                <Title45>
+                    <span style={{color: COLORS.red}}>ที่เหมาะกับ</span> คุณลูกค้ามาให้แล้วค่ะ ”
+                </Title45>
+            </XPTemplate>
 
             <Box sx={{
                 position: 'absolute',

@@ -12,7 +12,6 @@ interface IButton {
 }
 
 const Button: React.FC<IButton> = ({onClick, invert = false}): React.ReactElement => {
-
     return (
         <Box sx={{display: 'flex'}}>
             <Box

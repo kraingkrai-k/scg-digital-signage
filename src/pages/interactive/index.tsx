@@ -6,9 +6,11 @@ import BGFooter from "assets/images/bg-footer.png";
 import Footer from "component/Footer";
 import Navbar from "component/Navbar";
 import NavbarShape from "component/NavbarShape";
-import {XPRecommendTemp3} from "component/XPRecommend";
+import {XPInteractive} from "component/XPRecommend";
 import SmartSolution from "./component/SmartSolution";
 import Directory from "./component/Directory";
+import {Title45} from "component/common/Font.styles";
+import {COLORS} from "core/utils/constant";
 
 const Interactive: React.FC = (): React.ReactElement => {
 
@@ -19,7 +21,14 @@ const Interactive: React.FC = (): React.ReactElement => {
                 <NavbarShape />
             </Box>
 
-            <XPRecommendTemp3 />
+            <XPInteractive>
+                <Title45>
+                    “ น้อง XP <span style={{color: COLORS.red}}>เลือกสินค้าและบริการ</span>
+                </Title45>
+                <Title45>
+                    <span style={{color: COLORS.red}}>ที่เหมาะกับคุณลูกค้ามา</span> ให้แล้วค่ะ ”
+                </Title45>
+            </XPInteractive >
 
             <Box sx={{
                 position: 'absolute',

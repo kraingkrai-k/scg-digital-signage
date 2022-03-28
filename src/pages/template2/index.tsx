@@ -7,7 +7,7 @@ import {COLORS} from "core/utils/constant";
 import Footer from "component/Footer";
 import Navbar from "component/Navbar";
 import NavbarShape from "component/NavbarShape";
-import XPRecommend from "component/XPRecommend";
+import {XPTemplate} from "component/XPRecommend";
 import Promotion from "component/Promotion";
 import {Title45} from "component/common/Font.styles";
 
@@ -20,7 +20,15 @@ const Template2: React.FC = (): React.ReactElement => {
                 <NavbarShape />
             </Box>
 
-            <XPRecommend />
+            <XPTemplate>
+                <Title45>
+                    “ มาตรงนี้ให้ <span style={{color: COLORS.red}}>น้อง XP</span>
+                </Title45>
+
+                <Title45>
+                    ช่วยแนะนำบริการได้ค่ะ ”
+                </Title45>
+            </XPTemplate>
 
             <Box sx={{
                 position: 'absolute',

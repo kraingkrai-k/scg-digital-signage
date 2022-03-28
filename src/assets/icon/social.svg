@@ -23,8 +23,8 @@
 <path d="M146 38.7178C145.549 38.7178 145.107 38.8516 144.732 39.1024C144.357 39.3532 144.064 39.7096 143.892 40.1266C143.719 40.5436 143.674 41.0025 143.762 41.4452C143.85 41.8879 144.067 42.2946 144.386 42.6138C144.705 42.933 145.112 43.1503 145.555 43.2384C145.997 43.3264 146.456 43.2812 146.873 43.1085C147.29 42.9358 147.647 42.6432 147.898 42.2679C148.148 41.8926 148.282 41.4514 148.282 41C148.282 40.3947 148.042 39.8142 147.614 39.3862C147.186 38.9582 146.605 38.7178 146 38.7178ZM146 42.4813C145.707 42.4813 145.421 42.3945 145.177 42.2317C144.933 42.0689 144.744 41.8376 144.631 41.5669C144.519 41.2962 144.49 40.9984 144.547 40.711C144.604 40.4237 144.745 40.1597 144.953 39.9525C145.16 39.7454 145.424 39.6043 145.711 39.5471C145.998 39.49 146.296 39.5193 146.567 39.6314C146.838 39.7435 147.069 39.9334 147.232 40.177C147.394 40.4206 147.481 40.707 147.481 41C147.481 41.3929 147.325 41.7696 147.047 42.0475C146.77 42.3253 146.393 42.4813 146 42.4813Z" fill="white"/>
 <path d="M148.373 39.1609C148.667 39.1609 148.906 38.9221 148.906 38.6276C148.906 38.333 148.667 38.0942 148.373 38.0942C148.078 38.0942 147.839 38.333 147.839 38.6276C147.839 38.9221 148.078 39.1609 148.373 39.1609Z" fill="white"/>
 <defs>
-<filter id="filter0_d_877_38643" x="0" y="0" width="146" height="166" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter0_d_877_38643" x="0" y="0" width="146" height="166" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
 <feGaussianBlur stdDeviation="12"/>
@@ -36,8 +36,8 @@
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_877_38643" transform="translate(0 -0.0345294) scale(0.000833333)"/>
 </pattern>
-<filter id="filter1_d_877_38643" x="110" y="0" width="146" height="166" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter1_d_877_38643" x="110" y="0" width="146" height="166" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
 <feGaussianBlur stdDeviation="12"/>
@@ -49,8 +49,8 @@
 <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_877_38643" transform="translate(0 -0.0345294) scale(0.000833333)"/>
 </pattern>
-<filter id="filter2_d_877_38643" x="221" y="0" width="146" height="166" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter2_d_877_38643" x="221" y="0" width="146" height="166" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
 <feGaussianBlur stdDeviation="12"/>

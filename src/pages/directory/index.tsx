@@ -6,7 +6,9 @@ import BGFooter from "assets/images/bg-footer.png";
 import Footer from "component/Footer";
 import Navbar from "component/Navbar";
 import NavbarShape from "component/NavbarShape";
-import {XPRecommendDirectory} from "component/XPRecommend";
+import {XPDirectory} from "component/XPRecommend";
+import {Title45} from "component/common/Font.styles";
+import {COLORS} from "core/utils/constant";
 
 const Directory: React.FC = (): React.ReactElement => {
 
@@ -17,7 +19,14 @@ const Directory: React.FC = (): React.ReactElement => {
                 <NavbarShape />
             </Box>
 
-            <XPRecommendDirectory />
+            <XPDirectory>
+                <Title45>
+                    “ เลือกโซนที่สนใจจาก <span style={{color: COLORS.red}}>แผนผัง</span>
+                </Title45>
+                <Title45>
+                    <span style={{color: COLORS.red}}>หรือ จากสินค้าและบริการ</span>ได้เลยนะคะ”
+                </Title45>
+            </XPDirectory>
 
             <Box sx={{
                 position: 'absolute',
@@ -40,7 +49,7 @@ const Directory: React.FC = (): React.ReactElement => {
                     <Box sx={{width: '100%'}}>
                     </Box>
                     <Box sx={{ml: '1%', width: '50%', height: '65%'}}>
-                        <Directory />
+                        {/* <Directory /> */}
                     </Box>
                 </Box>
                 <Footer />
