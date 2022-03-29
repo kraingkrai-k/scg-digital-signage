@@ -116,7 +116,7 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
                             sx={{width: '18%', height: '18%'}}
                         />
 
-                        <Box sx={{display: 'grid'}}>
+                        <Box sx={{display: 'grid', justifyItems: 'baseline'}}>
                             <Title30 sx={{color: COLORS.red}}>
                                 {data.text}
                             </Title30>

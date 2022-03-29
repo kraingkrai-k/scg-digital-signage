@@ -17,34 +17,6 @@ export const IconBallLoon = (props: SvgIconProps) => (
     </SvgIcon>
 )
 
-export const FooterShape = (props: SvgIconProps) => (
-    <SvgIcon {...props}>
-        <svg width="100%" height="100%" viewBox="0 0 889 348" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M899.121 0L10 224L0.684082 348H899.121V0Z" fill="url(#paint0_linear_1259_11272)" />
-            <defs>
-                <linearGradient id="paint0_linear_1259_11272" x1="425.247" y1="-83.6219" x2="577.056" y2="315.313" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#CFCFCF" />
-                    <stop offset="0.888469" stop-color="white" />
-                </linearGradient>
-            </defs>
-        </svg>
-    </SvgIcon>
-)
-
-export const FooterShapeLeft = (props: SvgIconProps) => (
-    <SvgIcon {...props}>
-        <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 459 237" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M125.3 0L-4.99988 77.2105L-5 237H458.142L125.3 0Z" fill="url(#paint0_linear_1259_10570)" />
-            <defs>
-                <linearGradient id="paint0_linear_1259_10570" x1="-5.12109" y1="44" x2="75.1431" y2="333.927" gradientUnits="userSpaceOnUse">
-                    <stop offset="0.625" stop-color="white" />
-                    <stop offset="1" stop-color="#E3E3E3" />
-                </linearGradient>
-            </defs>
-        </svg>
-    </SvgIcon>
-)
-
 export const IconCloseModal = (props: SvgIconProps) => (
     <SvgIcon {...props}>
         <svg width="100%" height="100%" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">

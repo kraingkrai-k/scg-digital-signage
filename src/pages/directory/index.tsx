@@ -35,7 +35,13 @@ const Directory: React.FC = (): React.ReactElement => {
 
     // scale interactive page
     return (
-        <Box sx={{height: '100vh', width: '100%'}}>
+        <Box sx={{
+            height: '100vh', width: '100%',
+            backgroundImage: `url(${BGFooter})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            objectFit: 'fill',
+        }}>
             <Box sx={{height: '10%', position: 'relative'}}>
                 <Navbar />
                 <NavbarShape />
@@ -51,12 +57,12 @@ const Directory: React.FC = (): React.ReactElement => {
             </XPDirectory>
 
             <Box sx={{
-                position: 'absolute',
-                width: '100%',
-                backgroundImage: `url(${BGFooter})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                objectFit: 'fill',
+                // position: 'absolute',
+                // width: '100%',
+                // backgroundImage: `url(${BGFooter})`,
+                // backgroundSize: 'cover',
+                // backgroundRepeat: 'no-repeat',
+                // objectFit: 'fill',
             }}>
                 <Box
                     sx={{

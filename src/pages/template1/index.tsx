@@ -14,7 +14,7 @@ const Template1: React.FC = (): React.ReactElement => {
     const handlerProductClick = () => push('/template2')
 
     return (
-        <Box sx={{height: '100vh', width: '100%', bgcolor: COLORS.red}}>
+        <Box sx={{height: '98vh', width: '100%', bgcolor: COLORS.red}}>
             <Box sx={{height: '10%', position: 'relative'}}>
                 <NavbarTemplate1 />
             </Box>
@@ -26,7 +26,6 @@ const Template1: React.FC = (): React.ReactElement => {
                     height: '55%',
                     position: 'relative',
                     zIndex: 1,
-
 
                     display: 'flex',
                     alignItems: 'center',

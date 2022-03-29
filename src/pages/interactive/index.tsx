@@ -16,7 +16,13 @@ const Interactive: React.FC = (): React.ReactElement => {
 
     // * banner 10%, xp 15%, card 45%, footer 30%
     return (
-        <Box sx={{height: '100vh', width: '100%'}}>
+        <Box sx={{
+            height: '100vh', width: '100%',
+            backgroundImage: `url(${BGFooter})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            objectFit: 'fill',
+        }}>
             <Box sx={{height: '10%', position: 'relative'}}>
                 <Navbar />
                 <NavbarShape />
@@ -31,33 +37,24 @@ const Interactive: React.FC = (): React.ReactElement => {
                 </Title45>
             </XPInteractive>
 
-            <Box sx={{
-                position: 'absolute',
-                width: '100%',
-                backgroundImage: `url(${BGFooter})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                objectFit: 'fill',
-            }}>
-                <Box
-                    sx={{
-                        width: '100%',
-                        height: '45vh',
-                        position: 'relative',
-                        zIndex: 1,
-                        display: 'flex',
-                        direction: 'row',
-                    }}>
+            <Box
+                sx={{
+                    width: '100%',
+                    height: '45vh',
+                    position: 'relative',
+                    zIndex: 1,
+                    display: 'flex',
+                    direction: 'row',
+                }}>
 
-                    <Box sx={{width: '100%'}}>
-                        <SmartSolution />
-                    </Box>
-                    <Box sx={{ml: '1%', width: '65%', height: '67%'}}>
-                        <Directory />
-                    </Box>
+                <Box sx={{width: '100%'}}>
+                    <SmartSolution />
                 </Box>
-                <Footer />
+                <Box sx={{ml: '1%', width: '65%', height: '67%'}}>
+                    <Directory />
+                </Box>
             </Box>
+            <Footer />
         </Box>
     )
 };

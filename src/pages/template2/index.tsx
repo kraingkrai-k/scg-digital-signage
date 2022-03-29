@@ -36,7 +36,13 @@ const Template2: React.FC = (): React.ReactElement => {
 
     // * banner 10%, xp 15%, video 30%, promotion 15%, footer 30%
     return (
-        <Box sx={{height: '100vh', width: '100%'}}>
+        <Box sx={{
+            height: '100vh', width: '100%',
+            backgroundImage: `url(${BGFooter})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            objectFit: 'fill',
+        }}>
             <MyModal
                 onCancel={handlerCloseModal}
                 onOK={handlerOpenModal}
@@ -60,37 +66,28 @@ const Template2: React.FC = (): React.ReactElement => {
                 </Title45>
             </XPTemplate>
 
-            <Box sx={{
-                position: 'absolute',
-                width: '100%',
-                backgroundImage: `url(${BGFooter})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                objectFit: 'fill',
-            }}>
-                <Box
-                    sx={{
-                        bgcolor: COLORS.holder,
-                        width: '100%',
-                        height: '30vh',
-                        position: 'relative',
-                        zIndex: 1,
+            <Box
+                sx={{
+                    bgcolor: COLORS.holder,
+                    width: '100%',
+                    height: '30vh',
+                    position: 'relative',
+                    zIndex: 1,
 
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                    }}>
-                    <Title45 sx={{color: COLORS.white}}>
-                        Video Consent
-                    </Title45>
-                </Box>
-
-                <Promotion
-                    onPromotionClick={handlerPromotionClick}
-                    onProductClick={handlerProductClick}
-                />
-                <Footer />
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}>
+                <Title45 sx={{color: COLORS.white}}>
+                    Video Consent
+                </Title45>
             </Box>
+
+            <Promotion
+                onPromotionClick={handlerPromotionClick}
+                onProductClick={handlerProductClick}
+            />
+            <Footer />
         </Box>
     )
 };
