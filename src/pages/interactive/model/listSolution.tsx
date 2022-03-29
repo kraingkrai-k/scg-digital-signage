@@ -2,56 +2,54 @@ import {IconAccItem, IconAroundHome, IconDoctor, IconHomeCool, IconLandScape, Ic
 
 export interface IListSolution {
     id: number
-    icon: React.ReactNode
+    icon: any
     text: string
 }
-
-const sizeIcon = {width: '40%', height: '40%', float: 'right'}
 
 export const listSolution: IListSolution[] = [
     {
         id: 1,
-        icon: <IconDoctor sx={{...sizeIcon}} />,
+        icon: IconDoctor,
         text: "คลีนิค\nหมอบ้าน"
     },
     {
         id: 2,
-        icon: <IconRoof sx={{...sizeIcon}} />,
+        icon: IconRoof,
         text: "หลังคาพลังงาน\nแสงอาทิตย์"
     },
     {
         id: 3,
-        icon: <IconHomeCool sx={{...sizeIcon}} />,
+        icon: IconHomeCool,
         text: "ระบบ\nบ้านเย็น"
     },
     {
         id: 4,
-        icon: <IconLandScape sx={{...sizeIcon}} />,
+        icon: IconLandScape,
         text: "ตกแต่งภูมิทัศน์\nรอบบ้าน"
     },
     {
         id: 5,
-        icon: <IconToilet sx={{...sizeIcon}} />,
+        icon: IconToilet,
         text: "ห้องน้ำ\nเพื่อสุขภาพ"
     },
     {
         id: 6,
-        icon: <IconAroundHome sx={{...sizeIcon}} />,
+        icon: IconAroundHome,
         text: "พื้นที่\nนอกบ้าน"
     },
     {
         id: 7,
-        icon: <IconSupport sx={{...sizeIcon}} />,
+        icon: IconSupport,
         text: "บริการผู้ช่วย"
     },
     {
         id: 8,
-        icon: <IconTechnology sx={{...sizeIcon}} />,
+        icon: IconTechnology,
         text: "สินค้าเทคโนโลยี"
     },
     {
         id: 9,
-        icon: <IconAccItem sx={{...sizeIcon}} />,
+        icon: IconAccItem,
         text: "เครื่องใช้\nสำหรับ\nคนรักบ้าน"
     },
 ]

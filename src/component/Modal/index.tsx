@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import SvgIcon from "@mui/material/SvgIcon";
 
-import {Title14, Title17, Title20, Title30} from "component/common/Font.styles";
+import {Title17, Title20, Title30} from "component/common/Font.styles";
 import {IconCloseModal} from "assets/icon/Icon";
 import {COLORS} from "core/utils/constant";
 import {IListSolution} from "pages/interactive/model/listSolution";
@@ -31,10 +31,10 @@ const MyModal: React.FC<IMyModal> = ({onCancel, onOK, visible, children}): React
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: '80%',
+                width: '90%',
                 height: {
-                    monitor43: '80%',
-                    desktop: '80%',
+                    monitor43: '60%',
+                    desktop: '50%',
                 },
                 bgcolor: 'background.paper',
                 display: 'flex'
@@ -53,8 +53,10 @@ const MyModal: React.FC<IMyModal> = ({onCancel, onOK, visible, children}): React
                             position: 'absolute',
                             bottom: '3%',
                             right: '3%',
-                            width: '10%',
-                            p: '36px',
+                            width: '20%',
+                            p: '24px',
+                            pt: '28px',
+                            pb: '28px',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-around',
@@ -67,11 +69,11 @@ const MyModal: React.FC<IMyModal> = ({onCancel, onOK, visible, children}): React
                             sx={{
                                 width: {
                                     monitor43: '50px',
-                                    desktop: '40px',
+                                    desktop: '24px',
                                 },
                                 height: {
                                     monitor43: '50px',
-                                    desktop: '40px',
+                                    desktop: '24px',
                                 },
                             }}
                         />
@@ -91,24 +93,28 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
             <Box
                 sx={{
                     display: 'grid',
-                    gap: 2,
+                    // gap: 6,
                     gridTemplateColumns: 'repeat(2, 1fr)',
-                    width: '100%',
                     height: '70%',
+                    position: 'relative',
+                    // width: '100%',
+                    ml: '5%',
+                    mr: '10%',
+                    mt: '5%',
                 }}
             >
                 <Box sx={{
                     width: '80%',
-                    ml: '10%',
-                    mt: '7%',
+                    // ml: '7%',
+                    mt: '10%',
+                    overflowY: 'scroll'
                 }}>
-                    <Box sx={{display: 'flex', gap: 4, alignItems: 'center'}}>
-                        <Box sx={{
-                            width: '30%',
-                            height: '30%',
-                        }}>
-                            {data.icon}
-                        </Box>
+                    <Box sx={{display: 'flex', gap: 3, alignItems: 'center'}}>
+                        <SvgIcon
+                            component={data.icon}
+                            inheritViewBox
+                            sx={{width: '18%', height: '18%'}}
+                        />
 
                         <Box sx={{display: 'grid'}}>
                             <Title30 sx={{color: COLORS.red}}>
@@ -121,7 +127,7 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
                         </Box>
                     </Box>
 
-                    <Box sx={{alignItems: 'center', justifyContent: 'center', width: '100%'}}>
+                    <Box sx={{alignItems: 'center', justifyContent: 'center'}}>
                         <Box
                             sx={{
                                 backgroundImage: `url(${MockImg})`,
@@ -136,26 +142,30 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
                                     monitor43: '100%',
                                     desktop: '100%',
                                 },
-                                mt: '1.5%'
+                                mt: '7%',
+                                mb: '10%',
                             }}
                         />
 
-                        <Box sx={{mt: '2%', letterSpacing: '0.1rem', lineHeight: '1.6'}}>
+                        <Box
+                            sx={{
+                                letterSpacing: '0.1rem',
+                                lineHeight: '1.4',
+                            }}
+                        >
                             <Title17 sx={{fontWeight: 400}}>
                                 ถ้าคุณกำลังมีปัญหาเรื่องบ้านแต่ไม่รู้ว่าควรปรึกษาใคร เราขอแนะนำ <span style={{fontWeight: 700}}>"คลินิคหมอบ้าน"</span> ที่จะมาช่วยไขทุกข้อข้องใจเรื่องบ้านกับผู้เชี่ยวชาญจากเอสซีจีไม่ว่าจะเป็นสร้างบ้านใหม่ปรับปรุงหรือต่อเติมบ้านเก่า
                             </Title17>
                         </Box>
+
                     </Box>
                 </Box>
 
-                <Box sx={{
-                    flex: 1,
-                    mt: '5%',
-                }}>
+                <Box sx={{mt: '1%'}}>
                     <SvgIcon
                         component={IconMap}
                         inheritViewBox
-                        sx={{width: '100%', height: '90%'}}
+                        sx={{width: '110%', height: '70%'}}
                     />
 
                     <Box sx={{
@@ -173,8 +183,8 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
                                 backgroundSize: 'cover',
                                 backgroundRepeat: 'repeat',
                                 objectFit: 'contain',
-                                height: '200px',
-                                width: '200px',
+                                height: '100px',
+                                width: '100px',
                             }}
                         />
 
@@ -190,11 +200,7 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
                 </Box>
             </Box>
 
-
-            <Box sx={{
-                ml: '5%',
-                mt: '3%',
-            }}>
+            <Box sx={{ml: '5%'}}>
                 <Title20>
                     สินค้าและบริการแนะนำ
                 </Title20>

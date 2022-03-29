@@ -26,30 +26,31 @@ const Content: React.FC<IContent> = ({floor, zone, setZone}): React.ReactElement
             sx={{
                 display: 'grid',
                 justifyItems: 'center',
-                gap: 2,
+                gap: 4,
                 gridTemplateColumns: 'repeat(2, 1fr)',
-                mt: '1%'
+                mt: '3%'
             }}
         >
-            <Box sx={{width: '100%', display: 'block', textAlign: 'center'}}>
+            <Box sx={{width: '100%' , mt: '10%'}}>
                 <SvgIcon
                     component={mapFloorSvg(floor)}
                     inheritViewBox
                     sx={{
+                        ml: '4%',
                         width: {
                             monitor43: '1500px',
-                            desktop: '1000px',
+                            desktop: '100%',
                         },
                         height: {
                             monitor43: '1500px',
-                            desktop: '1000px',
+                            desktop: '80%',
                         },
                     }}
                 />
                 <MetaFooter />
             </Box>
 
-            <Box sx={{width: '80%'}}>
+            <Box sx={{width: '90%'}}>
                 <Zone
                     floor={floor}
                     zone={zone}

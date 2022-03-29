@@ -32,6 +32,7 @@ const ModalPromotion: React.FC = (): React.ReactElement => {
                     <Box sx={{
                         display: 'grid',
                         ml: '10%',
+                        mt: '5%',
                         width: '80%',
                     }}>
                         <Title30>
@@ -58,15 +59,21 @@ const ModalPromotion: React.FC = (): React.ReactElement => {
                             </Title17>
                         </Box>
 
-                        <Title14 sx={{mt: '2%', letterSpacing: '0.1rem'}}>
+                        <Box sx={{
+                            mt: '4%', letterSpacing: '0.1rem',
+                            fontSize: {
+                                monitor43: '16px',
+                                desktop: '15px',
+                            }
+                        }}>
                             สุดคุ้ม! สุด Cool! หน้าร้อนแต่บ้านต้องเย็น เตรียมรับมืออากาศร้อนบ้านร้อน อบอ้าว แก้ได้ด้วย
                             การเลือกวัสดุแต่งบ้านให้บ้านเย็น ช่วยลดอุณหภูมิ คลายความร้อน ระบายความร้อนภายในบ้าน และที่สำคัญยังช่วยประหยัดไฟอีกด้วย ร้อนนี้ SCG Home Onlineยกสินค้าพร้อม
-                        </Title14>
+                        </Box>
                     </Box>
                 </Grid>
 
                 <Grid item xs={3}>
-                    <Box sx={{display: 'grid', justifyContent: 'center', mt: '10%'}}>
+                    <Box sx={{display: 'grid', justifyContent: 'center', mt: '15%', alignItems: 'center'}}>
                         <Box sx={{
                             border: '2px solid #D5AF26',
                             boxShadow: '0px 4px 40px rgba(0, 0, 0, 0.12)',
@@ -81,10 +88,10 @@ const ModalPromotion: React.FC = (): React.ReactElement => {
                                     sx={{
                                         backgroundImage: `url(${MockQR})`,
                                         backgroundSize: 'cover',
-                                        backgroundRepeat: 'repeat',
-                                        objectFit: 'contain',
-                                        height: '200px',
-                                        width: '200px',
+                                        backgroundRepeat: 'no-repeat',
+                                        objectFit: 'cover',
+                                        height: '150px',
+                                        width: '150px',
                                     }}
                                 />
                             </Box>

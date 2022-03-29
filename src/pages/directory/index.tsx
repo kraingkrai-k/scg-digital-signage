@@ -8,7 +8,7 @@ import Footer from "component/Footer";
 import Navbar from "component/Navbar";
 import NavbarShape from "component/NavbarShape";
 import {XPDirectory} from "component/XPRecommend";
-import {Title45} from "component/common/Font.styles";
+import {Title40} from "component/common/Font.styles";
 import {COLORS} from "core/utils/constant";
 import Tabs from "./component/Tabs";
 import Content from "./component/Content";
@@ -33,20 +33,21 @@ const Directory: React.FC = (): React.ReactElement => {
         setFloor(x)
     }
 
+    // scale interactive page
     return (
         <Box sx={{height: '100vh', width: '100%'}}>
-            <Box sx={{height: '14%', position: 'relative'}}>
+            <Box sx={{height: '10%', position: 'relative'}}>
                 <Navbar />
                 <NavbarShape />
             </Box>
 
             <XPDirectory>
-                <Title45>
+                <Title40>
                     “ เลือกโซนที่สนใจจาก <span style={{color: COLORS.red}}>แผนผัง</span>
-                </Title45>
-                <Title45>
+                </Title40>
+                <Title40>
                     <span style={{color: COLORS.red}}>หรือ จากสินค้าและบริการ</span>ได้เลยนะคะ”
-                </Title45>
+                </Title40>
             </XPDirectory>
 
             <Box sx={{
@@ -60,10 +61,7 @@ const Directory: React.FC = (): React.ReactElement => {
                 <Box
                     sx={{
                         width: '100%',
-                        height: {
-                            monitor43: '85vh',
-                            desktop: '85vh',
-                        },
+                        height: '45vh',
                         position: 'relative',
                         zIndex: 1,
                         display: 'flex',
@@ -79,12 +77,7 @@ const Directory: React.FC = (): React.ReactElement => {
                         ml: '2%',
                         mr: '2%',
                     }}>
-                        <Box
-                            sx={{
-                                width: '100%',
-                                height: '50px',
-                            }}
-                        >
+                        <Box sx={{width: '100%'}}>
                             <Tabs
                                 floor={floor}
                                 setFloor={handlerSetFloor}
@@ -97,9 +90,7 @@ const Directory: React.FC = (): React.ReactElement => {
                         </Box>
                     </Box>
                 </Box>
-                <Box sx={{pt: '5%'}}>
-                    <Footer />
-                </Box>
+                <Footer />
             </Box>
         </Box>
     )

@@ -7,9 +7,10 @@ import {COLORS} from "core/utils/constant";
 
 import {IListSolution, listSolution} from "../model/listSolution";
 import Tag, {WrapTag} from "./Tag";
+import SvgIcon from "@mui/material/SvgIcon";
 
 interface IBoxSolution {
-    children: React.ReactNode
+    children: any
     text: string
     onClick: (x: any) => void
 }
@@ -21,11 +22,11 @@ const BoxSolution = ({children, text, onClick}: IBoxSolution) => {
             sx={{
                 width: {
                     monitor43: '320px',
-                    desktop: '200px',
+                    desktop: '150px',
                 },
                 height: {
                     monitor43: '320px',
-                    desktop: '200px',
+                    desktop: '150px',
                 },
                 background: 'linear-gradient(180deg, #CECECE 0%, #EEEEEE 0.01%, #FFFFFF 68.75%)',
                 boxShadow: '0px 5px 30px rgba(0, 0, 0, 0.25)',
@@ -34,7 +35,22 @@ const BoxSolution = ({children, text, onClick}: IBoxSolution) => {
                 p: '16px',
                 cursor: 'pointer',
             }}>
-            {children}
+            <SvgIcon
+                component={children}
+                inheritViewBox
+                sx={{
+                    float: 'right',
+                    width: {
+                        monitor43: '75px',
+                        desktop: '65px',
+                    },
+                    height: {
+                        monitor43: '75px',
+                        desktop: '65px',
+                    },
+                }}
+            />
+
             <Box sx={{
                 float: 'left',
                 position: 'absolute',
@@ -105,15 +121,15 @@ const SmartSolution: React.FC = (): React.ReactElement => {
             <WrapTag sx={{
                 width: {
                     monitor43: '30%',
-                    desktop: '23%',
+                    desktop: '50%',
                 },
                 borderTop: {
-                    monitor43: `7vh solid ${COLORS.gold}`,
-                    desktop: `6vh solid ${COLORS.gold}`,
+                    monitor43: `4vh solid ${COLORS.greyText}`,
+                    desktop: `4vh solid ${COLORS.greyText}`,
                 },
                 borderRight: {
-                    monitor43: '80px solid transparent',
-                    desktop: '80px solid transparent',
+                    monitor43: '5vh solid transparent',
+                    desktop: '5vh solid transparent',
                 },
             }}
             >
@@ -130,8 +146,8 @@ const SmartSolution: React.FC = (): React.ReactElement => {
             }}>
                 <Box
                     sx={{
-                        pt: '1%',
-                        pb: '2%',
+                        pt: '2%',
+                        pb: '4%',
                     }}
                 >
                     <Title20>

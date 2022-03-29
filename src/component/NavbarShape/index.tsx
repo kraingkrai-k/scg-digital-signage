@@ -7,8 +7,8 @@ const NavbarShape: React.FC = (): React.ReactElement => {
     return (
         <Box sx={{
             width: '35%',
-            borderTop: `4vh solid ${COLORS.redBorder}`,
-            borderLeft: '100px solid transparent',
+            borderTop: `2vh solid ${COLORS.redBorder}`,
+            borderLeft: '3vh solid transparent',
             float: 'right',
             mt: '-0.1%'
         }}

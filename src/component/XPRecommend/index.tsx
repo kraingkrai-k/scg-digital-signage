@@ -14,7 +14,7 @@ export const XPTemplate: React.FC = ({children}): React.ReactElement => (
             backgroundSize: 'cover',
             backgroundRepeat: 'repeat',
             objectFit: 'contain',
-            height: '20vh',
+            height: '15vh',
         }}
     >
         <Box sx={{
@@ -23,7 +23,7 @@ export const XPTemplate: React.FC = ({children}): React.ReactElement => (
             alignItems: 'center',
             height: 'inherit',
         }}>
-            <Box sx={{display: 'grid'}}>
+            <Box sx={{display: 'grid', width: '100%', justifyContent: 'end'}}>
                 {children}
             </Box>
 
@@ -31,19 +31,20 @@ export const XPTemplate: React.FC = ({children}): React.ReactElement => (
                 width: {
                     monitor43: '30%',
                     desktop: '30%',
-                    lg: '300px',
                 },
                 height: {
                     monitor43: '35%',
                     desktop: '35%',
-                    lg: '300px',
                 },
                 right: {
                     monitor43: 0,
-                    desktop: '5%',
+                    desktop: '3%',
                 },
                 position: 'absolute',
-                top: '5%',
+                top: {
+                    monitor43: 0,
+                    desktop: '-2%',
+                },
                 zIndex: 1
             }}>
                 <SvgIcon
@@ -53,7 +54,7 @@ export const XPTemplate: React.FC = ({children}): React.ReactElement => (
                 />
             </Box>
         </Box>
-    </Box>
+    </Box >
 )
 
 export const XPInteractive: React.FC = ({children}): React.ReactElement => (
@@ -63,7 +64,7 @@ export const XPInteractive: React.FC = ({children}): React.ReactElement => (
             backgroundSize: 'cover',
             backgroundRepeat: 'repeat',
             objectFit: 'contain',
-            height: '20vh',
+            height: '15vh',
         }}
     >
         <Box sx={{
@@ -72,7 +73,7 @@ export const XPInteractive: React.FC = ({children}): React.ReactElement => (
             alignItems: 'center',
             height: 'inherit',
         }}>
-            <Box sx={{display: 'grid'}}>
+            <Box sx={{display: 'grid', width: '100%', justifyContent: 'end'}}>
                 {children}
             </Box>
 
@@ -80,19 +81,20 @@ export const XPInteractive: React.FC = ({children}): React.ReactElement => (
                 width: {
                     monitor43: '30%',
                     desktop: '30%',
-                    lg: '300px',
                 },
                 height: {
                     monitor43: '35%',
-                    desktop: '35%',
-                    lg: '300px',
+                    desktop: '25%',
                 },
                 position: 'absolute',
                 right: {
-                    monitor43: 0,
-                    desktop: '5%',
+                    monitor43: '4%',
+                    desktop: '3%',
                 },
-                top: '5%',
+                top: {
+                    monitor43: 0,
+                    desktop: '7%',
+                },
                 zIndex: 1
             }}>
                 <SvgIcon
@@ -112,7 +114,7 @@ export const XPDirectory: React.FC = ({children}): React.ReactElement => (
             backgroundSize: 'cover',
             backgroundRepeat: 'repeat',
             objectFit: 'contain',
-            height: '20vh',
+            height: '15vh',
         }}
     >
         <Box sx={{
@@ -121,27 +123,24 @@ export const XPDirectory: React.FC = ({children}): React.ReactElement => (
             alignItems: 'center',
             height: 'inherit',
         }}>
-            <Box sx={{display: 'grid'}}>
+            <Box sx={{display: 'grid', width: '100%', justifyContent: 'end'}}>
                 {children}
             </Box>
 
             <Box sx={{
                 width: {
                     monitor43: '30%',
-                    desktop: '30%',
-                    lg: '300px',
+                    desktop: '25%',
                 },
                 height: {
                     monitor43: '35%',
-                    desktop: '35%',
-                    lg: '300px',
+                    desktop: '30%',
                 },
                 position: 'absolute',
                 right: {
                     monitor43: 0,
                     desktop: '5%',
                 },
-                top: '5%',
                 zIndex: 1
             }}>
                 <SvgIcon

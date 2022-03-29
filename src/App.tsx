@@ -20,12 +20,12 @@ const theme = createTheme({
     breakpoints: {
         values: {
             xs: 0,
-            sm: 600,
-            md: 900,
-            lg: 1200,
-            xl: 1536,
-            desktop: 1920,
-            monitor43: 3840
+            sm: 0,
+            md: 0,
+            lg: 0,
+            xl: 0,
+            desktop: 1080,
+            monitor43: 2160
         },
     },
 });

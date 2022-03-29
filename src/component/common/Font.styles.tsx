@@ -18,6 +18,21 @@ export const Title35 = styled('span')(({theme}) => ({
     },
 }));
 
+export const Title40 = styled('span')(({theme}) => ({
+    fontWeight: 700,
+    fontSize: '40px',
+    [theme.breakpoints.only('monitor43')]: {
+    },
+    [theme.breakpoints.only('desktop')]: {
+
+    },
+    [theme.breakpoints.only('xl')]: {
+
+    },
+    [theme.breakpoints.only('lg')]: {
+    },
+}));
+
 export const Title45 = styled('span')(({theme}) => ({
     fontWeight: 700,
     fontSize: '45px',
@@ -39,10 +54,10 @@ export const Title30 = styled('span')(({theme}) => ({
     fontWeight: 700,
     fontSize: '30px',
     [theme.breakpoints.only('monitor43')]: {
-        fontSize: '62px',
+        fontSize: '42px',
     },
     [theme.breakpoints.only('desktop')]: {
-        fontSize: '42px',
+        fontSize: '30px',
     },
     [theme.breakpoints.only('xl')]: {
 
@@ -77,7 +92,7 @@ export const Title17 = styled('span')(({theme}) => ({
         fontSize: '34px',
     },
     [theme.breakpoints.only('desktop')]: {
-        fontSize: '24px',
+        fontSize: '17px',
     },
     [theme.breakpoints.only('xl')]: {
 
@@ -93,7 +108,7 @@ export const Title14 = styled('span')(({theme}) => ({
         fontSize: '28px',
     },
     [theme.breakpoints.only('desktop')]: {
-        fontSize: '24px',
+        fontSize: '14px',
     },
     [theme.breakpoints.only('xl')]: {
 

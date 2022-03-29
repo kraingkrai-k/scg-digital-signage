@@ -14,9 +14,10 @@ import {COLORS} from "core/utils/constant";
 
 const Interactive: React.FC = (): React.ReactElement => {
 
+    // * banner 10%, xp 15%, card 45%, footer 30%
     return (
         <Box sx={{height: '100vh', width: '100%'}}>
-            <Box sx={{height: '14%', position: 'relative'}}>
+            <Box sx={{height: '10%', position: 'relative'}}>
                 <Navbar />
                 <NavbarShape />
             </Box>
@@ -28,7 +29,7 @@ const Interactive: React.FC = (): React.ReactElement => {
                 <Title45>
                     <span style={{color: COLORS.red}}>ที่เหมาะกับคุณลูกค้ามา</span> ให้แล้วค่ะ ”
                 </Title45>
-            </XPInteractive >
+            </XPInteractive>
 
             <Box sx={{
                 position: 'absolute',
@@ -41,7 +42,7 @@ const Interactive: React.FC = (): React.ReactElement => {
                 <Box
                     sx={{
                         width: '100%',
-                        height: '70vh',
+                        height: '45vh',
                         position: 'relative',
                         zIndex: 1,
                         display: 'flex',
@@ -51,7 +52,7 @@ const Interactive: React.FC = (): React.ReactElement => {
                     <Box sx={{width: '100%'}}>
                         <SmartSolution />
                     </Box>
-                    <Box sx={{ml: '1%', width: '55%', height: '90%'}}>
+                    <Box sx={{ml: '1%', width: '65%', height: '67%'}}>
                         <Directory />
                     </Box>
                 </Box>

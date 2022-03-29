@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 
 import {COLORS} from "core/utils/constant";
 import {TouchBackNavigator} from "assets/icon/Icon";
-import {Title14, Title17, Title45} from "component/common/Font.styles";
+import {Title14, Title17} from "component/common/Font.styles";
 
 interface ITab {
     onClick: (floor: number) => void
@@ -17,7 +17,7 @@ export const Tab: React.FC<ITab> = ({active, floor, title, onClick}): React.Reac
         <Box
             onClick={active ? () => { } : () => onClick(floor)}
             sx={{
-                width: '35%',
+                width: '33%',
                 background: active ? 'linear-gradient(180deg, #EC1C24 0%, #D0121A 100%)' : 'linear-gradient(195.17deg, #A6A6A6 2.43%, #E1E1E1 89.2%)',
                 display: 'flex',
                 alignItems: 'center',
@@ -29,8 +29,8 @@ export const Tab: React.FC<ITab> = ({active, floor, title, onClick}): React.Reac
             <Title14 sx={{
                 alignSelf: 'flex-start',
                 mt: {
-                    monitor43: "1.5%",
-                    desktop: "2%",
+                    monitor43: "7%",
+                    desktop: "7%",
                 }
             }}>
                 ชั้น
@@ -39,19 +39,17 @@ export const Tab: React.FC<ITab> = ({active, floor, title, onClick}): React.Reac
             <Box sx={{
                 fontSize: {
                     monitor43: '50px',
-                    desktop: '42px',
+                    desktop: '50px',
                 },
-                fontWeight: 700
+                fontWeight: 700,
+                // gap: 4
+                minWidth: '40px',
+                flexWrap: 'wrap',
             }}>
                 {floor}
             </Box>
 
-            <Title17 sx={{
-                ml: {
-                    monitor43: '1%',
-                    desktop: '1%',
-                }
-            }}>
+            <Title17 sx={{whiteSpace: 'break-spaces', lineHeight: '1.3'}}>
                 {title}
             </Title17>
         </Box>
@@ -94,24 +92,26 @@ const Tabs: React.FC<ITabs> = ({floor, setFloor}): React.ReactElement => {
                 />
             </Box>
 
-            <Tab
-                active={floor === 1}
-                floor={1}
-                title="ศูนย์รวมทุก โซลูชั่นเรื่องบ้าน"
-                onClick={setFloor}
-            />
-            <Tab
-                active={floor === 2}
-                floor={2}
-                title="Cotto Life กระเบื้อง สุขภัณฑ์"
-                onClick={setFloor}
-            />
-            <Tab
-                active={floor === 3}
-                floor={3}
-                title="บริการออกแบบ ภายในครบวงจร"
-                onClick={setFloor}
-            />
+            <Box sx={{display: 'flex', width: '100%'}}>
+                <Tab
+                    active={floor === 1}
+                    floor={1}
+                    title={`ศูนย์รวมทุก\nโซลูชั่นเรื่องบ้าน`}
+                    onClick={setFloor}
+                />
+                <Tab
+                    active={floor === 2}
+                    floor={2}
+                    title={`"Cotto Life\nกระเบื้อง สุขภัณฑ์`}
+                    onClick={setFloor}
+                />
+                <Tab
+                    active={floor === 3}
+                    floor={3}
+                    title={`บริการออกแบบ\nภายในครบวงจร`}
+                    onClick={setFloor}
+                />
+            </Box>
         </Box>
     )
 };

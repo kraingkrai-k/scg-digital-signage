@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import {useHistory} from "react-router-dom";
 import SvgIcon from "@mui/material/SvgIcon";
 
-import {Title14, Title20, Title30, Title35} from "component/common/Font.styles";
+import {Title14, Title17, Title20, Title30} from "component/common/Font.styles";
 import {COLORS} from "core/utils/constant";
 import {IconDirectoryNavigator} from "assets/icon/Icon";
 
@@ -25,15 +25,15 @@ const Directory: React.FC = (): React.ReactElement => {
             <WrapTag sx={{
                 width: {
                     monitor43: '30%',
-                    desktop: '35%',
+                    desktop: '50%',
                 },
                 borderTop: {
-                    monitor43: `7vh solid ${COLORS.gold}`,
-                    desktop: `7vh solid ${COLORS.gold}`,
+                    monitor43: `4vh solid ${COLORS.greyText}`,
+                    desktop: `4vh solid ${COLORS.greyText}`,
                 },
                 borderRight: {
-                    monitor43: '80px solid transparent',
-                    desktop: '80px solid transparent',
+                    monitor43: '5vh solid transparent',
+                    desktop: '5vh solid transparent',
                 },
             }}
             >
@@ -50,8 +50,8 @@ const Directory: React.FC = (): React.ReactElement => {
             }}>
                 <Box
                     sx={{
-                        pt: '1%',
-                        pb: '2%',
+                        pt: '2%',
+                        pb: '4%',
                     }}
                 >
                     <Title20>
@@ -109,7 +109,7 @@ const DirectoryNavigator: React.FC<IDirectoryNavigator> = ({floor, title, subTit
                 flex: 1,
                 display: 'flex',
                 alignItems: 'center',
-                p: '14px'
+                p: 2,
             }}>
                 <Box
                     sx={{
@@ -119,7 +119,7 @@ const DirectoryNavigator: React.FC<IDirectoryNavigator> = ({floor, title, subTit
                         ml: '4%',
                         minWidth: {
                             monitor43: '200px',
-                            desktop: '130px',
+                            desktop: '70px',
                         },
                     }}>
                     <Title14 sx={{
@@ -131,8 +131,8 @@ const DirectoryNavigator: React.FC<IDirectoryNavigator> = ({floor, title, subTit
 
                     <Box sx={{
                         fontSize: {
-                            monitor43: '148px',
-                            desktop: '104px',
+                            monitor43: '50px',
+                            desktop: '50px',
                         },
                         fontWeight: 700
                     }}>
@@ -145,25 +145,25 @@ const DirectoryNavigator: React.FC<IDirectoryNavigator> = ({floor, title, subTit
                         flex: 1,
                         display: 'grid',
                         alignItems: 'center',
-                        p: '14px',
                     }}
                 >
-                    <Title35>
+                    <Title17>
                         {title}
-                    </Title35>
-                    <Title20 sx={{mt: '2%', fontWeight: 400}}>
+                    </Title17>
+                    <Title14 sx={{mt: '2%'}}>
                         {subTitle}
-                    </Title20>
+                    </Title14>
                 </Box>
             </Box>
 
 
             <Box sx={{
                 bgcolor: COLORS.red,
-                width: '5%',
+                width: '10%',
                 float: 'right',
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'center',
                 borderTopRightRadius: '12px',
                 borderBottomRightRadius: '12px',
             }}>
@@ -173,11 +173,11 @@ const DirectoryNavigator: React.FC<IDirectoryNavigator> = ({floor, title, subTit
                     sx={{
                         width: {
                             monitor43: '60px',
-                            desktop: '40px',
+                            desktop: '30px',
                         },
                         height: {
                             monitor43: '60px',
-                            desktop: '40px',
+                            desktop: '30px',
                         },
                     }}
                 />

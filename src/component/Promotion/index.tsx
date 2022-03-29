@@ -16,11 +16,12 @@ const Promotion: React.FC<IPromotion> = ({onPromotionClick, onProductClick}): Re
             <Box
                 onClick={onPromotionClick}
                 sx={{
-                    height: {
-                        monitor43: '20vh',
-                        desktop: '20vh',
-                        lg: '16vh',
-                    },
+                    // height: {
+                    //     monitor43: '20vh',
+                    //     desktop: '20vh',
+                    //     lg: '16vh',
+                    // },
+                    height: '15vh',
                     bgcolor: COLORS.holder,
                     m: '24px',
                     cursor: 'pointer',

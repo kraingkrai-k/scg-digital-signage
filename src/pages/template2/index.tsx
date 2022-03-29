@@ -34,6 +34,7 @@ const Template2: React.FC = (): React.ReactElement => {
         setVisible(true)
     }
 
+    // * banner 10%, xp 15%, video 30%, promotion 15%, footer 30%
     return (
         <Box sx={{height: '100vh', width: '100%'}}>
             <MyModal
@@ -44,7 +45,7 @@ const Template2: React.FC = (): React.ReactElement => {
                 <ModalPromotion />
             </MyModal>
 
-            <Box sx={{height: '14%', position: 'relative'}}>
+            <Box sx={{height: '10%', position: 'relative'}}>
                 <Navbar />
                 <NavbarShape />
             </Box>
@@ -71,7 +72,7 @@ const Template2: React.FC = (): React.ReactElement => {
                     sx={{
                         bgcolor: COLORS.holder,
                         width: '100%',
-                        height: '36vh',
+                        height: '30vh',
                         position: 'relative',
                         zIndex: 1,
 

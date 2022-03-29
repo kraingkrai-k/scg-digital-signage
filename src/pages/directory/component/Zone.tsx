@@ -28,7 +28,7 @@ const Zone: React.FC<IZone> = ({zone, floor, onClick}): React.ReactElement => {
     return (
         <Box
             sx={{
-                background: 'linear-gradient(180deg, #BABABA 0%, #E4E4E4 100%)',
+                background: 'linear-gradient(360deg, #BABABA 0%, #E4E4E4 100%)',
                 width: '100%',
                 borderRadius: {
                     monitor43: '12px',
@@ -51,7 +51,7 @@ const Zone: React.FC<IZone> = ({zone, floor, onClick}): React.ReactElement => {
             <Title20 sx={{
                 textAlign: 'center',
                 display: 'block',
-                pb: '2%',
+                pb: '5%',
             }}>
                 เลือกโซนจากสินค้าหรือบริการ
             </Title20>
@@ -75,17 +75,14 @@ const Zone: React.FC<IZone> = ({zone, floor, onClick}): React.ReactElement => {
                                 display: 'grid',
                                 alignItems: 'center',
                                 width: {
-                                    monitor43: '160px',
-                                    desktop: '120px',
+                                    monitor43: '100px',
+                                    desktop: '80px',
                                 },
                                 height: {
-                                    monitor43: '160px',
-                                    desktop: '120px',
+                                    monitor43: '100px',
+                                    desktop: '80px',
                                 },
-                                p: {
-                                    monitor43: 2,
-                                    desktop: 2,
-                                },
+                                p: 1,
                                 borderRadius: {
                                     monitor43: '12px',
                                     desktop: '12px',
