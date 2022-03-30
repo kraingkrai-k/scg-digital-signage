@@ -12,7 +12,7 @@ import useMapSvg from '../hooks/uesMapSvg';
 import {IListZone} from '../model/content';
 
 import Zone from './Zone';
-import {ModalBodySvgZone} from './ModalBodySvgZone';
+import {ModalBodySvgZone} from './ModalBodySvgPlan';
 
 interface IContent {
   floor: number;

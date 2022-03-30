@@ -4,26 +4,29 @@ import SvgIcon from '@mui/material/SvgIcon';
 
 import {Title17, Title20, Title30} from 'component/common/Font.styles';
 import {COLORS} from 'core/utils/constant';
-
-import MockImg from 'assets/images/mockImg.png';
-import MockQR from 'assets/images/mockQR.png';
 import {ReactComponent as IconMap} from 'assets/images/mockMap.svg';
+
+import {bodyPlan} from '../model/svg-plan';
 
 interface IModalBodySvgZone {
   zone: string;
 }
 
 export const ModalBodySvgZone: React.FC<IModalBodySvgZone> = ({zone}): React.ReactElement => {
+  if (!zone) {
+    return <></>;
+  }
+
+  const data = bodyPlan[zone];
+
   return (
     <>
       <Box
         sx={{
           display: 'grid',
-          // gap: 6,
           gridTemplateColumns: 'repeat(2, 1fr)',
           height: '70%',
           position: 'relative',
-          // width: '100%',
           ml: '5%',
           mr: '10%',
           mt: '5%',
@@ -32,25 +35,22 @@ export const ModalBodySvgZone: React.FC<IModalBodySvgZone> = ({zone}): React.Rea
         <Box
           sx={{
             width: '80%',
-            // ml: '7%',
             mt: '10%',
             overflowY: 'scroll',
           }}
         >
           <Box sx={{display: 'flex', gap: 3, alignItems: 'center'}}>
-            {/* <SvgIcon component={data.icon} inheritViewBox sx={{width: '18%', height: '18%'}} /> */}
-
             <Box sx={{display: 'grid', justifyItems: 'baseline'}}>
-              <Title30 sx={{color: COLORS.red}}>{'data.text'}</Title30>
+              <Title30 sx={{color: COLORS.red}}>{data.title}</Title30>
 
-              <Title17>ชั้น 1 Living Design Studio</Title17>
+              <Title17>ชั้น {data.floor}</Title17>
             </Box>
           </Box>
 
           <Box sx={{alignItems: 'center', justifyContent: 'center'}}>
             <Box
               sx={{
-                backgroundImage: `url(${MockImg})`,
+                backgroundImage: `url(${data.image})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'repeat',
                 objectFit: 'contain',
@@ -98,7 +98,7 @@ export const ModalBodySvgZone: React.FC<IModalBodySvgZone> = ({zone}): React.Rea
           >
             <Box
               sx={{
-                backgroundImage: `url(${MockQR})`,
+                backgroundImage: `url(${data.qrCode})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'repeat',
                 objectFit: 'contain',
@@ -128,23 +128,11 @@ export const ModalBodySvgZone: React.FC<IModalBodySvgZone> = ({zone}): React.Rea
               },
             }}
           >
-            <li>
-              <Title17 sx={{fontWeight: 400}}>ปรึกษาผู้เชี่ยวชาญสร้างบ้าน</Title17>
-            </li>
-
-            <li>
-              <Title17 sx={{fontWeight: 400}}>ปรับปรุงบ้าน</Title17>
-            </li>
-          </Box>
-
-          <Box>
-            <li>
-              <Title17 sx={{fontWeight: 400}}>ปรึกษาผู้เชี่ยวชาญสร้างบ้าน</Title17>
-            </li>
-
-            <li>
-              <Title17 sx={{fontWeight: 400}}>ปรับปรุงบ้าน</Title17>
-            </li>
+            {data.metaText.map((x) => (
+              <li>
+                <Title17 sx={{fontWeight: 400}}>{x}</Title17>
+              </li>
+            ))}
           </Box>
         </Box>
       </Box>
