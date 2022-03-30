@@ -13,11 +13,13 @@ import {COLORS} from "core/utils/constant";
 import Tabs from "./component/Tabs";
 import Content from "./component/Content";
 
+import './index.css'
+
 const Directory: React.FC = (): React.ReactElement => {
     const {state}: any = useLocation()
 
     const [floor, setFloor] = useState<number>(1)
-    const [zone, setZone] = useState<number>(1)
+    const [zone, setZone] = useState<number>(-1)
 
     useEffect(() => {
         if (state?.tab) {
@@ -91,6 +93,7 @@ const Directory: React.FC = (): React.ReactElement => {
                             <Content
                                 floor={floor}
                                 zone={zone}
+                                setFloor={handlerSetFloor}
                                 setZone={handlerSetZone}
                             />
                         </Box>
