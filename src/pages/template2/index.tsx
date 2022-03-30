@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import Box from "@mui/material/Box";
 import {useHistory} from "react-router-dom";
 
+// @ts-ignore
+import V2 from 'assets/video/v-tem2.mp4';
 import BGFooter from "assets/images/bg-footer.png";
 import {COLORS} from "core/utils/constant";
 
@@ -13,6 +15,7 @@ import Promotion from "component/Promotion";
 import {Title45} from "component/common/Font.styles";
 import ModalPromotion from "component/ModalPromotion";
 import MyModal from "component/Modal";
+import Video from "component/VideoPlayer";
 
 // TODO - polling personal, go to template 3
 const Template2: React.FC = (): React.ReactElement => {
@@ -25,6 +28,9 @@ const Template2: React.FC = (): React.ReactElement => {
     }
 
     const handlerProductClick = () => push('/interactive')
+
+    // back to template 1
+    const handlerVideoEnded = () => push('/')
 
     const handlerCloseModal = () => {
         setVisible(false)
@@ -73,14 +79,8 @@ const Template2: React.FC = (): React.ReactElement => {
                     height: '30vh',
                     position: 'relative',
                     zIndex: 1,
-
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
                 }}>
-                <Title45 sx={{color: COLORS.white}}>
-                    Video Consent
-                </Title45>
+               <Video onEnded={handlerVideoEnded} source={V2} />
             </Box>
 
             <Promotion

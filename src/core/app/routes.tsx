@@ -9,10 +9,10 @@ import InteractiveRoutes from "pages/interactive/InteractiveRoute";
 import DirectoryRoutes from "pages/directory/DirectoryRoute";
 
 const Routes: React.FunctionComponent = (): React.ReactElement => {
-    const matches = useMediaQuery('(min-height:1920px)');
+    const matches = useMediaQuery('(min-height:1919px)');
 
     if (!matches) {
-        return <>height = 1920px</>
+        return <>{`height >= 1920px, current = ${window.screen.height}`}</>
     }
 
     return (
