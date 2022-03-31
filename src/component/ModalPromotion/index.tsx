@@ -30,11 +30,11 @@ const ModalPromotion: React.FC<IModalPromotion> = ({promotion}): React.ReactElem
           <Box
             sx={{
               display: 'grid',
-              ml: '10%',
-              width: '90%',
+              ml: '7%',
+              width: '100%',
             }}
           >
-            <Title30>เตรียมพบกับ Flash Sale 13:00 - 15:00</Title30>
+            <Title30>{promotion.title}</Title30>
 
             <Box sx={{display: 'flex', alignItems: 'center', mt: '2%'}}>
               <SvgIcon
@@ -51,21 +51,17 @@ const ModalPromotion: React.FC<IModalPromotion> = ({promotion}): React.ReactElem
                   },
                 }}
               />
-              <Title17>
-                ชั้น {promotion?.floor} โซน {promotion?.zone}
-              </Title17>
+              <Title17>{promotion.subTitle}</Title17>
             </Box>
 
             <Box
               sx={{
                 mt: '4%',
-                mb: '3vh',
-                letterSpacing: '0.1rem',
+                mb: '2vh',
+                lineHeight: '1.6',
               }}
             >
-              <Title17 sx={{fontWeight: 400, textAlign: 'justify', whiteSpace: 'break-spaces'}}>
-                {promotion?.meta}
-              </Title17>
+              <Title17 sx={{fontWeight: 400, whiteSpace: 'break-spaces'}}>{promotion?.meta}</Title17>
             </Box>
           </Box>
         </Grid>
@@ -86,7 +82,7 @@ const ModalPromotion: React.FC<IModalPromotion> = ({promotion}): React.ReactElem
                 <Box
                   sx={{
                     backgroundImage: `url(${promotion?.qrCode})`,
-                    backgroundSize: 'cover',
+                    backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
                     height: '150px',
                     width: '140px',
