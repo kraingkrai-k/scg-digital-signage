@@ -21,6 +21,7 @@ export interface ISectionPersonal {
   age: number;
   type: 'video' | 'images';
   source: {
+    floor: number;
     zone: string;
     item: any;
   }[];
@@ -28,17 +29,16 @@ export interface ISectionPersonal {
 
 export const sectionPersonal: ISectionPersonal[] = [
   {
-    id: 1,
-    meta: 'female less 35',
+    id: 3,
+    meta: 'female over 50',
     type: 'video',
     sex: 'F',
-    age: 1,
+    age: 49,
     source: [
-      {zone: 'z1', item: F_Less_35_1},
-      {zone: 'z1', item: F_Less_35_2},
-      {zone: 'z1', item: F_Less_35_3},
-      {zone: 'z1', item: F_Less_35_4},
-      {zone: 'z1', item: F_Less_35_5},
+      {floor: 1, zone: 'z1', item: F_Over_50_1},
+      {floor: 1, zone: 'z1', item: F_Over_50_2},
+      {floor: 1, zone: 'z1', item: F_Over_50_3},
+      {floor: 1, zone: 'z1', item: F_Over_50_4},
     ],
   },
   {
@@ -48,23 +48,25 @@ export const sectionPersonal: ISectionPersonal[] = [
     sex: 'F',
     age: 34,
     source: [
-      {zone: 'z1', item: F35_50_1},
-      {zone: 'z1', item: F35_50_2},
-      {zone: 'z1', item: F35_50_3},
-      {zone: 'z1', item: F35_50_4},
+      {floor: 1, zone: 'z1', item: F35_50_1},
+      {floor: 1, zone: 'z1', item: F35_50_2},
+      {floor: 1, zone: 'z1', item: F35_50_3},
+      {floor: 1, zone: 'z1', item: F35_50_4},
     ],
   },
   {
-    id: 3,
-    meta: 'female over 50',
+    // clear
+    id: 1,
+    meta: 'female less 35',
     type: 'video',
     sex: 'F',
-    age: 49,
+    age: 1,
     source: [
-      {zone: 'z1', item: F_Over_50_1},
-      {zone: 'z1', item: F_Over_50_2},
-      {zone: 'z1', item: F_Over_50_3},
-      {zone: 'z1', item: F_Over_50_4},
+      {floor: 1, zone: 'z1', item: F_Less_35_1},
+      {floor: 1, zone: 'z1', item: F_Less_35_2},
+      {floor: 1, zone: 'z1', item: F_Less_35_3},
+      {floor: 1, zone: 'z1', item: F_Less_35_4},
+      {floor: 1, zone: 'z1', item: F_Less_35_5},
     ],
   },
 ];

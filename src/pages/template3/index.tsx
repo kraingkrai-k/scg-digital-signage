@@ -4,7 +4,6 @@ import Carousel from 'react-material-ui-carousel';
 import {useHistory} from 'react-router-dom';
 
 import BGFooter from 'assets/images/bg-footer.png';
-// import MockImg from 'assets/images/mockImg.png';
 
 import Footer from 'component/Footer';
 import Navbar from 'component/Navbar';
@@ -16,7 +15,9 @@ import {COLORS} from 'core/utils/constant';
 import MyModal from 'component/Modal';
 import ModalPromotion from 'component/ModalPromotion';
 import {AppContext} from 'core/context';
+
 import {ISectionPersonal, sectionPersonal} from './model/personal-data';
+import {ISectionPromotion} from './model/promotion-data';
 
 const Template3: React.FC = (): React.ReactElement => {
   const {state} = useContext(AppContext);
@@ -24,8 +25,10 @@ const Template3: React.FC = (): React.ReactElement => {
   const [visible, setVisible] = useState<boolean>(false);
 
   const [personal, serPersonal] = useState<ISectionPersonal>({} as ISectionPersonal);
+  const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
 
-  const handlerPromotionClick = () => {
+  const handlerPromotionClick = (x: ISectionPromotion) => {
+    serPromotion(x);
     handlerOpenModal();
   };
 
@@ -33,7 +36,6 @@ const Template3: React.FC = (): React.ReactElement => {
     if (state.personalData) {
       const fetch = state.personalData;
       // console.log('hi data', state.personalData);
-
       const find = sectionPersonal.find((x) => x.sex === fetch.sex && fetch.age > x.age);
       if (find) {
         serPersonal(find);
@@ -53,8 +55,11 @@ const Template3: React.FC = (): React.ReactElement => {
     setVisible(true);
   };
 
-  const handlerContentClick = (zone: string) => {
-    console.log('click', zone, personal);
+  const handlerContentClick = (x: any) => {
+    push('/directory', {
+      zone: x.zone,
+      tab: x.floor,
+    });
   };
 
   return (
@@ -69,7 +74,7 @@ const Template3: React.FC = (): React.ReactElement => {
       }}
     >
       <MyModal onCancel={handlerCloseModal} onOK={handlerOpenModal} visible={visible}>
-        <ModalPromotion />
+        <ModalPromotion promotion={promotion} />
       </MyModal>
 
       <Box sx={{height: '10%', position: 'relative'}}>
@@ -90,7 +95,7 @@ const Template3: React.FC = (): React.ReactElement => {
         {personal?.source?.map?.((x: any, i: number) => (
           <Box
             key={i}
-            onClick={() => handlerContentClick(x.zone)}
+            onClick={() => handlerContentClick(x)}
             sx={{
               width: '100%',
               height: '100%',

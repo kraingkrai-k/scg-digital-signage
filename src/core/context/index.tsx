@@ -16,7 +16,7 @@ const initState: IState = {
   personalActive: true,
   interActive: false,
   personalData: {
-    age: 18,
+    age: 51,
     sex: 'F',
   },
 };
