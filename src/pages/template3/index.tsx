@@ -1,7 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
+import Carousel from 'react-material-ui-carousel';
 
 import BGFooter from 'assets/images/bg-footer.png';
+// import MockImg from 'assets/images/mockImg.png';
 
 import Footer from 'component/Footer';
 import Navbar from 'component/Navbar';
@@ -13,6 +15,21 @@ import {COLORS} from 'core/utils/constant';
 import MyModal from 'component/Modal';
 import ModalPromotion from 'component/ModalPromotion';
 import {AppContext} from 'core/context';
+
+const mock = [
+  {
+    name: 'Random Name #1',
+    description: 'red',
+  },
+  {
+    name: 'Random Name #2',
+    description: 'green',
+  },
+  {
+    name: 'Random Name #3',
+    description: 'blue',
+  },
+];
 
 const Template3: React.FC = (): React.ReactElement => {
   const {state} = useContext(AppContext);
@@ -69,17 +86,22 @@ const Template3: React.FC = (): React.ReactElement => {
         </Title45>
       </XPTemplate>
 
-      <Box
-        sx={{
-          bgcolor: 'green',
-          width: '100%',
-          height: '36vh',
-          position: 'relative',
-          zIndex: 1,
-        }}
-      >
-        Personal Consent
-      </Box>
+      <Carousel height="36vh" animation="slide" autoPlay interval={5000}>
+        {mock.map((item, i) => (
+          <Box
+            key={i}
+            sx={{
+              width: '100%',
+              height: '100%',
+              backgroundColor: item.description,
+              // backgroundImage: `url(${MockImg})`,
+              // backgroundSize: 'cover',
+              // backgroundRepeat: 'no-repeat',
+              // objectFit: 'fill',
+            }}
+          ></Box>
+        ))}
+      </Carousel>
 
       <Promotion onPromotionClick={handlerPromotionClick} onProductClick={handlerProductClick} />
       <Footer />

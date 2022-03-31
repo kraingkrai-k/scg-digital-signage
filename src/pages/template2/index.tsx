@@ -17,7 +17,6 @@ import ModalPromotion from "component/ModalPromotion";
 import MyModal from "component/Modal";
 import Video from "component/VideoPlayer";
 
-// TODO - polling personal, go to template 3
 const Template2: React.FC = (): React.ReactElement => {
     const {push} = useHistory()
     const [visible, setVisible] = useState<boolean>(false)
