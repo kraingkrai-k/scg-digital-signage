@@ -5,16 +5,10 @@ interface IPersonalData {
   sex: 'M' | 'F';
 }
 interface IState {
-  foo: string;
-  personalActive: boolean;
-  interActive: boolean;
   personalData: IPersonalData;
 }
 
 const initState: IState = {
-  foo: 'bar',
-  personalActive: true,
-  interActive: false,
   personalData: {
     age: 51,
     sex: 'F',
@@ -24,8 +18,6 @@ const initState: IState = {
 interface IAppContext {
   state: IState;
   dispatch: {
-    onPersonalRouteActive: () => void;
-    onInteractiveRouteActive: () => void;
     setPersonalData: (x: IPersonalData) => void;
   };
 }
@@ -35,24 +27,6 @@ export const AppContext = createContext<IAppContext>({} as IAppContext);
 const Context: React.FC = ({children}) => {
   const [state, setState] = useState<IState>(initState);
 
-  const onPersonalRouteActive = () => {
-    console.log('personal still active');
-    setState((prevState) => ({
-      ...prevState,
-      personalActive: true,
-      interActive: false,
-    }));
-  };
-
-  const onInteractiveRouteActive = () => {
-    console.log('interactive still active');
-    setState((prevState) => ({
-      ...prevState,
-      personalActive: false,
-      interActive: true,
-    }));
-  };
-
   const setPersonalData = (x: IPersonalData) => {
     setState((prevState) => ({
       ...prevState,
@@ -61,8 +35,6 @@ const Context: React.FC = ({children}) => {
   };
 
   const dispatch = {
-    onPersonalRouteActive,
-    onInteractiveRouteActive,
     setPersonalData,
   };
 

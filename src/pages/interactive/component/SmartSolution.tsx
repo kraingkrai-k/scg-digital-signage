@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Box from "@mui/material/Box";
+import SvgIcon from "@mui/material/SvgIcon";
 
 import {Title30, Title20, Title17} from "component/common/Font.styles";
 import MyModal, {ModalBodySolution} from "component/Modal";
@@ -7,7 +8,6 @@ import {COLORS} from "core/utils/constant";
 
 import {IListSolution, listSolution} from "../model/listSolution";
 import Tag, {WrapTag} from "./Tag";
-import SvgIcon from "@mui/material/SvgIcon";
 
 interface IBoxSolution {
     children: any

@@ -8,8 +8,7 @@ interface IVideo {
   loop?: boolean;
 }
 
-// ! policy google , autoplay must be muted
-const Video: React.FC<IVideo> = ({onEnded, source, loop = false}): React.ReactElement => {
+const Video: React.FC<IVideo> = ({onEnded, source, loop = true}): React.ReactElement => {
   // @ts-ignore
   return (
     <>

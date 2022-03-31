@@ -20,81 +20,52 @@ const needMinWidth = 1080;
 const personalTimer = 2000;
 const personalWhiteListRoute = ['/', '/template2', '/template3'];
 
-const interactiveTimer = 20000;
-// const interactiveWhiteListRoute = ['/interactive', '/directory'];
-
 const Routes: React.FunctionComponent = (): React.ReactElement => {
   const {push} = useHistory();
   const {pathname} = useLocation();
   const handle = useFullScreenHandle();
 
   let personal_timer: any;
-  let interactive_timer: any;
 
-  const {state, dispatch} = useContext(AppContext);
+  const {dispatch} = useContext(AppContext);
 
   const currentWidth = window?.innerWidth || 0;
   const currentHeight = window?.innerHeight || 0;
 
+  const nowActivePersonal = () => {
+    handlerPersonalRoute();
+  };
+
   useEffect(() => {
     if (personalWhiteListRoute.indexOf(pathname) !== -1) {
-      handlerPersonalRoute();
-      clearInterval(interactive_timer);
-    } else {
-      handlerInteractiveRoute();
-      clearInterval(personal_timer);
+      nowActivePersonal();
     }
 
     return () => {
       clearInterval(personal_timer);
-      clearInterval(interactive_timer);
     };
     // eslint-disable-next-line
   }, [pathname]);
 
-  useEffect(() => {
-    if (state.personalActive) {
-      clearInterval(interactive_timer);
-    }
-
-    if (state.interActive) {
-      clearInterval(personal_timer);
-    }
-    // eslint-disable-next-line
-  }, [state]);
-
-  useEffect(() => {
-    // handle.enter();
-  }, []);
-
   const handlerPersonalRoute = () => {
-    // personal_timer = setInterval(() => {
-    //   console.log('interval fetch personal');
-    //   Template3Service()
-    //     .getPersonalData()
-    //     .then((x) => {
-    //       dispatch.setPersonalData(x);
-    //       if (pathname !== '/template3') {
-    //         push('/template3');
-    //       }
-    //     })
-    //     .catch((e) => console.log('personal err', e))
-    //     .finally(() => {
-    //       clearInterval(interactive_timer);
-    //     });
-    // }, personalTimer);
-  };
-
-  const handlerInteractiveRoute = () => {
-    interactive_timer = setInterval(() => {
-      push('/');
-    }, interactiveTimer);
+    personal_timer = setInterval(() => {
+      // console.log('interval fetch personal');
+      Template3Service()
+        .getPersonalData()
+        .then((x) => {
+          // dispatch.setPersonalData(x);
+          if (pathname !== '/template3') {
+            // push('/template3');
+          }
+        })
+        .catch((e) => console.log('personal err', e))
+    }, personalTimer);
   };
 
   if (currentWidth >= needMinWidth && currentHeight >= needMinHeight) {
     return (
       <FullScreen handle={handle}>
-        {handle.active ? (
+        {!handle.active ? (
           <Switch>
             <Route path="/" exact>
               <Template1Route />

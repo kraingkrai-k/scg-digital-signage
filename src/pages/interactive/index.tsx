@@ -1,62 +1,88 @@
-import React from "react";
-import Box from "@mui/material/Box";
+import React, {useEffect} from 'react';
+import Box from '@mui/material/Box';
+import {useHistory} from 'react-router-dom';
 
-import BGFooter from "assets/images/bg-footer.png";
+import BGFooter from 'assets/images/bg-footer.png';
 
-import Footer from "component/Footer";
-import Navbar from "component/Navbar";
-import NavbarShape from "component/NavbarShape";
-import {XPInteractive} from "component/XPRecommend";
-import SmartSolution from "./component/SmartSolution";
-import Directory from "./component/Directory";
-import {Title45} from "component/common/Font.styles";
-import {COLORS} from "core/utils/constant";
+import Footer from 'component/Footer';
+import Navbar from 'component/Navbar';
+import NavbarShape from 'component/NavbarShape';
+import {XPInteractive} from 'component/XPRecommend';
+import SmartSolution from './component/SmartSolution';
+import Directory from './component/Directory';
+import {Title45} from 'component/common/Font.styles';
+import {COLORS} from 'core/utils/constant';
 
+const interactiveTimer = 5000;
 const Interactive: React.FC = (): React.ReactElement => {
+  const {push} = useHistory();
 
-    // * banner 10%, xp 15%, card 45%, footer 30%
-    return (
-        <Box sx={{
-            height: '100vh', width: '100%',
-            backgroundImage: `url(${BGFooter})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            objectFit: 'fill',
-        }}>
-            <Box sx={{height: '10%', position: 'relative'}}>
-                <Navbar />
-                <NavbarShape />
-            </Box>
+  let interactive_timer: any;
 
-            <XPInteractive>
-                <Title45>
-                    “ น้อง XP <span style={{color: COLORS.red}}>เลือกสินค้าและบริการ</span>
-                </Title45>
-                <Title45>
-                    <span style={{color: COLORS.red}}>ที่เหมาะกับคุณลูกค้ามา</span> ให้แล้วค่ะ ”
-                </Title45>
-            </XPInteractive>
+  const watchInteractive = () => {
+    interactive_timer = setInterval(() => {
+      // push('/');
+    }, interactiveTimer);
+  };
 
-            <Box
-                sx={{
-                    width: '100%',
-                    height: '45vh',
-                    position: 'relative',
-                    zIndex: 1,
-                    display: 'flex',
-                    direction: 'row',
-                }}>
+  const handlerStillActive = () => {
+    clearInterval(interactive_timer);
+    watchInteractive();
+  };
 
-                <Box sx={{width: '100%'}}>
-                    <SmartSolution />
-                </Box>
-                <Box sx={{ml: '1%', width: '65%', height: '67%'}}>
-                    <Directory />
-                </Box>
-            </Box>
-            <Footer />
+  useEffect(() => {
+    watchInteractive();
+    return () => {
+      clearInterval(interactive_timer);
+    };
+  }, []);
+
+  return (
+    <Box
+      onClick={handlerStillActive}
+      sx={{
+        height: '100vh',
+        width: '100%',
+        backgroundImage: `url(${BGFooter})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        objectFit: 'fill',
+      }}
+    >
+      <Box sx={{height: '10%', position: 'relative'}}>
+        <Navbar />
+        <NavbarShape />
+      </Box>
+
+      <XPInteractive>
+        <Title45>
+          “ น้อง XP <span style={{color: COLORS.red}}>เลือกสินค้าและบริการ</span>
+        </Title45>
+        <Title45>
+          <span style={{color: COLORS.red}}>ที่เหมาะกับคุณลูกค้ามา</span> ให้แล้วค่ะ ”
+        </Title45>
+      </XPInteractive>
+
+      <Box
+        sx={{
+          width: '100%',
+          height: '45vh',
+          position: 'relative',
+          zIndex: 1,
+          display: 'flex',
+          direction: 'row',
+        }}
+      >
+        <Box sx={{width: '100%'}}>
+          <SmartSolution />
         </Box>
-    )
+        <Box sx={{ml: '1%', width: '65%', height: '67%'}}>
+          <Directory />
+        </Box>
+      </Box>
+      <Footer />
+    </Box>
+  );
 };
 
 export default Interactive;

@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import {COLORS} from "core/utils/constant";
 import {TouchBackNavigator} from "assets/icon/Icon";
 import {Title14, Title17} from "component/common/Font.styles";
+import { useHistory } from "react-router-dom";
 
 interface ITab {
     onClick: (floor: number) => void
@@ -62,10 +63,9 @@ interface ITabs {
 }
 
 const Tabs: React.FC<ITabs> = ({floor, setFloor}): React.ReactElement => {
+    const {goBack} = useHistory()
 
-    const handlerBack = () => {
-        console.log('back: ')
-    }
+    const handlerBack = () => goBack()
 
     return (
         <Box sx={{display: 'flex'}}>
