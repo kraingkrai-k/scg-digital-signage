@@ -2,7 +2,7 @@ import React, {useState, createContext} from 'react';
 
 interface IPersonalData {
   age: number;
-  gender: 'M' | 'F';
+  sex: 'M' | 'F';
 }
 interface IState {
   foo: string;
@@ -16,8 +16,8 @@ const initState: IState = {
   personalActive: true,
   interActive: false,
   personalData: {
-    age: 18,
-    gender: 'M',
+    age: 51,
+    sex: 'F',
   },
 };
 

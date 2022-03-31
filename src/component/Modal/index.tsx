@@ -36,6 +36,7 @@ const MyModal: React.FC<IMyModal> = ({onCancel, onOK, visible, children}): React
                     monitor43: '60%',
                     desktop: '50%',
                 },
+                // minHeight: '0%',
                 bgcolor: 'background.paper',
                 display: 'flex'
             }}>

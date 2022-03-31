@@ -1,27 +1,21 @@
-import {AxiosInstance} from "axios";
+// import axios, {AxiosInstance} from 'axios';
+// import {BASE_URL_REST} from 'core/utils/env';
 
 export interface ITemplate3Service {
-    getTemp: () => Promise<any[]>
-    getPm: () => Promise<any[]>
+  getPersonalData: () => Promise<any>;
 }
 
-export const Template3Service = (axiosInstance: AxiosInstance): ITemplate3Service => {
-    return {
-        getTemp: async (): Promise<any[]> => {
-            return Promise.resolve([])
+const mockPersonalData = [{}, {age: 18, sex: 'M'}, {age: 20, sex: 'F'}] as any;
 
-        },
-        getPm: async (): Promise<any[]> => {
-            // const {
-            //     data,
-            //     status
-            // } = await axiosInstance.get('https://ah3gx2g2pf.execute-api.ap-southeast-1.amazonaws.com/prod?edge_id=demo')
-            // if (status !== 200) {
-            //     return []
-            // }
-            // return data.data
-            return Promise.resolve([])
-
-        }
-    }
-}
+export const Template3Service = (): ITemplate3Service => {
+  return {
+    getPersonalData: async (): Promise<any> => {
+      //   const {status} = await axios.get(`${BASE_URL_REST}/`);
+      //   if (status === 200) {
+      //     return Promise.resolve([]);
+      //   }
+      const dataFromFetch = Math.round(Math.random() * 2);
+      return Promise.resolve(mockPersonalData[dataFromFetch]);
+    },
+  };
+};

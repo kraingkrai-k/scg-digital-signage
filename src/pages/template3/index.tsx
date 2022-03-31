@@ -1,5 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
+import Carousel from 'react-material-ui-carousel';
+import {useHistory} from 'react-router-dom';
 
 import BGFooter from 'assets/images/bg-footer.png';
 
@@ -15,22 +17,35 @@ import MyModal from 'component/Modal';
 import ModalPromotion from 'component/ModalPromotion';
 import {AppContext} from 'core/context';
 
+import {ISectionPersonal, sectionPersonal} from './model/personal-data';
+import {ISectionPromotion} from './model/promotion-data';
+
 const Template3: React.FC = (): React.ReactElement => {
   const {state} = useContext(AppContext);
+  const {push} = useHistory();
   const [visible, setVisible] = useState<boolean>(false);
 
-  const handlerPromotionClick = () => {
+  const [personal, serPersonal] = useState<ISectionPersonal>({} as ISectionPersonal);
+  const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
+
+  const handlerPromotionClick = (x: ISectionPromotion) => {
+    serPromotion(x);
     handlerOpenModal();
   };
 
   useEffect(() => {
     if (state.personalData) {
-      console.log('hi data', state.personalData);
+      const fetch = state.personalData;
+      // console.log('hi data', state.personalData);
+      const find = sectionPersonal.find((x) => x.sex === fetch.sex && fetch.age > x.age);
+      if (find) {
+        serPersonal(find);
+      }
     }
   }, [state.personalData]);
 
   const handlerProductClick = () => {
-    console.log('product !!');
+    push('/directory');
   };
 
   const handlerCloseModal = () => {
@@ -41,16 +56,35 @@ const Template3: React.FC = (): React.ReactElement => {
     setVisible(true);
   };
 
+  const handlerContentClick = (x: any) => {
+    push('/directory', {
+      zone: x.zone,
+      tab: x.floor,
+    });
+  };
+
   return (
-    <Box sx={{height: '100vh', width: '100%'}}>
+    <Box
+      sx={{
+        height: '100vh',
+        width: '100%',
+        backgroundImage: `url(${BGFooter})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        objectFit: 'fill',
+      }}
+    >
       <MyModal onCancel={handlerCloseModal} onOK={handlerOpenModal} visible={visible}>
-        <ModalPromotion />
+        <ModalPromotion promotion={promotion} />
       </MyModal>
 
-      <Box sx={{height: '14%', position: 'relative'}}>
+      <Box sx={{height: '10%', position: 'relative'}}>
         <NavVideoBar />
-        {/*<Navbar />*/}
-        <NavbarShape />
+        {/* workaround keep layout */}
+        <Box sx={{opacity: 0}}>
+          <NavbarShape />
+        </Box>
+        {/* keep layout */}
       </Box>
 
       <XPTemplate>
@@ -62,31 +96,24 @@ const Template3: React.FC = (): React.ReactElement => {
         </Title45>
       </XPTemplate>
 
-      <Box
-        sx={{
-          position: 'absolute',
-          width: '100%',
-          backgroundImage: `url(${BGFooter})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          objectFit: 'fill',
-        }}
-      >
-        <Box
-          sx={{
-            bgcolor: 'green',
-            width: '100%',
-            height: '36vh',
-            position: 'relative',
-            zIndex: 1,
-          }}
-        >
-          Personal Consent
-        </Box>
+      <Carousel height="32vh" animation="slide" indicators={false} autoPlay interval={5000}>
+        {personal?.source?.map?.((x: any, i: number) => (
+          <Box
+            key={i}
+            onClick={() => handlerContentClick(x)}
+            sx={{
+              width: '100%',
+              height: '100%',
+              backgroundImage: `url(${x.item})`,
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+            }}
+          ></Box>
+        ))}
+      </Carousel>
 
-        <Promotion onPromotionClick={handlerPromotionClick} onProductClick={handlerProductClick} />
-        <Footer />
-      </Box>
+      <Promotion onPromotionClick={handlerPromotionClick} onProductClick={handlerProductClick} />
+      <Footer />
     </Box>
   );
 };

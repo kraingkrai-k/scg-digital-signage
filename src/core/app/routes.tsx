@@ -1,5 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 import {Route, Switch, useHistory, useLocation} from 'react-router-dom';
+import {FullScreen, useFullScreenHandle} from 'react-full-screen';
 // import useMediaQuery from '@mui/material/useMediaQuery';
 //   const matches = useMediaQuery('(min-height:1080px)');
 
@@ -9,6 +10,9 @@ import Template3Routes from 'pages/template3/Template3Route';
 import InteractiveRoutes from 'pages/interactive/InteractiveRoute';
 import DirectoryRoutes from 'pages/directory/DirectoryRoute';
 import {AppContext} from 'core/context';
+import {Template3Service} from 'pages/template3/service/template3-service';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 const needMinHeight = 1920;
 const needMinWidth = 1080;
@@ -22,6 +26,7 @@ const interactiveTimer = 20000;
 const Routes: React.FunctionComponent = (): React.ReactElement => {
   const {push} = useHistory();
   const {pathname} = useLocation();
+  const handle = useFullScreenHandle();
 
   let personal_timer: any;
   let interactive_timer: any;
@@ -58,23 +63,26 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
     // eslint-disable-next-line
   }, [state]);
 
-  const handlerPersonalRoute = () => {
-    personal_timer = setInterval(() => {
-      console.log('interval fetch personal');
-      // mock
-      const dataFromFetch = {
-        age: 18,
-        gender: 'F',
-      } as const;
+  useEffect(() => {
+    // handle.enter();
+  }, []);
 
-      if (dataFromFetch) {
-        clearInterval(interactive_timer);
-        if (pathname !== '/template3') {
-          dispatch.setPersonalData(dataFromFetch);
-          push('/template3');
-        }
-      }
-    }, personalTimer);
+  const handlerPersonalRoute = () => {
+    // personal_timer = setInterval(() => {
+    //   console.log('interval fetch personal');
+    //   Template3Service()
+    //     .getPersonalData()
+    //     .then((x) => {
+    //       dispatch.setPersonalData(x);
+    //       if (pathname !== '/template3') {
+    //         push('/template3');
+    //       }
+    //     })
+    //     .catch((e) => console.log('personal err', e))
+    //     .finally(() => {
+    //       clearInterval(interactive_timer);
+    //     });
+    // }, personalTimer);
   };
 
   const handlerInteractiveRoute = () => {
@@ -85,31 +93,41 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
 
   if (currentWidth >= needMinWidth && currentHeight >= needMinHeight) {
     return (
-      <Switch>
-        <Route path="/" exact>
-          <Template1Route />
-        </Route>
+      <FullScreen handle={handle}>
+        {handle.active ? (
+          <Switch>
+            <Route path="/" exact>
+              <Template1Route />
+            </Route>
 
-        <Route path="/template2">
-          <Template2Routes baseURL="/template2" />
-        </Route>
+            <Route path="/template2">
+              <Template2Routes baseURL="/template2" />
+            </Route>
 
-        <Route path="/template3">
-          <Template3Routes baseURL="/template3" />
-        </Route>
+            <Route path="/template3">
+              <Template3Routes baseURL="/template3" />
+            </Route>
 
-        <Route path="/interactive">
-          <InteractiveRoutes baseURL="/interactive" />
-        </Route>
+            <Route path="/interactive">
+              <InteractiveRoutes baseURL="/interactive" />
+            </Route>
 
-        <Route path="/directory">
-          <DirectoryRoutes baseURL="/directory" />
-        </Route>
+            <Route path="/directory">
+              <DirectoryRoutes baseURL="/directory" />
+            </Route>
 
-        <Route path="*">
-          <h1>not found.</h1>
-        </Route>
-      </Switch>
+            <Route path="*">
+              <h1>not found.</h1>
+            </Route>
+          </Switch>
+        ) : (
+          <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh'}}>
+            <Button onClick={handle.enter} variant="outlined" size="large">
+              Enter Full Screen
+            </Button>
+          </Box>
+        )}
+      </FullScreen>
     );
   }
 
