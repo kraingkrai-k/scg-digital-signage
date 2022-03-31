@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import SvgIcon from '@mui/material/SvgIcon';
 
-import {Title14, Title17, Title30} from 'component/common/Font.styles';
+import {Title17, Title30} from 'component/common/Font.styles';
 import {IconPin} from 'assets/icon/Icon';
 import {ISectionPromotion} from 'pages/template3/model/promotion-data';
 
