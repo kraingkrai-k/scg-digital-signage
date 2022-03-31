@@ -16,7 +16,7 @@ const needMinWidth = 1080;
 const personalTimer = 2000;
 const personalWhiteListRoute = ['/', '/template2', '/template3'];
 
-const interactiveTimer = 10000;
+const interactiveTimer = 20000;
 // const interactiveWhiteListRoute = ['/interactive', '/directory'];
 
 const Routes: React.FunctionComponent = (): React.ReactElement => {
@@ -26,7 +26,7 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
   let personal_timer: any;
   let interactive_timer: any;
 
-  const {state} = useContext(AppContext);
+  const {state, dispatch} = useContext(AppContext);
 
   const currentWidth = window?.innerWidth || 0;
   const currentHeight = window?.innerHeight || 0;
@@ -34,8 +34,10 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
   useEffect(() => {
     if (personalWhiteListRoute.indexOf(pathname) !== -1) {
       handlerPersonalRoute();
+      clearInterval(interactive_timer);
     } else {
       handlerInteractiveRoute();
+      clearInterval(personal_timer);
     }
 
     return () => {
@@ -59,12 +61,25 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
   const handlerPersonalRoute = () => {
     personal_timer = setInterval(() => {
       console.log('interval fetch personal');
+      // mock
+      const dataFromFetch = {
+        age: 18,
+        gender: 'F',
+      } as const;
+
+      if (dataFromFetch) {
+        clearInterval(interactive_timer);
+        if (pathname !== '/template3') {
+          dispatch.setPersonalData(dataFromFetch);
+          push('/template3');
+        }
+      }
     }, personalTimer);
   };
 
   const handlerInteractiveRoute = () => {
     interactive_timer = setInterval(() => {
-      console.log('interval waiting for redirect to personal');
+      push('/');
     }, interactiveTimer);
   };
 
