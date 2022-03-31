@@ -43,12 +43,12 @@ const Footer: React.FC = (): React.ReactElement => {
             desktop: '160px',
           },
           ml: {
-            // monitorr43: '2%',
-            desktop: '3%',
+            monitorr43: '2%',
+            desktop: '4%',
           },
           bottom: {
-              monitor43: '2%',
-            desktop: '1.5%',
+            monitor43: '1.8%',
+            desktop: '1.4%',
           },
         }}
       />
