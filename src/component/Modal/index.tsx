@@ -8,7 +8,6 @@ import {IconCloseModal} from 'assets/icon/Icon';
 import {COLORS} from 'core/utils/constant';
 import {IListSolution} from 'pages/interactive/model/listSolution';
 
-import {ReactComponent as IconMap} from 'assets/images/mockMap.svg';
 import {Grid} from '@mui/material';
 
 export interface IMyModal {
@@ -79,7 +78,10 @@ const MyModal: React.FC<IMyModal> = ({onCancel, onOK, visible, children}): React
   );
 };
 
-export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): React.ReactElement => {
+export const ModalBodySolution: React.FC<{data: IListSolution; isZone?: boolean}> = ({
+  data,
+  isZone = false,
+}): React.ReactElement => {
   return (
     <>
       <Box
@@ -101,7 +103,7 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
           }}
         >
           <Box sx={{display: 'flex', gap: 3, alignItems: 'center'}}>
-            <SvgIcon component={data.icon} inheritViewBox sx={{width: '18%', height: '18%'}} />
+            {!isZone ? <SvgIcon component={data.icon} inheritViewBox sx={{width: '18%', height: '18%'}} /> : <></>}
 
             <Box sx={{display: 'grid', justifyItems: 'baseline'}}>
               <Title30 sx={{color: COLORS.red}}>{data.text}</Title30>
@@ -142,7 +144,7 @@ export const ModalBodySolution: React.FC<{data: IListSolution}> = ({data}): Reac
         </Box>
 
         <Box sx={{mt: '1%'}}>
-          <SvgIcon component={IconMap} inheritViewBox sx={{width: '110%', height: '70%'}} />
+          <SvgIcon component={data.svgPlan} inheritViewBox sx={{width: '110%', height: '70%'}} />
 
           <Box
             sx={{

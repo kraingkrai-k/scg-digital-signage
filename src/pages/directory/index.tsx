@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
-import {useLocation} from 'react-router-dom';
+import {useHistory, useLocation} from 'react-router-dom';
 
 import BGFooter from 'assets/images/bg-footer.png';
 
@@ -15,11 +15,26 @@ import Content from './component/Content';
 
 import './index.css';
 
+const directoryTimer = 15000;
 const Directory: React.FC = (): React.ReactElement => {
   const {state}: any = useLocation();
+  const {push} = useHistory();
 
   const [floor, setFloor] = useState<number>(1);
   const [zone, setZone] = useState<number>(-1);
+
+  let directory_timer: any;
+
+  const watchDirectory = () => {
+    directory_timer = setInterval(() => {
+      push('/');
+    }, directoryTimer);
+  };
+
+  const handlerStillActive = () => {
+    clearInterval(directory_timer);
+    watchDirectory();
+  };
 
   useEffect(() => {
     if (state?.tab) {
@@ -29,6 +44,12 @@ const Directory: React.FC = (): React.ReactElement => {
     if (state?.zone) {
       setZone(state.zone);
     }
+    watchDirectory();
+    return () => {
+      clearInterval(directory_timer);
+    };
+
+    // eslint-disable-next-line
   }, [state]);
 
   const handlerSetZone = (x: number) => {
@@ -42,6 +63,7 @@ const Directory: React.FC = (): React.ReactElement => {
   // scale interactive page
   return (
     <Box
+      onClick={handlerStillActive}
       sx={{
         height: '100vh',
         width: '100%',

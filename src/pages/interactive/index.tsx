@@ -13,7 +13,7 @@ import Directory from './component/Directory';
 import {Title45} from 'component/common/Font.styles';
 import {COLORS} from 'core/utils/constant';
 
-const interactiveTimer = 5000;
+const interactiveTimer = 15000;
 const Interactive: React.FC = (): React.ReactElement => {
   const {push} = useHistory();
 
@@ -21,7 +21,7 @@ const Interactive: React.FC = (): React.ReactElement => {
 
   const watchInteractive = () => {
     interactive_timer = setInterval(() => {
-      // push('/');
+      push('/');
     }, interactiveTimer);
   };
 
@@ -35,6 +35,8 @@ const Interactive: React.FC = (): React.ReactElement => {
     return () => {
       clearInterval(interactive_timer);
     };
+
+    // eslint-disable-next-line
   }, []);
 
   return (

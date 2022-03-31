@@ -12,7 +12,7 @@ const Video: React.FC<IVideo> = ({onEnded, source, loop = true}): React.ReactEle
   // @ts-ignore
   return (
     <>
-      <iframe src={Silence} allow='autoplay' id='audio' style={{ display:'none' }}/>
+      <iframe title='title' src={Silence} allow='autoplay' id='audio' style={{ display:'none' }}/>
       <video
         muted={false}
         loop={loop}

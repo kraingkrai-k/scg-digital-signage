@@ -5,14 +5,15 @@ import SvgIcon from '@mui/material/SvgIcon';
 import {ReactComponent as FloorPlan1} from 'assets/images/floorPlan1.svg';
 import {ReactComponent as FloorPlan2} from 'assets/images/floorPlan2.svg';
 import {ReactComponent as FloorPlan3} from 'assets/images/floorPlan3.svg';
-import MyModal from 'component/Modal';
+import MyModal, {ModalBodySolution} from 'component/Modal';
 
 import MetaFooter from './MetaFooter';
 import useMapSvg from '../hooks/uesMapSvg';
 import {IListZone} from '../model/content';
 
 import Zone from './Zone';
-import {ModalBodySvgZone} from './ModalBodySvgPlan';
+import {IListSolution} from 'pages/interactive/model/listSolution';
+import {bodyPlan} from '../model/svg-plan';
 
 interface IContent {
   floor: number;
@@ -24,6 +25,7 @@ interface IContent {
 type IState = {
   visible: boolean;
   zone: string;
+  data: IListSolution;
 };
 
 const sizePlan = {
@@ -42,13 +44,16 @@ const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.Re
   const [modal, setModal] = useState<IState>({
     visible: false,
     zone: '',
+    data: {} as IListSolution,
   });
 
   const handlerOpenModal = (zone: string) => {
+    const data = bodyPlan[zone];
     setModal((prevState) => ({
       ...prevState,
       visible: true,
       zone,
+      data,
     }));
   };
 
@@ -85,7 +90,7 @@ const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.Re
       }}
     >
       <MyModal onOK={handlerOKModal} onCancel={handlerCloseModal} visible={modal.visible}>
-        <ModalBodySvgZone zone={modal.zone} />
+        <ModalBodySolution data={modal.data} isZone={true} />
       </MyModal>
       <Box sx={{width: '100%', mt: '10%'}}>
         {/* workaround keep dom element */}
