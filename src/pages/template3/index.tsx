@@ -7,6 +7,7 @@ import BGFooter from 'assets/images/bg-footer.png';
 
 import Footer from 'component/Footer';
 import Navbar from 'component/Navbar';
+import NavVideoBar from 'component/NavVideoBar';
 import NavbarShape from 'component/NavbarShape';
 import {XPTemplate} from 'component/XPRecommend';
 import Promotion from 'component/Promotion';
@@ -78,8 +79,12 @@ const Template3: React.FC = (): React.ReactElement => {
       </MyModal>
 
       <Box sx={{height: '10%', position: 'relative'}}>
-        <Navbar />
-        <NavbarShape />
+        <NavVideoBar />
+        {/* workaround keep layout */}
+        <Box sx={{opacity: 0}}>
+          <NavbarShape />
+        </Box>
+        {/* keep layout */}
       </Box>
 
       <XPTemplate>
