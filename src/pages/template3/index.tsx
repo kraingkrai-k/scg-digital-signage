@@ -35,7 +35,6 @@ const Template3: React.FC = (): React.ReactElement => {
   useEffect(() => {
     if (state.personalData) {
       const fetch = state.personalData;
-      // console.log('hi data', state.personalData);
       const find = sectionPersonal.find((x) => x.sex === fetch.sex && fetch.age > x.age);
       if (find) {
         serPersonal(find);
@@ -95,7 +94,7 @@ const Template3: React.FC = (): React.ReactElement => {
         </Title45>
       </XPTemplate>
 
-      <Carousel height="32vh" animation="slide" indicators={false} autoPlay interval={5000}>
+      <Carousel height="32vh" animation="slide" indicators={false} autoPlay={false}>
         {personal?.source?.map?.((x: any, i: number) => (
           <Box
             key={i}

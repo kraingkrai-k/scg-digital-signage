@@ -1,6 +1,6 @@
 import React, {useState, createContext} from 'react';
 
-interface IPersonalData {
+export interface IPersonalData {
   age: number;
   sex: 'M' | 'F';
 }

@@ -1,8 +1,8 @@
 import React, {useContext, useEffect} from 'react';
 import {Route, Switch, useHistory, useLocation} from 'react-router-dom';
 import {FullScreen, useFullScreenHandle} from 'react-full-screen';
-// import useMediaQuery from '@mui/material/useMediaQuery';
-//   const matches = useMediaQuery('(min-height:1080px)');
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 import Template1Route from 'pages/template1/Template1Route';
 import Template2Routes from 'pages/template2/Template2Route';
@@ -11,8 +11,6 @@ import InteractiveRoutes from 'pages/interactive/InteractiveRoute';
 import DirectoryRoutes from 'pages/directory/DirectoryRoute';
 import {AppContext} from 'core/context';
 import {Template3Service} from 'pages/template3/service/template3-service';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 
 const needMinHeight = 1920;
 const needMinWidth = 1080;
@@ -32,13 +30,9 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
   const currentWidth = window?.innerWidth || 0;
   const currentHeight = window?.innerHeight || 0;
 
-  const nowActivePersonal = () => {
-    handlerPersonalRoute();
-  };
-
   useEffect(() => {
     if (personalWhiteListRoute.indexOf(pathname) !== -1) {
-      nowActivePersonal();
+      handlerPersonalRoute();
     }
 
     return () => {
@@ -49,12 +43,11 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
 
   const handlerPersonalRoute = () => {
     personal_timer = setInterval(() => {
-      // console.log('interval fetch personal');
       Template3Service()
         .getPersonalData()
         .then((x) => {
-          // dispatch.setPersonalData(x);
-          if (pathname !== '/template3') {
+          dispatch.setPersonalData(x);
+          if (pathname !== '/template3' && x?.age) {
             // push('/template3');
           }
         })
