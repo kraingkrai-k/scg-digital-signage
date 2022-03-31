@@ -58,7 +58,7 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
   if (currentWidth >= needMinWidth && currentHeight >= needMinHeight) {
     return (
       <FullScreen handle={handle}>
-        {!handle.active ? (
+        {handle.active ? (
           <Switch>
             <Route path="/" exact>
               <Template1Route />
