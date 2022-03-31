@@ -19,6 +19,7 @@ import {AppContext} from 'core/context';
 import {ISectionPersonal, sectionPersonal} from './model/personal-data';
 import {ISectionPromotion} from './model/promotion-data';
 
+const template3Timer = 15000;
 const Template3: React.FC = (): React.ReactElement => {
   const {state} = useContext(AppContext);
   const {push} = useHistory();
@@ -26,6 +27,19 @@ const Template3: React.FC = (): React.ReactElement => {
 
   const [personal, serPersonal] = useState<ISectionPersonal>({} as ISectionPersonal);
   const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
+
+  let template3_timer: any;
+
+  const watchTemplate3 = () => {
+    template3_timer = setInterval(() => {
+      push('/');
+    }, template3Timer);
+  };
+
+  const handlerStillActive = () => {
+    clearInterval(template3_timer);
+    watchTemplate3();
+  };
 
   const handlerPromotionClick = (x: ISectionPromotion) => {
     serPromotion(x);
@@ -41,6 +55,15 @@ const Template3: React.FC = (): React.ReactElement => {
       }
     }
   }, [state.personalData]);
+
+  useEffect(() => {
+    handlerStillActive();
+    return () => {
+      clearInterval(template3_timer);
+    };
+
+    // eslint-disable-next-line
+  }, []);
 
   const handlerProductClick = () => {
     push('/directory');
@@ -106,7 +129,7 @@ const Template3: React.FC = (): React.ReactElement => {
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
             }}
-          ></Box>
+          />
         ))}
       </Carousel>
 
