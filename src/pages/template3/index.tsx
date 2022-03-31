@@ -99,7 +99,11 @@ const Template3: React.FC = (): React.ReactElement => {
               // backgroundRepeat: 'no-repeat',
               // objectFit: 'fill',
             }}
-          ></Box>
+          >
+            <Title45 sx={{color: 'white'}}>
+              Hi mock: {state?.personalData?.age} & {state?.personalData?.sex}
+            </Title45>
+          </Box>
         ))}
       </Carousel>
 

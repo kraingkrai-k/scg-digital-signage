@@ -9,6 +9,7 @@ import Template3Routes from 'pages/template3/Template3Route';
 import InteractiveRoutes from 'pages/interactive/InteractiveRoute';
 import DirectoryRoutes from 'pages/directory/DirectoryRoute';
 import {AppContext} from 'core/context';
+import {Template3Service} from 'pages/template3/service/template3-service';
 
 const needMinHeight = 1920;
 const needMinWidth = 1080;
@@ -61,19 +62,18 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
   const handlerPersonalRoute = () => {
     personal_timer = setInterval(() => {
       console.log('interval fetch personal');
-      // mock
-      const dataFromFetch = {
-        age: 18,
-        gender: 'F',
-      } as const;
-
-      if (dataFromFetch) {
-        clearInterval(interactive_timer);
-        if (pathname !== '/template3') {
-          dispatch.setPersonalData(dataFromFetch);
-          push('/template3');
-        }
-      }
+      Template3Service()
+        .getPersonalData()
+        .then((x) => {
+          dispatch.setPersonalData(x);
+          if (pathname !== '/template3') {
+            push('/template3');
+          }
+        })
+        .catch((e) => console.log('personal err', e))
+        .finally(() => {
+          clearInterval(interactive_timer);
+        });
     }, personalTimer);
   };
 
