@@ -41,12 +41,21 @@ const Template3: React.FC = (): React.ReactElement => {
   };
 
   return (
-    <Box sx={{height: '100vh', width: '100%'}}>
+    <Box
+      sx={{
+        height: '100vh',
+        width: '100%',
+        backgroundImage: `url(${BGFooter})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        objectFit: 'fill',
+      }}
+    >
       <MyModal onCancel={handlerCloseModal} onOK={handlerOpenModal} visible={visible}>
         <ModalPromotion />
       </MyModal>
 
-      <Box sx={{height: '14%', position: 'relative'}}>
+      <Box sx={{height: '10%', position: 'relative'}}>
         <Navbar />
         <NavbarShape />
       </Box>
@@ -62,29 +71,18 @@ const Template3: React.FC = (): React.ReactElement => {
 
       <Box
         sx={{
-          position: 'absolute',
+          bgcolor: 'green',
           width: '100%',
-          backgroundImage: `url(${BGFooter})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          objectFit: 'fill',
+          height: '36vh',
+          position: 'relative',
+          zIndex: 1,
         }}
       >
-        <Box
-          sx={{
-            bgcolor: 'green',
-            width: '100%',
-            height: '36vh',
-            position: 'relative',
-            zIndex: 1,
-          }}
-        >
-          Personal Consent
-        </Box>
-
-        <Promotion onPromotionClick={handlerPromotionClick} onProductClick={handlerProductClick} />
-        <Footer />
+        Personal Consent
       </Box>
+
+      <Promotion onPromotionClick={handlerPromotionClick} onProductClick={handlerProductClick} />
+      <Footer />
     </Box>
   );
 };
