@@ -60,21 +60,21 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
   }, [state]);
 
   const handlerPersonalRoute = () => {
-    personal_timer = setInterval(() => {
-      console.log('interval fetch personal');
-      Template3Service()
-        .getPersonalData()
-        .then((x) => {
-          dispatch.setPersonalData(x);
-          if (pathname !== '/template3') {
-            push('/template3');
-          }
-        })
-        .catch((e) => console.log('personal err', e))
-        .finally(() => {
-          clearInterval(interactive_timer);
-        });
-    }, personalTimer);
+    // personal_timer = setInterval(() => {
+    //   console.log('interval fetch personal');
+    //   Template3Service()
+    //     .getPersonalData()
+    //     .then((x) => {
+    //       dispatch.setPersonalData(x);
+    //       if (pathname !== '/template3') {
+    //         push('/template3');
+    //       }
+    //     })
+    //     .catch((e) => console.log('personal err', e))
+    //     .finally(() => {
+    //       clearInterval(interactive_timer);
+    //     });
+    // }, personalTimer);
   };
 
   const handlerInteractiveRoute = () => {

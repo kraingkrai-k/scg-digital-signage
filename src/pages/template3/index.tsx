@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import Carousel from 'react-material-ui-carousel';
-import { useHistory } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 import BGFooter from 'assets/images/bg-footer.png';
 // import MockImg from 'assets/images/mockImg.png';
@@ -16,26 +16,14 @@ import {COLORS} from 'core/utils/constant';
 import MyModal from 'component/Modal';
 import ModalPromotion from 'component/ModalPromotion';
 import {AppContext} from 'core/context';
-
-const mock = [
-  {
-    name: 'Random Name #1',
-    description: 'red',
-  },
-  {
-    name: 'Random Name #2',
-    description: 'green',
-  },
-  {
-    name: 'Random Name #3',
-    description: 'blue',
-  },
-];
+import {ISectionPersonal, sectionPersonal} from './model/personal-data';
 
 const Template3: React.FC = (): React.ReactElement => {
   const {state} = useContext(AppContext);
-  const {push} = useHistory()
+  const {push} = useHistory();
   const [visible, setVisible] = useState<boolean>(false);
+
+  const [personal, serPersonal] = useState<ISectionPersonal>({} as ISectionPersonal);
 
   const handlerPromotionClick = () => {
     handlerOpenModal();
@@ -43,12 +31,18 @@ const Template3: React.FC = (): React.ReactElement => {
 
   useEffect(() => {
     if (state.personalData) {
+      const fetch = state.personalData;
       // console.log('hi data', state.personalData);
+
+      const find = sectionPersonal.find((x) => x.sex === fetch.sex && fetch.age > x.age);
+      if (find) {
+        serPersonal(find);
+      }
     }
   }, [state.personalData]);
 
   const handlerProductClick = () => {
-    push('/directory')
+    push('/directory');
   };
 
   const handlerCloseModal = () => {
@@ -57,6 +51,10 @@ const Template3: React.FC = (): React.ReactElement => {
 
   const handlerOpenModal = () => {
     setVisible(true);
+  };
+
+  const handlerContentClick = (zone: string) => {
+    console.log('click', zone, personal);
   };
 
   return (
@@ -88,24 +86,19 @@ const Template3: React.FC = (): React.ReactElement => {
         </Title45>
       </XPTemplate>
 
-      <Carousel height="33vh" animation="slide" autoPlay interval={5000}>
-        {mock.map((item, i) => (
+      <Carousel height="32vh" animation="slide" indicators={false} autoPlay interval={5000}>
+        {personal?.source?.map?.((x: any, i: number) => (
           <Box
             key={i}
+            onClick={() => handlerContentClick(x.zone)}
             sx={{
               width: '100%',
               height: '100%',
-              backgroundColor: item.description,
-              // backgroundImage: `url(${MockImg})`,
-              // backgroundSize: 'cover',
-              // backgroundRepeat: 'no-repeat',
-              // objectFit: 'fill',
+              backgroundImage: `url(${x.item})`,
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
             }}
-          >
-            <Title45 sx={{color: 'white'}}>
-              Hi mock: {state?.personalData?.age} & {state?.personalData?.sex}
-            </Title45>
-          </Box>
+          ></Box>
         ))}
       </Carousel>
 
