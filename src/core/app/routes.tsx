@@ -1,8 +1,8 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Route, Switch, useHistory, useLocation} from 'react-router-dom';
-import {FullScreen, useFullScreenHandle} from 'react-full-screen';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import ReactFullscreen from 'react-easyfullscreen';
 
 import Template1Route from 'pages/template1/Template1Route';
 import Template2Routes from 'pages/template2/Template2Route';
@@ -21,7 +21,7 @@ const personalWhiteListRoute = ['/', '/template2', '/template3'];
 const Routes: React.FunctionComponent = (): React.ReactElement => {
   const {push} = useHistory();
   const {pathname} = useLocation();
-  const handle = useFullScreenHandle();
+  const [show, setShow] = useState<boolean>(false);
 
   let personal_timer: any;
 
@@ -57,41 +57,51 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
 
   if (currentWidth >= needMinWidth && currentHeight >= needMinHeight) {
     return (
-      <FullScreen handle={handle}>
-        {handle.active ? (
-          <Switch>
-            <Route path="/" exact>
-              <Template1Route />
-            </Route>
+      <ReactFullscreen>
+        {({ref, onRequest}: any) =>
+          show ? (
+            <Switch>
+              <Route path="/" exact>
+                <Template1Route />
+              </Route>
 
-            <Route path="/template2">
-              <Template2Routes baseURL="/template2" />
-            </Route>
+              <Route path="/template2">
+                <Template2Routes baseURL="/template2" />
+              </Route>
 
-            <Route path="/template3">
-              <Template3Routes baseURL="/template3" />
-            </Route>
+              <Route path="/template3">
+                <Template3Routes baseURL="/template3" />
+              </Route>
 
-            <Route path="/interactive">
-              <InteractiveRoutes baseURL="/interactive" />
-            </Route>
+              <Route path="/interactive">
+                <InteractiveRoutes baseURL="/interactive" />
+              </Route>
 
-            <Route path="/directory">
-              <DirectoryRoutes baseURL="/directory" />
-            </Route>
+              <Route path="/directory">
+                <DirectoryRoutes baseURL="/directory" />
+              </Route>
 
-            <Route path="*">
-              <h1>not found.</h1>
-            </Route>
-          </Switch>
-        ) : (
-          <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh'}}>
-            <Button onClick={handle.enter} variant="outlined" size="large">
-              Enter Full Screen
-            </Button>
-          </Box>
-        )}
-      </FullScreen>
+              <Route path="*">
+                <h1>not found.</h1>
+              </Route>
+            </Switch>
+          ) : (
+            <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh'}}>
+              <Button
+                ref={ref}
+                onClick={() => {
+                  onRequest();
+                  setShow(true);
+                }}
+                variant="outlined"
+                size="large"
+              >
+                Enter Full Screen
+              </Button>
+            </Box>
+          )
+        }
+      </ReactFullscreen>
     );
   }
 
