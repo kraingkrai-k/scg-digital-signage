@@ -23,14 +23,19 @@ const Template1: React.FC = (): React.ReactElement => {
 
       <Box
         sx={{
-          bgcolor: COLORS.holder,
           width: '100%',
           height: '55%',
-          position: 'relative',
-          zIndex: 1,
         }}
       >
         <Video onEnded={handlerProductClick} source={V1} />
+        <Box
+          sx={{
+            background: 'linear-gradient(180deg, #EC1C24 10.42%, rgba(236, 28, 36, 0) 100%)',
+            transform: 'matrix(1, 0, 0, -1, 0, 0)',
+            height: '3vh',
+            mt: '-3vh',
+          }}
+        />
       </Box>
 
       <Box

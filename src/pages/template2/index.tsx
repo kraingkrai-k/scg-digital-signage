@@ -30,7 +30,6 @@ const Template2: React.FC = (): React.ReactElement => {
 
   const handlerProductClick = () => push('/interactive');
 
-  // back to template 1
   const handlerVideoEnded = () => push('/');
 
   const handlerCloseModal = () => {
@@ -41,7 +40,6 @@ const Template2: React.FC = (): React.ReactElement => {
     setVisible(true);
   };
 
-  // * banner 10%, xp 15%, video 30%, promotion 15%, footer 30%
   return (
     <Box
       sx={{

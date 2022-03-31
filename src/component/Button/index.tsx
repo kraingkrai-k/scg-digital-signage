@@ -30,7 +30,7 @@ const Button: React.FC<IButton> = ({onClick, invert = false}): React.ReactElemen
                     padding: {
                         monitor43: '18px 20px 18px 20px',
                         xl: '14px 16px 14px 16px',
-                        desktop: '12px 16px 12px 16px',
+                        desktop: '14px 16px 14px 16px',
                         lg: '10px 12px 10px 12px',
                     }
                 }}>
@@ -50,15 +50,11 @@ const Button: React.FC<IButton> = ({onClick, invert = false}): React.ReactElemen
                                 sx={{
                                     width: {
                                         monitor43: '72px',
-                                        xl: '72px',
-                                        desktop: '42px',
-                                        lg: '32px',
+                                        desktop: '50px',
                                     },
                                     height: {
                                         monitor43: '72px',
-                                        xl: '72px',
-                                        desktop: '42px',
-                                        lg: '32px',
+                                        desktop: '50px',
                                     },
                                 }}
                                 invert={invert}

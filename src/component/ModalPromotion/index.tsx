@@ -16,13 +16,14 @@ const ModalPromotion: React.FC<IModalPromotion> = ({promotion}): React.ReactElem
     <Box sx={{height: '100%', width: '100%'}}>
       <Box
         sx={{
-          height: '40%',
           width: '100%',
           backgroundImage: `url(${promotion?.banner})`,
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'repeat',
+          height: '15vh',
+          mb: '3%',
         }}
-      ></Box>
+      />
 
       <Grid container spacing={2}>
         <Grid item xs={8}>
@@ -30,7 +31,7 @@ const ModalPromotion: React.FC<IModalPromotion> = ({promotion}): React.ReactElem
             sx={{
               display: 'grid',
               ml: '10%',
-              width: '80%',
+              width: '90%',
             }}
           >
             <Title30>เตรียมพบกับ Flash Sale 13:00 - 15:00</Title30>
@@ -58,38 +59,37 @@ const ModalPromotion: React.FC<IModalPromotion> = ({promotion}): React.ReactElem
             <Box
               sx={{
                 mt: '4%',
+                mb: '3vh',
                 letterSpacing: '0.1rem',
-                fontSize: {
-                  monitor43: '16px',
-                  desktop: '15px',
-                },
               }}
             >
-              {promotion?.meta}
+              <Title17 sx={{fontWeight: 400, textAlign: 'justify', whiteSpace: 'break-spaces'}}>
+                {promotion?.meta}
+              </Title17>
             </Box>
           </Box>
         </Grid>
 
-        <Grid item xs={3}>
+        <Grid item xs={4} mt="2%">
           <Box sx={{display: 'grid', justifyContent: 'center', alignItems: 'center'}}>
             <Box
               sx={{
                 border: '2px solid #D5AF26',
                 boxShadow: '0px 4px 40px rgba(0, 0, 0, 0.12)',
                 borderRadius: '6px',
-                p: 2,
+                p: '12px',
+                pb: 0,
               }}
             >
               <Box sx={{display: 'grid'}}>
-                <Title14 sx={{textAlign: 'center'}}>แสกนรับสิทธิ์</Title14>
+                <Title17 sx={{textAlign: 'center'}}>แสกนรับสิทธิ์</Title17>
                 <Box
                   sx={{
                     backgroundImage: `url(${promotion?.qrCode})`,
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
-                    objectFit: 'cover',
                     height: '150px',
-                    width: '150px',
+                    width: '140px',
                   }}
                 />
               </Box>

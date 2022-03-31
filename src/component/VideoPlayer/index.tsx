@@ -8,7 +8,7 @@ interface IVideo {
   loop?: boolean;
 }
 
-const Video: React.FC<IVideo> = ({onEnded, source, loop = true}): React.ReactElement => {
+const Video: React.FC<IVideo> = ({onEnded, source, loop = false}): React.ReactElement => {
   // @ts-ignore
   return (
     <>
