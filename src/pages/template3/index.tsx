@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import Carousel from 'react-material-ui-carousel';
+import { useHistory } from 'react-router-dom';
 
 import BGFooter from 'assets/images/bg-footer.png';
 // import MockImg from 'assets/images/mockImg.png';
@@ -33,6 +34,7 @@ const mock = [
 
 const Template3: React.FC = (): React.ReactElement => {
   const {state} = useContext(AppContext);
+  const {push} = useHistory()
   const [visible, setVisible] = useState<boolean>(false);
 
   const handlerPromotionClick = () => {
@@ -41,12 +43,12 @@ const Template3: React.FC = (): React.ReactElement => {
 
   useEffect(() => {
     if (state.personalData) {
-      console.log('hi data', state.personalData);
+      // console.log('hi data', state.personalData);
     }
   }, [state.personalData]);
 
   const handlerProductClick = () => {
-    console.log('product !!');
+    push('/directory')
   };
 
   const handlerCloseModal = () => {
@@ -86,7 +88,7 @@ const Template3: React.FC = (): React.ReactElement => {
         </Title45>
       </XPTemplate>
 
-      <Carousel height="36vh" animation="slide" autoPlay interval={5000}>
+      <Carousel height="33vh" animation="slide" autoPlay interval={5000}>
         {mock.map((item, i) => (
           <Box
             key={i}
