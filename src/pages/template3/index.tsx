@@ -6,7 +6,6 @@ import {useHistory} from 'react-router-dom';
 import BGFooter from 'assets/images/bg-footer.png';
 
 import Footer from 'component/Footer';
-import Navbar from 'component/Navbar';
 import NavVideoBar from 'component/NavVideoBar';
 import NavbarShape from 'component/NavbarShape';
 import {XPTemplate} from 'component/XPRecommend';

@@ -16,7 +16,7 @@ const NavVideoBar: React.FC<INavVideoBar> = ({center = false}): React.ReactEleme
         width: '100%',
       }}
     >
-      <VideoPlayer source={flashSaleVideo} onEnded={() => {}} />
+      <VideoPlayer source={flashSaleVideo} loop={true} onEnded={() => {}} />
     </Box>
   );
 };
