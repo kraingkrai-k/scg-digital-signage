@@ -12,7 +12,7 @@ import DirectoryRoutes from 'pages/directory/DirectoryRoute';
 import {AppContext} from 'core/context';
 import {Template3Service} from 'pages/template3/service/template3-service';
 
-const needMinHeight = 1920;
+const needMinHeight = 1;
 const needMinWidth = 1080;
 
 const personalTimer = 2000;
