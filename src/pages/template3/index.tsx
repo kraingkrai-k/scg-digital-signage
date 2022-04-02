@@ -26,13 +26,14 @@ const Template3: React.FC = (): React.ReactElement => {
   const [visible, setVisible] = useState<boolean>(false);
 
   const [personal, serPersonal] = useState<ISectionPersonal>({} as ISectionPersonal);
+  const [maxRandom, setMaxRandom] = useState<number>(0);
   const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
 
   let template3_timer: any;
 
   const watchTemplate3 = () => {
     template3_timer = setInterval(() => {
-      push('/');
+      // push('/');
     }, template3Timer);
   };
 
@@ -52,6 +53,8 @@ const Template3: React.FC = (): React.ReactElement => {
       const find = sectionPersonal.find((x) => x.sex === fetch.sex && fetch.age > x.age);
       if (find) {
         serPersonal(find);
+        const random = Math.round(Math.random() * find.size);
+        setMaxRandom(random)
       }
     }
   }, [state.personalData]);
@@ -117,7 +120,7 @@ const Template3: React.FC = (): React.ReactElement => {
         </Title45>
       </XPTemplate>
 
-      <Carousel height="32vh" animation="slide" indicators={false} autoPlay={false}>
+      {/* <Carousel height="32vh" animation="slide" indicators={false} autoPlay={false}>
         {personal?.source?.map?.((x: any, i: number) => (
           <Box
             key={i}
@@ -131,7 +134,20 @@ const Template3: React.FC = (): React.ReactElement => {
             }}
           />
         ))}
-      </Carousel>
+      </Carousel> */}
+
+      <Box sx={{width: '100%', height: '32vh'}}>
+        <Box
+          onClick={() => handlerContentClick(personal.source?.[maxRandom])}
+          sx={{
+            width: '100%',
+            height: '100%',
+            backgroundImage: `url(${personal.source?.[maxRandom].item})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+      </Box>
 
       <Promotion onPromotionClick={handlerPromotionClick} onProductClick={handlerProductClick} />
       <Footer />

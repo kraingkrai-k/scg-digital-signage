@@ -34,6 +34,7 @@ export interface ISectionPersonal {
   meta: string;
   sex: 'M' | 'F';
   age: number;
+  size: number;
   type: 'video' | 'images';
   source: {
     floor: number;
@@ -49,6 +50,7 @@ export const sectionPersonal: ISectionPersonal[] = [
     type: 'images',
     sex: 'M',
     age: 49,
+    size: 3,
     source: [
       {floor: 1, zone: 'z1', item: M_Over_50_1},
       {floor: 1, zone: 'z1', item: M_Over_50_2},
@@ -62,6 +64,7 @@ export const sectionPersonal: ISectionPersonal[] = [
     type: 'images',
     sex: 'M',
     age: 34,
+    size: 2,
     source: [
       {floor: 1, zone: 'z1', item: M_35_50_1},
       {floor: 1, zone: 'z1', item: M_35_50_2},
@@ -74,6 +77,7 @@ export const sectionPersonal: ISectionPersonal[] = [
     type: 'images',
     sex: 'M',
     age: 1,
+    size: 4,
     source: [
       {floor: 1, zone: 'z1', item: M_Less_35_1},
       {floor: 1, zone: 'z1', item: M_Less_35_2},
@@ -88,6 +92,7 @@ export const sectionPersonal: ISectionPersonal[] = [
     type: 'images',
     sex: 'F',
     age: 49,
+    size: 3,
     source: [
       {floor: 1, zone: 'z1', item: F_Over_50_1},
       {floor: 1, zone: 'z1', item: F_Over_50_2},
@@ -101,6 +106,7 @@ export const sectionPersonal: ISectionPersonal[] = [
     type: 'images',
     sex: 'F',
     age: 34,
+    size: 3,
     source: [
       {floor: 1, zone: 'z1', item: F_35_50_1},
       {floor: 1, zone: 'z1', item: F_35_50_2},
@@ -114,6 +120,7 @@ export const sectionPersonal: ISectionPersonal[] = [
     type: 'images',
     sex: 'F',
     age: 1,
+    size: 4,
     source: [
       {floor: 1, zone: 'z1', item: F_Less_35_1},
       {floor: 1, zone: 'z1', item: F_Less_35_2},
