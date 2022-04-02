@@ -33,7 +33,7 @@ const Template3: React.FC = (): React.ReactElement => {
 
   const watchTemplate3 = () => {
     template3_timer = setInterval(() => {
-      // push('/');
+      push('/');
     }, template3Timer);
   };
 
