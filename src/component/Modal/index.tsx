@@ -116,16 +116,13 @@ export const ModalBodySolution: React.FC<{data: IListSolution; isZone?: boolean}
             <Box
               sx={{
                 backgroundImage: `url(${data.image})`,
-                backgroundSize: 'cover',
+                backgroundSize: 'contain',
                 backgroundRepeat: 'no-repeat',
                 height: {
-                  monitor43: '500px',
-                  desktop: '300px',
+                  monitor43: '170px',
+                  desktop: '150px',
                 },
-                width: {
-                  monitor43: '100%',
-                  desktop: '100%',
-                },
+                width: '100%',
                 mt: '7%',
                 mb: '8%',
               }}
@@ -143,18 +140,24 @@ export const ModalBodySolution: React.FC<{data: IListSolution; isZone?: boolean}
           </Box>
         </Box>
 
-        <Box sx={{mt: '1%'}}>
-          <SvgIcon component={data.svgPlan} inheritViewBox sx={{width: '110%', height: '70%'}} />
+        <Box sx={{mt: '15%'}}>
+          {/* <SvgIcon component={data.svgPlan} inheritViewBox sx={{width: '110%', height: '70%'}} /> */}
+          <Box
+            sx={{
+              backgroundImage: `url(${data.svgPlan})`,
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '100%',
+              width: '100%',
+            }}
+          />
 
           <Box
             sx={{
               position: 'absolute',
               display: 'flex',
               alignItems: 'center',
-              top: {
-                monitor43: '50%',
-                desktop: '60%',
-              },
+              bottom: 0
             }}
           >
             <Box
@@ -163,8 +166,8 @@ export const ModalBodySolution: React.FC<{data: IListSolution; isZone?: boolean}
                 backgroundSize: 'cover',
                 backgroundRepeat: 'repeat',
                 objectFit: 'contain',
-                height: '140px',
-                width: '140px',
+                height: '100px',
+                width: '100px',
               }}
             />
 
