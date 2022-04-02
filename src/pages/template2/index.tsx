@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import {useHistory} from 'react-router-dom';
+import dayjs from 'dayjs';
 
 // @ts-ignore
 import V2 from 'assets/video/v-tem2.mp4';
@@ -17,11 +18,21 @@ import ModalPromotion from 'component/ModalPromotion';
 import MyModal from 'component/Modal';
 import Video from 'component/VideoPlayer';
 import {ISectionPromotion} from 'pages/template3/model/promotion-data';
+import {flashSaleData} from 'pages/template3/model/flash-sale-data';
+import NavVideoBar, {INavVideoBar} from 'component/NavVideoBar';
 
 const Template2: React.FC = (): React.ReactElement => {
   const {push} = useHistory();
   const [visible, setVisible] = useState<boolean>(false);
   const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
+  const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
+
+  useEffect(() => {
+    const findFlashSale = flashSaleData.find((x) => dayjs().isBetween(x.start, x.end));
+    if (findFlashSale) {
+      setFlashSale(findFlashSale);
+    }
+  }, []);
 
   const handlerPromotionClick = (x: ISectionPromotion) => {
     serPromotion(x);
@@ -31,8 +42,7 @@ const Template2: React.FC = (): React.ReactElement => {
   const handlerProductClick = () => push('/interactive');
 
   const handlerVideoEnded = () => {
-    console.log('tem2 ended')
-    push('/')
+    // push('/')
   };
 
   const handlerCloseModal = () => {
@@ -59,8 +69,12 @@ const Template2: React.FC = (): React.ReactElement => {
       </MyModal>
 
       <Box sx={{height: '10%', position: 'relative'}}>
-        <Navbar />
-        <NavbarShape />
+        <NavVideoBar {...flashSale} />
+        {/* workaround keep layout */}
+        <Box sx={{opacity: 0}}>
+          <NavbarShape />
+        </Box>
+        {/* keep layout */}
       </Box>
 
       <XPTemplate>
