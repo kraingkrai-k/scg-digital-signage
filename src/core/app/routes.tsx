@@ -15,8 +15,8 @@ import {Template3Service} from 'pages/template3/service/template3-service';
 const needMinHeight = 1;
 const needMinWidth = 1080;
 
-const personalTimer = 2000;
-const personalWhiteListRoute = ['/', '/template2', '/template3'];
+const personalTimer = 5000;
+const personalWhiteListRoute = ['/', '/template2'];
 
 const Routes: React.FunctionComponent = (): React.ReactElement => {
   const {push} = useHistory();
@@ -48,7 +48,7 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
         .then((x) => {
           dispatch.setPersonalData(x);
           if (pathname !== '/template3' && x?.age) {
-            // push('/template3');
+            push('/template3');
           }
         })
         .catch((e) => console.log('personal err', e));
