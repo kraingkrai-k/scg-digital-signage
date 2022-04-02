@@ -63,7 +63,7 @@ const Template3: React.FC = (): React.ReactElement => {
   }, []);
 
   const handlerProductClick = () => {
-    push('/directory');
+    push('/interactive');
   };
 
   const handlerCloseModal = () => {
