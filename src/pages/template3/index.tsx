@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import Carousel from 'react-material-ui-carousel';
-import {useHistory} from 'react-router-dom';
+import {useHistory, useLocation} from 'react-router-dom';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
 
@@ -16,7 +16,6 @@ import {Title45} from 'component/common/Font.styles';
 import {COLORS} from 'core/utils/constant';
 import MyModal from 'component/Modal';
 import ModalPromotion from 'component/ModalPromotion';
-import {AppContext} from 'core/context';
 
 import {ISectionPersonal, sectionPersonal} from './model/personal-data';
 import {ISectionPromotion} from './model/promotion-data';
@@ -25,12 +24,11 @@ import {flashSaleData} from './model/flash-sale-data';
 dayjs.extend(isBetween);
 
 const Template3: React.FC = (): React.ReactElement => {
-  const {state} = useContext(AppContext);
   const {push} = useHistory();
-  const [visible, setVisible] = useState<boolean>(false);
+  const {state}: any = useLocation();
 
+  const [visible, setVisible] = useState<boolean>(false);
   const [personal, serPersonal] = useState<ISectionPersonal>({} as ISectionPersonal);
-  // const [maxRandom, setMaxRandom] = useState<number>(0);
   const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
   const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
 
@@ -40,16 +38,11 @@ const Template3: React.FC = (): React.ReactElement => {
   };
 
   useEffect(() => {
-    if (state?.personalData?.age) {
-      const fetch = state.personalData;
-      const find = sectionPersonal.find((x) => x.sex === fetch.sex && fetch.age > x.age);
+    if (state?.age) {
+      const find = sectionPersonal.find((x) => x.sex === state.sex && state.age > x.age);
       if (find) {
         serPersonal(find);
-        // const random = Math.round(Math.random() * find.size);
-        // setMaxRandom(random);
       }
-    } else {
-      push('/');
     }
     // eslint-disable-next-line
   }, [state.personalData]);

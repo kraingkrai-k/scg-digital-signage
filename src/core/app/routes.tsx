@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route, Switch, useHistory, useLocation} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -9,7 +9,6 @@ import Template2Routes from 'pages/template2/Template2Route';
 import Template3Routes from 'pages/template3/Template3Route';
 import InteractiveRoutes from 'pages/interactive/InteractiveRoute';
 import DirectoryRoutes from 'pages/directory/DirectoryRoute';
-import {AppContext} from 'core/context';
 import {Template3Service} from 'pages/template3/service/template3-service';
 
 const needMinHeight = 1;
@@ -24,8 +23,6 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
   const [show, setShow] = useState<boolean>(false);
 
   let personal_timer: any;
-
-  const {dispatch} = useContext(AppContext);
 
   const currentWidth = window?.innerWidth || 0;
   const currentHeight = window?.innerHeight || 0;
@@ -48,9 +45,10 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
       Template3Service()
         .getPersonalData()
         .then((x) => {
-          dispatch.setPersonalData(x);
-          if (pathname !== '/template3') {
-            push('/template3');
+          if (x?.age) {
+            push('/template3', x);
+          } else {
+            push('/');
           }
         })
         .catch((e) => console.log('personal err', e));
