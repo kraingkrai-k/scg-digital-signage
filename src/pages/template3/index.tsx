@@ -25,7 +25,6 @@ import {flashSaleData} from './model/flash-sale-data';
 dayjs.extend(isBetween);
 
 const template3Timer = 15000;
-let template3_timer: any;
 
 const Template3: React.FC = (): React.ReactElement => {
   const {state} = useContext(AppContext);
@@ -36,6 +35,7 @@ const Template3: React.FC = (): React.ReactElement => {
   const [maxRandom, setMaxRandom] = useState<number>(0);
   const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
   const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
+  let [template3_timer, setX] = useState<any>(null);
 
   const watchTemplate3 = () => {
     template3_timer = setInterval(() => {

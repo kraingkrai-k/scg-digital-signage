@@ -14,7 +14,6 @@ import Tabs from './component/Tabs';
 import Content from './component/Content';
 
 const directoryTimer = 15000;
-let directory_timer: any;
 
 const Directory: React.FC = (): React.ReactElement => {
   const {state}: any = useLocation();
@@ -22,6 +21,7 @@ const Directory: React.FC = (): React.ReactElement => {
 
   const [floor, setFloor] = useState<number>(1);
   const [zone, setZone] = useState<number>(-1);
+  let [directory_timer, setX] = useState<any>(null);
 
   const watchDirectory = () => {
     directory_timer = setInterval(() => {

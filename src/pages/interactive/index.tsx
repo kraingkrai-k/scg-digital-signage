@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import {useHistory} from 'react-router-dom';
 
@@ -14,10 +14,11 @@ import {Title45} from 'component/common/Font.styles';
 import {COLORS} from 'core/utils/constant';
 
 const interactiveTimer = 15000;
-let interactive_timer: any;
 
 const Interactive: React.FC = (): React.ReactElement => {
   const {push} = useHistory();
+  
+  let [interactive_timer, setX] = useState<any>(null);
 
   const watchInteractive = () => {
     interactive_timer = setInterval(() => {
