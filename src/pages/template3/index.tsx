@@ -1,12 +1,14 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
-import Carousel from 'react-material-ui-carousel';
+// import Carousel from 'react-material-ui-carousel';
 import {useHistory} from 'react-router-dom';
+import dayjs from 'dayjs';
+import isBetween from 'dayjs/plugin/isBetween';
 
 import BGFooter from 'assets/images/bg-footer.png';
 
 import Footer from 'component/Footer';
-import NavVideoBar from 'component/NavVideoBar';
+import NavVideoBar, {INavVideoBar} from 'component/NavVideoBar';
 import NavbarShape from 'component/NavbarShape';
 import {XPTemplate} from 'component/XPRecommend';
 import Promotion from 'component/Promotion';
@@ -18,8 +20,11 @@ import {AppContext} from 'core/context';
 
 import {ISectionPersonal, sectionPersonal} from './model/personal-data';
 import {ISectionPromotion} from './model/promotion-data';
+import {flashSaleData} from './model/flash-sale-data';
 
 const template3Timer = 15000;
+dayjs.extend(isBetween)
+
 const Template3: React.FC = (): React.ReactElement => {
   const {state} = useContext(AppContext);
   const {push} = useHistory();
@@ -28,6 +33,7 @@ const Template3: React.FC = (): React.ReactElement => {
   const [personal, serPersonal] = useState<ISectionPersonal>({} as ISectionPersonal);
   const [maxRandom, setMaxRandom] = useState<number>(0);
   const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
+  const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar)
 
   let template3_timer: any;
 
@@ -61,6 +67,12 @@ const Template3: React.FC = (): React.ReactElement => {
 
   useEffect(() => {
     handlerStillActive();
+
+    const findFlashSale = flashSaleData.find(x => dayjs().isBetween(x.start, x.end))
+    if (findFlashSale) {
+      setFlashSale(findFlashSale)
+    }
+
     return () => {
       clearInterval(template3_timer);
     };
@@ -82,8 +94,8 @@ const Template3: React.FC = (): React.ReactElement => {
 
   const handlerContentClick = (x: any) => {
     push('/directory', {
-      zone: x.zone,
-      tab: x.floor,
+      zone: x?.zone,
+      tab: x?.floor,
     });
   };
 
@@ -103,7 +115,7 @@ const Template3: React.FC = (): React.ReactElement => {
       </MyModal>
 
       <Box sx={{height: '10%', position: 'relative'}}>
-        <NavVideoBar />
+        <NavVideoBar {...flashSale} />
         {/* workaround keep layout */}
         <Box sx={{opacity: 0}}>
           <NavbarShape />
@@ -136,7 +148,7 @@ const Template3: React.FC = (): React.ReactElement => {
         ))}
       </Carousel> */}
 
-      <Box sx={{width: '100%', height: '32vh'}}>
+      <Box sx={{width: '100%', height: '32vh', zIndex: 1, position: 'relative'}}>
         <Box
           onClick={() => handlerContentClick(personal.source?.[maxRandom])}
           sx={{

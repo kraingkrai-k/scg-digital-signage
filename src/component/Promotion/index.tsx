@@ -20,7 +20,7 @@ const Promotion: React.FC<IPromotion> = ({onPromotionClick, onProductClick}): Re
           cursor: 'pointer',
         }}
       >
-        <Carousel height="16vh" animation="slide" indicators={false} autoPlay={true} interval={10000}>
+        <Carousel height="16vh" animation="slide" indicators={false} autoPlay={true} interval={5000}>
           {sectionPromotion.map?.((x: ISectionPromotion, i: number) => (
             <Box
               key={i}

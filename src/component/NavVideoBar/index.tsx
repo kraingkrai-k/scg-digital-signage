@@ -1,14 +1,19 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import VideoPlayer from '../VideoPlayer';
-// @ts-ignore
-import flashSaleVideo from 'assets/video/flash_sale.mp4';
 
-interface INavVideoBar {
-  center?: boolean;
+import Navbar from 'component/Navbar';
+import VideoPlayer from '../VideoPlayer';
+
+export interface INavVideoBar {
+  video?: any;
 }
 
-const NavVideoBar: React.FC<INavVideoBar> = ({center = false}): React.ReactElement => {
+const NavVideoBar: React.FC<INavVideoBar> = ({video}): React.ReactElement => {
+
+  if (!video) {
+    return <Navbar />
+  }
+
   return (
     <Box
       sx={{
@@ -16,7 +21,7 @@ const NavVideoBar: React.FC<INavVideoBar> = ({center = false}): React.ReactEleme
         width: '100%',
       }}
     >
-      <VideoPlayer source={flashSaleVideo} loop={true} onEnded={() => {}} />
+      <VideoPlayer source={video} loop={true} onEnded={() => { }} />
     </Box>
   );
 };
