@@ -49,7 +49,7 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
         .getPersonalData()
         .then((x) => {
           dispatch.setPersonalData(x);
-          if (pathname !== '/template3' && x?.age) {
+          if (pathname !== '/template3') {
             push('/template3');
           }
         })
