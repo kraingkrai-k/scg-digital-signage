@@ -9,7 +9,6 @@ import BGFooter from 'assets/images/bg-footer.png';
 import {COLORS} from 'core/utils/constant';
 
 import Footer from 'component/Footer';
-import Navbar from 'component/Navbar';
 import NavbarShape from 'component/NavbarShape';
 import {XPTemplate} from 'component/XPRecommend';
 import Promotion from 'component/Promotion';
@@ -41,9 +40,7 @@ const Template2: React.FC = (): React.ReactElement => {
 
   const handlerProductClick = () => push('/interactive');
 
-  const handlerVideoEnded = () => {
-    // push('/')
-  };
+  const handlerVideoEnded = () => push('/')
 
   const handlerCloseModal = () => {
     setVisible(false);
