@@ -157,7 +157,7 @@ export const bodyPlan: {[key: string]: IListSolution} = {
   },
   z14: {
     id: 14,
-    text: 'doo Deco',
+    text: 'Younique',
     subTitle: 'ชั้น 3',
     image: F3_Z13,
     qrCode: MockQR,
