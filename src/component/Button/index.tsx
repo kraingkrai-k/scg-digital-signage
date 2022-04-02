@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
 import {Title35} from "component/common/Font.styles";
-import {TouchAppWhite} from "assets/icon/Icon";
+import {TouchAppInvert, TouchAppWhite} from "assets/icon/Icon";
 import {COLORS} from "core/utils/constant";
 
 interface IButton {
@@ -46,19 +46,34 @@ const Button: React.FC<IButton> = ({onClick, invert = false}): React.ReactElemen
                             </Title35>
                         </Grid>
                         <Grid item>
-                            <TouchAppWhite
-                                sx={{
-                                    width: {
-                                        monitor43: '72px',
-                                        desktop: '50px',
-                                    },
-                                    height: {
-                                        monitor43: '72px',
-                                        desktop: '50px',
-                                    },
-                                }}
-                                invert={invert}
-                            />
+                            {invert ?
+                                <TouchAppWhite
+                                    sx={{
+                                        width: {
+                                            monitor43: '72px',
+                                            desktop: '50px',
+                                        },
+                                        height: {
+                                            monitor43: '72px',
+                                            desktop: '50px',
+                                        },
+                                    }}
+                                />
+                                :
+                                <TouchAppInvert
+                                    sx={{
+                                        width: {
+                                            monitor43: '72px',
+                                            desktop: '50px',
+                                        },
+                                        height: {
+                                            monitor43: '72px',
+                                            desktop: '50px',
+                                        },
+                                    }}
+                                />
+                            }
+
                         </Grid>
                         <Grid item>
                             <Title35 sx={{color: invert ? COLORS.white : COLORS.greyText}}>
