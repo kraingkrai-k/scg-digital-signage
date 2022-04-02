@@ -21,26 +21,18 @@ const Directory: React.FC = (): React.ReactElement => {
 
   const [floor, setFloor] = useState<number>(1);
   const [zone, setZone] = useState<number>(-1);
-  
-  let directory_timer: any = null;
 
-  const watchDirectory = () => {
+  let directory_timer: NodeJS.Timer | null = null;
+
+  const handlerStillActive = () => {
+    directory_timer && clearInterval(directory_timer);
+
     directory_timer = setInterval(() => {
       push('/');
     }, directoryTimer);
   };
 
-  const handlerStillActive = () => {
-    clearInterval(directory_timer);
-
-    setTimeout(() => {
-      watchDirectory();
-    }, 1000);
-  };
-
   useEffect(() => {
-    handlerStillActive();
-
     if (state?.tab) {
       setFloor(state.tab);
     }
@@ -48,8 +40,13 @@ const Directory: React.FC = (): React.ReactElement => {
     if (state?.zone) {
       setZone(state.zone);
     }
+
+    directory_timer = setInterval(() => {
+      push('/');
+    }, directoryTimer);
+
     return () => {
-      clearInterval(directory_timer);
+      directory_timer && clearInterval(directory_timer);
     };
 
     // eslint-disable-next-line

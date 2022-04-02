@@ -17,27 +17,24 @@ const interactiveTimer = 15000;
 
 const Interactive: React.FC = (): React.ReactElement => {
   const {push} = useHistory();
-  
-  let interactive_timer: any = null;
 
-  const watchInteractive = () => {
+  let interactive_timer: NodeJS.Timer | null = null;
+
+  const handlerStillActive = () => {
+    interactive_timer && clearInterval(interactive_timer);
+
     interactive_timer = setInterval(() => {
       push('/');
     }, interactiveTimer);
   };
 
-  const handlerStillActive = () => {
-    clearInterval(interactive_timer);
-
-    setTimeout(() => {
-      watchInteractive();
-    }, 1000);
-  };
-
   useEffect(() => {
-    handlerStillActive();
+    interactive_timer = setInterval(() => {
+      push('/');
+    }, interactiveTimer);
+
     return () => {
-      clearInterval(interactive_timer);
+      interactive_timer && clearInterval(interactive_timer);
     };
 
     // eslint-disable-next-line

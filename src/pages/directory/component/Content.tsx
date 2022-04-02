@@ -14,6 +14,7 @@ import {IListZone} from '../model/content';
 import Zone from './Zone';
 import {IListSolution} from 'pages/interactive/model/listSolution';
 import {bodyPlan} from '../model/svg-plan';
+import {useEffect} from 'react';
 
 interface IContent {
   floor: number;
@@ -66,6 +67,13 @@ const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.Re
     }));
   };
 
+  useEffect(() => {
+    if (zone && zone !== -1) {
+      mapZoneSelected(zone as any);
+    }
+    // eslint-disable-next-line
+  }, [zone]);
+
   const handlerOKModal = () => {
     setModal((prevState) => ({
       ...prevState,
@@ -75,7 +83,6 @@ const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.Re
 
   const handlerZoneClick = (x: IListZone) => {
     setFloor(x.floor);
-    mapZoneSelected(x.zone);
     setZone(x.id);
   };
 

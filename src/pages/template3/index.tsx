@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import Carousel from 'react-material-ui-carousel';
 import {useHistory, useLocation} from 'react-router-dom';
