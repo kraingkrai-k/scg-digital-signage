@@ -33,6 +33,8 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
   useEffect(() => {
     if (personalWhiteListRoute.indexOf(pathname) !== -1) {
       handlerPersonalRoute();
+    } else {
+      clearInterval(personal_timer);
     }
 
     return () => {
