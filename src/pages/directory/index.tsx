@@ -1,17 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import {useHistory, useLocation} from 'react-router-dom';
+import dayjs from 'dayjs';
 
 import BGFooter from 'assets/images/bg-footer.png';
 
 import Footer from 'component/Footer';
-import Navbar from 'component/Navbar';
+// import Navbar from 'component/Navbar';
 import NavbarShape from 'component/NavbarShape';
 import {XPDirectory} from 'component/XPRecommend';
 import {Title40} from 'component/common/Font.styles';
 import {COLORS} from 'core/utils/constant';
 import Tabs from './component/Tabs';
 import Content from './component/Content';
+import NavVideoBar, { INavVideoBar } from 'component/NavVideoBar';
+import { flashSaleData } from 'pages/template3/model/flash-sale-data';
 
 const directoryTimer = 15000;
 
@@ -21,6 +24,7 @@ const Directory: React.FC = (): React.ReactElement => {
 
   const [floor, setFloor] = useState<number>(1);
   const [zone, setZone] = useState<number>(-1);
+  const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
 
   let directory_timer: NodeJS.Timer | null = null;
 
@@ -46,6 +50,11 @@ const Directory: React.FC = (): React.ReactElement => {
   }, [state]);
 
   useEffect(() => {
+    const findFlashSale = flashSaleData.find((x) => dayjs().isBetween(x.start, x.end));
+    if (findFlashSale) {
+      setFlashSale(findFlashSale);
+    }
+
     directory_timer = setInterval(() => {
       push('/');
     }, directoryTimer);
@@ -79,8 +88,12 @@ const Directory: React.FC = (): React.ReactElement => {
       }}
     >
       <Box sx={{height: '10%', position: 'relative'}}>
-        <Navbar />
-        <NavbarShape />
+      <NavVideoBar {...flashSale} />
+        {/* workaround keep layout */}
+        <Box sx={{opacity: 0}}>
+          <NavbarShape />
+        </Box>
+        {/* keep layout */}
       </Box>
 
       <XPDirectory>

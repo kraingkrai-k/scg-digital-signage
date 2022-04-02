@@ -1,11 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import {useHistory} from 'react-router-dom';
+import dayjs from 'dayjs';
 
 import BGFooter from 'assets/images/bg-footer.png';
 
 import Footer from 'component/Footer';
-import Navbar from 'component/Navbar';
+// import Navbar from 'component/Navbar';
 import NavbarShape from 'component/NavbarShape';
 import {XPInteractive} from 'component/XPRecommend';
 import SmartSolution from './component/SmartSolution';
@@ -13,11 +14,15 @@ import Directory from './component/Directory';
 import {Title45} from 'component/common/Font.styles';
 import {COLORS} from 'core/utils/constant';
 import Ads from './component/Ads';
+import NavVideoBar, {INavVideoBar} from 'component/NavVideoBar';
+import { flashSaleData } from 'pages/template3/model/flash-sale-data';
 
 const interactiveTimer = 15000;
 
 const Interactive: React.FC = (): React.ReactElement => {
   const {push} = useHistory();
+
+  const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
 
   let interactive_timer: NodeJS.Timer | null = null;
 
@@ -32,6 +37,11 @@ const Interactive: React.FC = (): React.ReactElement => {
   };
 
   useEffect(() => {
+    const findFlashSale = flashSaleData.find((x) => dayjs().isBetween(x.start, x.end));
+    if (findFlashSale) {
+      setFlashSale(findFlashSale);
+    }
+
     interactive_timer = setInterval(() => {
       push('/');
     }, interactiveTimer);
@@ -56,8 +66,15 @@ const Interactive: React.FC = (): React.ReactElement => {
       }}
     >
       <Box sx={{height: '10%', position: 'relative'}}>
-        <Navbar />
-        <NavbarShape />
+        <NavVideoBar {...flashSale} />
+        {/* workaround keep layout */}
+        <Box sx={{opacity: 0}}>
+          <NavbarShape />
+        </Box>
+        {/* keep layout */}
+
+        {/* <Navbar />
+        <NavbarShape /> */}
       </Box>
 
       <XPInteractive>
