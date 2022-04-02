@@ -33,7 +33,10 @@ const Directory: React.FC = (): React.ReactElement => {
 
   const handlerStillActive = () => {
     clearInterval(directory_timer);
-    watchDirectory();
+
+    setTimeout(() => {
+      watchDirectory();
+    }, 1000);
   };
 
   useEffect(() => {

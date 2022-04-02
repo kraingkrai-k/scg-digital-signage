@@ -27,7 +27,10 @@ const Interactive: React.FC = (): React.ReactElement => {
 
   const handlerStillActive = () => {
     clearInterval(interactive_timer);
-    watchInteractive();
+
+    setTimeout(() => {
+      watchInteractive();
+    }, 1000);
   };
 
   useEffect(() => {
