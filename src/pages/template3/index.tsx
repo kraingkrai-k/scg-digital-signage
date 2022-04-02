@@ -22,8 +22,10 @@ import {ISectionPersonal, sectionPersonal} from './model/personal-data';
 import {ISectionPromotion} from './model/promotion-data';
 import {flashSaleData} from './model/flash-sale-data';
 
+dayjs.extend(isBetween);
+
 const template3Timer = 15000;
-dayjs.extend(isBetween)
+let template3_timer: any;
 
 const Template3: React.FC = (): React.ReactElement => {
   const {state} = useContext(AppContext);
@@ -33,9 +35,7 @@ const Template3: React.FC = (): React.ReactElement => {
   const [personal, serPersonal] = useState<ISectionPersonal>({} as ISectionPersonal);
   const [maxRandom, setMaxRandom] = useState<number>(0);
   const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
-  const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar)
-
-  let template3_timer: any;
+  const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
 
   const watchTemplate3 = () => {
     template3_timer = setInterval(() => {
@@ -60,18 +60,18 @@ const Template3: React.FC = (): React.ReactElement => {
       if (find) {
         serPersonal(find);
         const random = Math.round(Math.random() * find.size);
-        setMaxRandom(random)
+        setMaxRandom(random);
       }
     }
   }, [state.personalData]);
 
   useEffect(() => {
-    handlerStillActive();
-
-    const findFlashSale = flashSaleData.find(x => dayjs().isBetween(x.start, x.end))
+    const findFlashSale = flashSaleData.find((x) => dayjs().isBetween(x.start, x.end));
     if (findFlashSale) {
-      setFlashSale(findFlashSale)
+      setFlashSale(findFlashSale);
     }
+
+    handlerStillActive();
 
     return () => {
       clearInterval(template3_timer);
@@ -101,6 +101,7 @@ const Template3: React.FC = (): React.ReactElement => {
 
   return (
     <Box
+      onClick={handlerStillActive}
       sx={{
         height: '100vh',
         width: '100%',

@@ -13,17 +13,15 @@ import {COLORS} from 'core/utils/constant';
 import Tabs from './component/Tabs';
 import Content from './component/Content';
 
-import './index.css';
-
 const directoryTimer = 15000;
+let directory_timer: any;
+
 const Directory: React.FC = (): React.ReactElement => {
   const {state}: any = useLocation();
   const {push} = useHistory();
 
   const [floor, setFloor] = useState<number>(1);
   const [zone, setZone] = useState<number>(-1);
-
-  let directory_timer: any;
 
   const watchDirectory = () => {
     directory_timer = setInterval(() => {
@@ -40,6 +38,8 @@ const Directory: React.FC = (): React.ReactElement => {
   };
 
   useEffect(() => {
+    handlerStillActive();
+
     if (state?.tab) {
       setFloor(state.tab);
     }
@@ -47,7 +47,6 @@ const Directory: React.FC = (): React.ReactElement => {
     if (state?.zone) {
       setZone(state.zone);
     }
-    watchDirectory();
     return () => {
       clearInterval(directory_timer);
     };

@@ -14,10 +14,10 @@ import {Title45} from 'component/common/Font.styles';
 import {COLORS} from 'core/utils/constant';
 
 const interactiveTimer = 15000;
+let interactive_timer: any;
+
 const Interactive: React.FC = (): React.ReactElement => {
   const {push} = useHistory();
-
-  let interactive_timer: any;
 
   const watchInteractive = () => {
     interactive_timer = setInterval(() => {
@@ -34,7 +34,7 @@ const Interactive: React.FC = (): React.ReactElement => {
   };
 
   useEffect(() => {
-    watchInteractive();
+    handlerStillActive();
     return () => {
       clearInterval(interactive_timer);
     };
