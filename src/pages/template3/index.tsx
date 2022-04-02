@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
-// import Carousel from 'react-material-ui-carousel';
+import Carousel from 'react-material-ui-carousel';
 import {useHistory} from 'react-router-dom';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
@@ -24,30 +24,15 @@ import {flashSaleData} from './model/flash-sale-data';
 
 dayjs.extend(isBetween);
 
-const template3Timer = 15000;
-
 const Template3: React.FC = (): React.ReactElement => {
   const {state} = useContext(AppContext);
   const {push} = useHistory();
   const [visible, setVisible] = useState<boolean>(false);
 
   const [personal, serPersonal] = useState<ISectionPersonal>({} as ISectionPersonal);
-  const [maxRandom, setMaxRandom] = useState<number>(0);
+  // const [maxRandom, setMaxRandom] = useState<number>(0);
   const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
   const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
-
-  let template3_timer: any = null;
-
-  const watchTemplate3 = () => {
-    template3_timer = setInterval(() => {
-      push('/');
-    }, template3Timer);
-  };
-
-  const handlerStillActive = () => {
-    clearInterval(template3_timer);
-    watchTemplate3();
-  };
 
   const handlerPromotionClick = (x: ISectionPromotion) => {
     serPromotion(x);
@@ -55,15 +40,18 @@ const Template3: React.FC = (): React.ReactElement => {
   };
 
   useEffect(() => {
-    if (state.personalData) {
+    if (state?.personalData?.age) {
       const fetch = state.personalData;
       const find = sectionPersonal.find((x) => x.sex === fetch.sex && fetch.age > x.age);
       if (find) {
         serPersonal(find);
-        const random = Math.round(Math.random() * find.size);
-        setMaxRandom(random);
+        // const random = Math.round(Math.random() * find.size);
+        // setMaxRandom(random);
       }
+    } else {
+      push('/');
     }
+    // eslint-disable-next-line
   }, [state.personalData]);
 
   useEffect(() => {
@@ -71,13 +59,6 @@ const Template3: React.FC = (): React.ReactElement => {
     if (findFlashSale) {
       setFlashSale(findFlashSale);
     }
-
-    handlerStillActive();
-
-    return () => {
-      clearInterval(template3_timer);
-    };
-
     // eslint-disable-next-line
   }, []);
 
@@ -102,7 +83,6 @@ const Template3: React.FC = (): React.ReactElement => {
 
   return (
     <Box
-      onClick={handlerStillActive}
       sx={{
         height: '100vh',
         width: '100%',
@@ -134,7 +114,7 @@ const Template3: React.FC = (): React.ReactElement => {
         </Title45>
       </XPTemplate>
 
-      {/* <Carousel height="32vh" animation="slide" indicators={false} autoPlay={false}>
+      <Carousel height="32vh" animation="slide" indicators={false} autoPlay={false}>
         {personal?.source?.map?.((x: any, i: number) => (
           <Box
             key={i}
@@ -148,9 +128,9 @@ const Template3: React.FC = (): React.ReactElement => {
             }}
           />
         ))}
-      </Carousel> */}
+      </Carousel>
 
-      <Box sx={{width: '100%', height: '32vh', zIndex: 1, position: 'relative'}}>
+      {/* <Box sx={{width: '100%', height: '32vh', zIndex: 1, position: 'relative'}}>
         <Box
           onClick={() => handlerContentClick(personal.source?.[maxRandom])}
           sx={{
@@ -161,7 +141,7 @@ const Template3: React.FC = (): React.ReactElement => {
             backgroundRepeat: 'no-repeat',
           }}
         />
-      </Box>
+      </Box> */}
 
       <Promotion onPromotionClick={handlerPromotionClick} onProductClick={handlerProductClick} />
       <Footer />

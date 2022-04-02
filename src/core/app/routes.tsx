@@ -15,8 +15,8 @@ import {Template3Service} from 'pages/template3/service/template3-service';
 const needMinHeight = 1;
 const needMinWidth = 1080;
 
-const personalTimer = 5000;
-const personalWhiteListRoute = ['/', '/template2'];
+const personalTimer = 3000;
+const personalWhiteListRoute = ['/', '/template2', '/template3'];
 
 const Routes: React.FunctionComponent = (): React.ReactElement => {
   const {push} = useHistory();
