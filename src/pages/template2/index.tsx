@@ -30,7 +30,10 @@ const Template2: React.FC = (): React.ReactElement => {
 
   const handlerProductClick = () => push('/interactive');
 
-  const handlerVideoEnded = () => push('/');
+  const handlerVideoEnded = () => {
+    console.log('tem2 ended')
+    push('/')
+  };
 
   const handlerCloseModal = () => {
     setVisible(false);

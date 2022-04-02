@@ -23,9 +23,11 @@ const Interactive: React.FC = (): React.ReactElement => {
   const handlerStillActive = () => {
     interactive_timer && clearInterval(interactive_timer);
 
-    interactive_timer = setInterval(() => {
-      push('/');
-    }, interactiveTimer);
+    if (interactive_timer) {
+      interactive_timer = setInterval(() => {
+        push('/');
+      }, interactiveTimer);
+    }
   };
 
   useEffect(() => {

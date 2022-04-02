@@ -39,13 +39,13 @@ const Template3: React.FC = (): React.ReactElement => {
 
   useEffect(() => {
     if (state?.age) {
-      const find = sectionPersonal.find((x) => x.sex === state.sex && state.age > x.age);
+      const find = sectionPersonal.find((x) => x.sex === state?.sex && state?.age > x.age);
       if (find) {
         serPersonal(find);
       }
     }
     // eslint-disable-next-line
-  }, [state.personalData]);
+  }, [state]);
 
   useEffect(() => {
     const findFlashSale = flashSaleData.find((x) => dayjs().isBetween(x.start, x.end));
