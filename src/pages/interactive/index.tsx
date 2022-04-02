@@ -12,6 +12,7 @@ import SmartSolution from './component/SmartSolution';
 import Directory from './component/Directory';
 import {Title45} from 'component/common/Font.styles';
 import {COLORS} from 'core/utils/constant';
+import Ads from './component/Ads';
 
 const interactiveTimer = 15000;
 
@@ -83,6 +84,7 @@ const Interactive: React.FC = (): React.ReactElement => {
         </Box>
         <Box sx={{ml: '1%', width: '65%', height: '67%'}}>
           <Directory />
+          <Ads />
         </Box>
       </Box>
       <Footer />
