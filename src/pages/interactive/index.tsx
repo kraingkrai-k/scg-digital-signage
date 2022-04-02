@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import Box from '@mui/material/Box';
 import {useHistory} from 'react-router-dom';
 
@@ -18,7 +18,7 @@ const interactiveTimer = 15000;
 const Interactive: React.FC = (): React.ReactElement => {
   const {push} = useHistory();
   
-  let [interactive_timer, setX] = useState<any>(null);
+  let interactive_timer: any = null;
 
   const watchInteractive = () => {
     interactive_timer = setInterval(() => {

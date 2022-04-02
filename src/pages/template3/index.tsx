@@ -35,7 +35,8 @@ const Template3: React.FC = (): React.ReactElement => {
   const [maxRandom, setMaxRandom] = useState<number>(0);
   const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
   const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
-  let [template3_timer, setX] = useState<any>(null);
+
+  let template3_timer: any = null;
 
   const watchTemplate3 = () => {
     template3_timer = setInterval(() => {
