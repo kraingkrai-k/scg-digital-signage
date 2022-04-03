@@ -11,6 +11,8 @@ import {IListSolution} from 'pages/interactive/model/listSolution';
 
 import {Grid} from '@mui/material';
 
+import {BASE_URL_MOBILE} from 'core/utils/env';
+
 export interface IMyModal {
   onOK: () => void;
   onCancel: () => void;
@@ -169,7 +171,7 @@ export const ModalBodySolution: React.FC<{data: IListSolution; isZone?: boolean}
                 margin: '12px',
               }}
             >
-              <QRCode value="hey" size={80} />
+              <QRCode value={`${BASE_URL_MOBILE}/${data.qrCode}`} size={80} />
             </Box>
 
             <Box sx={{display: 'grid'}}>

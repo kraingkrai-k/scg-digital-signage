@@ -2,10 +2,13 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import SvgIcon from '@mui/material/SvgIcon';
+import QRCode from 'react-qr-code';
 
 import {Title17, Title30} from 'component/common/Font.styles';
 import {IconPin} from 'assets/icon/Icon';
 import {ISectionPromotion} from 'pages/template3/model/promotion-data';
+import {COLORS} from 'core/utils/constant';
+import {BASE_URL_MOBILE} from 'core/utils/env';
 
 interface IModalPromotion {
   promotion: ISectionPromotion;
@@ -72,6 +75,7 @@ const ModalPromotion: React.FC<IModalPromotion> = ({promotion}): React.ReactElem
               sx={{
                 border: '2px solid #D5AF26',
                 boxShadow: '0px 4px 40px rgba(0, 0, 0, 0.12)',
+                background: COLORS.white,
                 borderRadius: '6px',
                 p: '12px',
                 pb: 0,
@@ -79,15 +83,9 @@ const ModalPromotion: React.FC<IModalPromotion> = ({promotion}): React.ReactElem
             >
               <Box sx={{display: 'grid'}}>
                 <Title17 sx={{textAlign: 'center'}}>แสกนรับสิทธิ์</Title17>
-                <Box
-                  sx={{
-                    backgroundImage: `url(${promotion?.qrCode})`,
-                    backgroundSize: 'contain',
-                    backgroundRepeat: 'no-repeat',
-                    height: '150px',
-                    width: '140px',
-                  }}
-                />
+                <Box sx={{margin: '12px'}}>
+                  <QRCode value={`${BASE_URL_MOBILE}/${promotion.qrCode}`} size={100} />
+                </Box>
               </Box>
             </Box>
           </Box>

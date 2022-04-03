@@ -1,5 +1,3 @@
-import MockQR from 'assets/images/mockQR.png';
-
 import Pro1 from 'assets/promotion/1.png';
 import Pro2 from 'assets/promotion/2.png';
 import Pro3 from 'assets/promotion/3.png';
@@ -31,7 +29,7 @@ export const sectionPromotion: ISectionPromotion[] = [
 - โปรโมชั่น หมดเขต 1 เม.ย.– 2 พ.ค. 65 และไม่สามารถใช้ร่วมกับโปรฯอื่นๆได้
 - ทางบริษัทฯขอสงวนสิทธิ์ในการเปลี่ยนแปลงโดยไม่ต้องแจ้งให้ทราบล่างหน้า
       `,
-    qrCode: MockQR,
+    qrCode: "z7.html",
   },
   {
     title: 'SCG Active AIR Quality นวัตกรรมกรองอากาศดีเข้าสู่บ้าน',
@@ -45,7 +43,7 @@ export const sectionPromotion: ISectionPromotion[] = [
 - โปรโมชั่น หมดเขต 1 เม.ย.– 2 พ.ค. 65 และไม่สามารถใช้ร่วมกับโปรฯอื่นๆได้
 - ทางบริษัทฯขอสงวนสิทธิ์ในการเปลี่ยนแปลงโดยไม่ต้องแจ้งให้ทราบล่างหน้า
       `,
-    qrCode: MockQR,
+    qrCode: "z7.html",
   },
   {
     title: 'SCG Solar Roof Solutions โซลูชั่นเพื่อบ้านประหยัดพลังงาน',
@@ -60,7 +58,7 @@ export const sectionPromotion: ISectionPromotion[] = [
 - โปรโมชั่น หมดเขต 1 เม.ย.– 2 พ.ค. 65 และไม่สามารถใช้ร่วมกับโปรฯอื่นๆได้
 - ทางบริษัทฯขอสงวนสิทธิ์ในการเปลี่ยนแปลงโดยไม่ต้องแจ้งให้ทราบล่างหน้า
     `,
-    qrCode: MockQR,
+    qrCode: "z7.html",
   },
   {
     title: 'โซลูชั่นตกแต่งภายนอก DECAAR by SCG',
@@ -80,7 +78,7 @@ HOT มาแรง!
     3) ผนัง/รั้ว ตกแต่งเอสซีจี เฟรทเวิร์ค (SCG FRETWORK)
     4) ผนัง/ระแนง ตกแต่งไลท์วูด (Litewood by Fameline)
     `,
-    qrCode: MockQR,
+    qrCode: "z7.html",
   },
   {
     title: 'พื้นไม้เทียม (Wood Plastic Composite) พร้อมบริการติดตั้ง',
@@ -94,7 +92,7 @@ NEW!
 - สินค้าพร้อมบริการติดตั้ง ราคาพิเศษ 2,699* บาทต่อตร.ม.
 หมายเหตุ *ปริมาณขั้นต่ำ 30 ตารางเมตร ราคาติดตั้งรวมแผ่น อุปกรณ์ ค่าแรงติดตั้ง  ไม่รวมฐานราก
     `,
-    qrCode: MockQR,
+    qrCode: "z7.html",
   },
   {
     title: 'บล็อก SCG HAPPY SPACE MENU พร้อมบริการติดตั้ง',
@@ -107,6 +105,6 @@ NEW!
 
 หมายเหตุ *ปริมาณขั้นต่ำ 30 ตารางเมตร ราคาติดตั้งรวมแผ่น อุปกรณ์ ค่าแรงติดตั้ง  ไม่รวมฐานราก
 `,
-    qrCode: MockQR,
+    qrCode: "z7.html",
   },
 ];
