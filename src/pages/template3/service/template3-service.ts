@@ -51,11 +51,11 @@ export const Template3Service = (): ITemplate3Service => {
 
   return {
     getPersonalData: async (): Promise<IPersonalData> => {
-      // mock
-      if (true) {
-        const dataFromFetch = Math.round(Math.random() * 7);
-        return Promise.resolve(dataConverter(mockPersonalData[dataFromFetch]));
-      }
+      // // mock
+      // if (true) {
+      //   const dataFromFetch = Math.round(Math.random() * 7);
+      //   return Promise.resolve(dataConverter(mockPersonalData[dataFromFetch]));
+      // }
 
       const {status, data} = await axios.get(`http://192.168.1.168:8001/genderage`);
       if (status === 200) {
