@@ -9,7 +9,6 @@ import BGFooter from 'assets/images/bg-footer.png';
 
 import Footer from 'component/Footer';
 import NavVideoBar, {INavVideoBar} from 'component/NavVideoBar';
-import NavbarShape from 'component/NavbarShape';
 import {XPTemplate} from 'component/XPRecommend';
 import Promotion from 'component/Promotion';
 import {Title45} from 'component/common/Font.styles';
@@ -91,11 +90,6 @@ const Template3: React.FC = (): React.ReactElement => {
 
       <Box sx={{height: '10%', position: 'relative'}}>
         <NavVideoBar {...flashSale} />
-        {/* workaround keep layout */}
-        <Box sx={{opacity: 0}}>
-          <NavbarShape />
-        </Box>
-        {/* keep layout */}
       </Box>
 
       <XPTemplate>

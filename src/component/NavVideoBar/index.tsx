@@ -4,6 +4,7 @@ import Fade from '@mui/material/Fade';
 
 import Navbar, {NavbarTemplate1} from 'component/Navbar';
 import VideoPlayer from '../VideoPlayer';
+import NavbarShape from 'component/NavbarShape';
 
 export interface INavVideoBar {
   video?: any;
@@ -13,6 +14,9 @@ const MyComponent = React.forwardRef((props: any, ref: any) => {
   return (
     <div ref={ref} {...props}>
       <VideoPlayer source={props?.source} loop={true} onEnded={() => {}} />
+      <Box sx={{opacity: 0}}>
+        <NavbarShape />
+      </Box>
     </div>
   );
 });
@@ -42,7 +46,10 @@ const NavVideoBar: React.FC<INavVideoBar> = ({video}): React.ReactElement => {
           <MyComponent source={video} loop={true} onEnded={() => {}} />
         </Fade>
       ) : (
-        <Navbar />
+        <>
+          <Navbar />
+          <NavbarShape />
+        </>
       )}
     </Box>
   );

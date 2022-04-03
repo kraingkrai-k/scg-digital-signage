@@ -6,8 +6,6 @@ import dayjs from 'dayjs';
 import BGFooter from 'assets/images/bg-footer.png';
 
 import Footer from 'component/Footer';
-// import Navbar from 'component/Navbar';
-import NavbarShape from 'component/NavbarShape';
 import {XPDirectory} from 'component/XPRecommend';
 import {Title40} from 'component/common/Font.styles';
 import {COLORS} from 'core/utils/constant';
@@ -86,11 +84,6 @@ const Directory: React.FC = (): React.ReactElement => {
     >
       <Box sx={{height: '10%', position: 'relative'}}>
         <NavVideoBar {...flashSale} />
-        {/* workaround keep layout */}
-        <Box sx={{opacity: 0}}>
-          <NavbarShape />
-        </Box>
-        {/* keep layout */}
       </Box>
 
       <XPDirectory>

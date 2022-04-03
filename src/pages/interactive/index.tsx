@@ -6,8 +6,6 @@ import dayjs from 'dayjs';
 import BGFooter from 'assets/images/bg-footer.png';
 
 import Footer from 'component/Footer';
-// import Navbar from 'component/Navbar';
-import NavbarShape from 'component/NavbarShape';
 import {XPInteractive} from 'component/XPRecommend';
 import SmartSolution from './component/SmartSolution';
 import Directory from './component/Directory';
@@ -67,14 +65,6 @@ const Interactive: React.FC = (): React.ReactElement => {
     >
       <Box sx={{height: '10%', position: 'relative'}}>
         <NavVideoBar {...flashSale} />
-        {/* workaround keep layout */}
-        <Box sx={{opacity: 0}}>
-          <NavbarShape />
-        </Box>
-        {/* keep layout */}
-
-        {/* <Navbar />
-        <NavbarShape /> */}
       </Box>
 
       <XPInteractive>

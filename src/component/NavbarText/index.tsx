@@ -53,7 +53,7 @@ const NavbarText: React.FC<INavbarText> = ({isTemplate1 = true}): React.ReactEle
                 <Grid item>
                     <Text style={{color: isTemplate1 ? COLORS.red : COLORS.black2}}>
                         <span className="italic">
-                            ทุกโซโลชัน
+                            ทุกโซลูชัน
                         </span>
                     </Text>
                 </Grid>
