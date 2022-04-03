@@ -83,6 +83,7 @@ const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.Re
 
   const handlerZoneClick = (x: IListZone) => {
     setFloor(x.floor);
+    mapZoneSelected(x.zone);
     setZone(x.id);
   };
 
