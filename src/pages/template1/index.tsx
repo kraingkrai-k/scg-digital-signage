@@ -37,7 +37,7 @@ const Template1: React.FC = (): React.ReactElement => {
           height: '55%',
         }}
       >
-        <Video onEnded={handlerProductClick} source={V1} />
+        <Video onEnded={() => push('/template2')} source={V1} />
         <Box
           sx={{
             background: 'linear-gradient(180deg, #EC1C24 10.42%, rgba(236, 28, 36, 0) 100%)',
@@ -55,6 +55,8 @@ const Template1: React.FC = (): React.ReactElement => {
           display: 'flex',
           justifyContent: 'center',
           mt: '2%',
+          position: 'relative',
+          zIndex: 1,
         }}
       >
         <Button invert={false} onClick={handlerProductClick} />
