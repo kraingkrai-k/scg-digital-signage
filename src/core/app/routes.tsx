@@ -27,10 +27,13 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
   const currentWidth = window?.innerWidth || 0;
   const currentHeight = window?.innerHeight || 0;
 
+  let mounted = true;
+
   useEffect(() => {
     if (personalWhiteListRoute.indexOf(pathname) !== -1) {
       handlerPersonalRoute();
     } else {
+      mounted = false;
       personal_timer?.current && clearInterval(personal_timer.current);
     }
 
@@ -45,6 +48,9 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
       Template3Service()
         .getPersonalData()
         .then((x) => {
+          if (!mounted) {
+            return;
+          }
           if (x?.age && x.age !== 0) {
             push('/template3', x);
           } else {
@@ -54,10 +60,14 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
           }
         })
         .catch((e) => {
+          console.log('personal err', e);
+          if (!mounted) {
+            return;
+          }
+
           if (pathname !== '/template2') {
             push('/');
           }
-          console.log('personal err', e);
         });
     }, personalTimer);
   };
