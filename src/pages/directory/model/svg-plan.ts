@@ -36,7 +36,7 @@ import P_F3_Z13 from 'assets/floorImages/p_f3_z13.png';
 export const bodyPlan: {[key: string]: IListSolution} = {
   z1: {
     id: 1,
-    text: 'Care Living Solutin',
+    text: 'Care Living Solution',
     subTitle: 'ชั้น 1',
     image: F1_Z1,
     qrCode: 'z1.html',

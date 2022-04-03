@@ -63,9 +63,9 @@ interface ITabs {
 }
 
 const Tabs: React.FC<ITabs> = ({floor, setFloor}): React.ReactElement => {
-    const {goBack} = useHistory()
+    const {push} = useHistory()
 
-    const handlerBack = () => goBack()
+    const handlerBack = () => push('/interactive')
 
     return (
         <Box sx={{display: 'flex'}}>
