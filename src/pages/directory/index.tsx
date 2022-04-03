@@ -69,7 +69,6 @@ const Directory: React.FC = (): React.ReactElement => {
     setFloor(x);
   };
 
-  // scale interactive page
   return (
     <Box
       onClick={handlerStillActive}

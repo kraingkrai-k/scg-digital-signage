@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Box from '@mui/material/Box';
 import {useHistory} from 'react-router-dom';
 import dayjs from 'dayjs';
@@ -22,13 +22,13 @@ const Interactive: React.FC = (): React.ReactElement => {
 
   const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
 
-  let interactive_timer: NodeJS.Timer | null = null;
+  let interactive_timer: {current: NodeJS.Timer | null} = useRef(null);
 
   const handlerStillActive = () => {
-    interactive_timer && clearInterval(interactive_timer);
+    interactive_timer?.current && clearInterval(interactive_timer.current);
 
     if (interactive_timer) {
-      interactive_timer = setInterval(() => {
+      interactive_timer.current = setInterval(() => {
         push('/');
       }, interactiveTimer);
     }
@@ -40,12 +40,12 @@ const Interactive: React.FC = (): React.ReactElement => {
       setFlashSale(findFlashSale);
     }
 
-    interactive_timer = setInterval(() => {
+    interactive_timer.current = setInterval(() => {
       push('/');
     }, interactiveTimer);
 
     return () => {
-      interactive_timer && clearInterval(interactive_timer);
+      interactive_timer?.current && clearInterval(interactive_timer.current);
     };
 
     // eslint-disable-next-line
