@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Route, Switch, useHistory, useLocation} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -22,7 +22,7 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
   const {pathname} = useLocation();
   const [show, setShow] = useState<boolean>(false);
 
-  let personal_timer: any;
+  let personal_timer: {current: NodeJS.Timer | null} = useRef(null);
 
   const currentWidth = window?.innerWidth || 0;
   const currentHeight = window?.innerHeight || 0;
@@ -31,17 +31,17 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
     if (personalWhiteListRoute.indexOf(pathname) !== -1) {
       handlerPersonalRoute();
     } else {
-      clearInterval(personal_timer);
+      personal_timer?.current && clearInterval(personal_timer.current);
     }
 
     return () => {
-      clearInterval(personal_timer);
+      personal_timer?.current && clearInterval(personal_timer.current);
     };
     // eslint-disable-next-line
   }, [pathname]);
 
   const handlerPersonalRoute = () => {
-    personal_timer = setInterval(() => {
+    personal_timer.current = setInterval(() => {
       Template3Service()
         .getPersonalData()
         .then((x) => {

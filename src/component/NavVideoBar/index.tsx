@@ -57,6 +57,14 @@ const NavVideoBar: React.FC<INavVideoBar> = ({video}): React.ReactElement => {
 
 export default NavVideoBar;
 
+const MyComponentTemp1 = React.forwardRef((props: any, ref: any) => {
+  return (
+    <div ref={ref} {...props}>
+      <VideoPlayer source={props?.source} loop={true} onEnded={() => {}} />
+    </div>
+  );
+});
+
 export const NavVideoBarTemp1: React.FC<INavVideoBar> = ({video}): React.ReactElement => {
   const [fade, setFade] = useState<boolean>(false);
 
@@ -79,7 +87,7 @@ export const NavVideoBarTemp1: React.FC<INavVideoBar> = ({video}): React.ReactEl
     >
       {fade ? (
         <Fade in={fade} unmountOnExit timeout={{enter: 3000}}>
-          <MyComponent source={video} loop={true} onEnded={() => {}} />
+          <MyComponentTemp1 source={video} loop={true} onEnded={() => {}} />
         </Fade>
       ) : (
         <NavbarTemplate1 />
