@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Box from '@mui/material/Box';
 import {useHistory, useLocation} from 'react-router-dom';
 import dayjs from 'dayjs';
@@ -13,8 +13,8 @@ import {Title40} from 'component/common/Font.styles';
 import {COLORS} from 'core/utils/constant';
 import Tabs from './component/Tabs';
 import Content from './component/Content';
-import NavVideoBar, { INavVideoBar } from 'component/NavVideoBar';
-import { flashSaleData } from 'pages/template3/model/flash-sale-data';
+import NavVideoBar, {INavVideoBar} from 'component/NavVideoBar';
+import {flashSaleData} from 'pages/template3/model/flash-sale-data';
 
 const directoryTimer = 15000;
 
@@ -26,17 +26,14 @@ const Directory: React.FC = (): React.ReactElement => {
   const [zone, setZone] = useState<number>(-1);
   const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
 
-  let directory_timer: NodeJS.Timer | null = null;
+  let directory_timer: {current: NodeJS.Timer | null} = useRef(null);
 
   const handlerStillActive = () => {
-    // @ts-ignore
-    clearInterval(directory_timer);
+    directory_timer?.current && clearInterval(directory_timer.current);
 
-    if (directory_timer) {
-      directory_timer = setInterval(() => {
-        push('/');
-      }, directoryTimer);
-    }
+    directory_timer.current = setInterval(() => {
+      push('/');
+    }, directoryTimer);
   };
 
   useEffect(() => {
@@ -55,16 +52,16 @@ const Directory: React.FC = (): React.ReactElement => {
       setFlashSale(findFlashSale);
     }
 
-    directory_timer = setInterval(() => {
+    directory_timer.current = setInterval(() => {
       push('/');
     }, directoryTimer);
 
     return () => {
-      directory_timer && clearInterval(directory_timer);
+      directory_timer?.current && clearInterval(directory_timer.current);
     };
 
     // eslint-disable-next-line
-  }, []);
+  }, [directory_timer]);
 
   const handlerSetZone = (x: number) => {
     setZone(x);
@@ -88,7 +85,7 @@ const Directory: React.FC = (): React.ReactElement => {
       }}
     >
       <Box sx={{height: '10%', position: 'relative'}}>
-      <NavVideoBar {...flashSale} />
+        <NavVideoBar {...flashSale} />
         {/* workaround keep layout */}
         <Box sx={{opacity: 0}}>
           <NavbarShape />
