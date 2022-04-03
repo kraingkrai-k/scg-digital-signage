@@ -52,9 +52,9 @@ export const sectionPersonal: ISectionPersonal[] = [
     age: 49,
     size: 3,
     source: [
-      {floor: 1, zone: 'z1', item: M_Over_50_1},
-      {floor: 1, zone: 'z1', item: M_Over_50_2},
-      {floor: 1, zone: 'z1', item: M_Over_50_3},
+      {floor: 1, zone: 'z5', item: M_Over_50_1},
+      {floor: 1, zone: 'z4', item: M_Over_50_2},
+      {floor: 1, zone: 'z6', item: M_Over_50_3},
       {floor: 1, zone: 'z1', item: M_Over_50_4},
     ],
   },
@@ -66,9 +66,9 @@ export const sectionPersonal: ISectionPersonal[] = [
     age: 34,
     size: 2,
     source: [
-      {floor: 1, zone: 'z1', item: M_35_50_1},
-      {floor: 1, zone: 'z1', item: M_35_50_2},
-      {floor: 1, zone: 'z1', item: M_35_50_3},
+      {floor: 1, zone: 'z5', item: M_35_50_1},
+      {floor: 1, zone: 'z4', item: M_35_50_2},
+      {floor: 1, zone: 'z6', item: M_35_50_3},
     ],
   },
   {
@@ -80,10 +80,10 @@ export const sectionPersonal: ISectionPersonal[] = [
     size: 4,
     source: [
       {floor: 1, zone: 'z1', item: M_Less_35_1},
-      {floor: 1, zone: 'z1', item: M_Less_35_2},
-      {floor: 1, zone: 'z1', item: M_Less_35_3},
-      {floor: 1, zone: 'z1', item: M_Less_35_4},
-      {floor: 1, zone: 'z1', item: M_Less_35_5},
+      {floor: 1, zone: 'z4', item: M_Less_35_2},
+      {floor: 1, zone: 'z7', item: M_Less_35_3},
+      {floor: 1, zone: 'z6', item: M_Less_35_4},
+      {floor: 1, zone: 'z5', item: M_Less_35_5},
     ],
   },
   {
@@ -94,10 +94,10 @@ export const sectionPersonal: ISectionPersonal[] = [
     age: 49,
     size: 3,
     source: [
-      {floor: 1, zone: 'z1', item: F_Over_50_1},
+      {floor: 1, zone: 'z4', item: F_Over_50_1},
       {floor: 1, zone: 'z1', item: F_Over_50_2},
-      {floor: 1, zone: 'z1', item: F_Over_50_3},
-      {floor: 1, zone: 'z1', item: F_Over_50_4},
+      {floor: 1, zone: 'z6', item: F_Over_50_3},
+      {floor: 1, zone: 'z5', item: F_Over_50_4},
     ],
   },
   {
@@ -108,10 +108,10 @@ export const sectionPersonal: ISectionPersonal[] = [
     age: 34,
     size: 3,
     source: [
-      {floor: 1, zone: 'z1', item: F_35_50_1},
-      {floor: 1, zone: 'z1', item: F_35_50_2},
-      {floor: 1, zone: 'z1', item: F_35_50_3},
-      {floor: 1, zone: 'z1', item: F_35_50_4},
+      {floor: 1, zone: 'z4', item: F_35_50_1},
+      {floor: 1, zone: 'z7', item: F_35_50_2},
+      {floor: 1, zone: 'z6', item: F_35_50_3},
+      {floor: 1, zone: 'z5', item: F_35_50_4},
     ],
   },
   {
@@ -123,10 +123,10 @@ export const sectionPersonal: ISectionPersonal[] = [
     size: 4,
     source: [
       {floor: 1, zone: 'z1', item: F_Less_35_1},
-      {floor: 1, zone: 'z1', item: F_Less_35_2},
-      {floor: 1, zone: 'z1', item: F_Less_35_3},
-      {floor: 1, zone: 'z1', item: F_Less_35_4},
-      {floor: 1, zone: 'z1', item: F_Less_35_5},
+      {floor: 1, zone: 'z4', item: F_Less_35_2},
+      {floor: 1, zone: 'z7', item: F_Less_35_3},
+      {floor: 1, zone: 'z6', item: F_Less_35_4},
+      {floor: 1, zone: 'z5', item: F_Less_35_5},
     ],
   },
 ];
