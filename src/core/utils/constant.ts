@@ -11,6 +11,7 @@ export const COLORS = {
   black2: '#202020',
   gold: '#D5AF26',
   holder1: '#C4C4C4',
+  paper: '#F2F2F2'
 };
 
 // background: linear-gradient(180deg, #CFCFCF 0%, #E6E6E6 100%);

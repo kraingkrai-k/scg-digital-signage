@@ -2,6 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import SvgIcon from '@mui/material/SvgIcon';
+import QRCode from 'react-qr-code';
 
 import {Title17, Title20, Title30} from 'component/common/Font.styles';
 import {IconCloseModal} from 'assets/icon/Icon';
@@ -27,7 +28,7 @@ const MyModal: React.FC<IMyModal> = ({onCancel, onOK, visible, children}): React
           left: '50%',
           transform: 'translate(-50%, -50%)',
           width: '94%',
-          bgcolor: 'background.paper',
+          bgcolor: COLORS.paper,
           display: 'flex',
         }}
       >
@@ -157,19 +158,19 @@ export const ModalBodySolution: React.FC<{data: IListSolution; isZone?: boolean}
               position: 'absolute',
               display: 'flex',
               alignItems: 'center',
-              bottom: 0
+              bottom: '-5%',
             }}
           >
             <Box
               sx={{
-                backgroundImage: `url(${data.qrCode})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'repeat',
-                objectFit: 'contain',
-                height: '100px',
-                width: '100px',
+                background: COLORS.white,
+                padding: '16px',
+                paddingBottom: '10px',
+                margin: '12px',
               }}
-            />
+            >
+              <QRCode value="hey" size={80} />
+            </Box>
 
             <Box sx={{display: 'grid'}}>
               <Title17 sx={{fontWeight: 400}}>สแกน QR</Title17>

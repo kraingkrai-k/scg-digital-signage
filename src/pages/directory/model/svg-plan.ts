@@ -40,7 +40,7 @@ export const bodyPlan: {[key: string]: IListSolution} = {
     text: 'Care Living Solutin',
     subTitle: 'ชั้น 1',
     image: F1_Z1,
-    qrCode: MockQR,
+    qrCode: 'z1.html',
     listDetail: [
       'ออกแบบห้องน้ำวัยเก๋า',
       'ออกแบบห้องนอนวัยเก๋า',
