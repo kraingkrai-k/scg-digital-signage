@@ -14,7 +14,8 @@ import Content from './component/Content';
 import NavVideoBar, {INavVideoBar} from 'component/NavVideoBar';
 import {flashSaleData} from 'pages/template3/model/flash-sale-data';
 
-const directoryTimer = 15000;
+// const directoryTimer = 15000;
+const directoryTimer = 180000; // 3min
 
 const Directory: React.FC = (): React.ReactElement => {
   const {state}: any = useLocation();

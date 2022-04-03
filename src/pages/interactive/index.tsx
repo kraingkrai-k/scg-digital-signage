@@ -13,9 +13,10 @@ import {Title45} from 'component/common/Font.styles';
 import {COLORS} from 'core/utils/constant';
 import Ads from './component/Ads';
 import NavVideoBar, {INavVideoBar} from 'component/NavVideoBar';
-import { flashSaleData } from 'pages/template3/model/flash-sale-data';
+import {flashSaleData} from 'pages/template3/model/flash-sale-data';
 
-const interactiveTimer = 15000;
+// const interactiveTimer = 15000;
+const interactiveTimer = 180000; // 3min
 
 const Interactive: React.FC = (): React.ReactElement => {
   const {push} = useHistory();
