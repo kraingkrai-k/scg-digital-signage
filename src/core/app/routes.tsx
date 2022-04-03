@@ -48,11 +48,15 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
           if (x?.age && x.age !== 0) {
             push('/template3', x);
           } else {
-            push('/');
+            if (pathname !== '/template2') {
+              push('/');
+            }
           }
         })
         .catch((e) => {
-          push('/');
+          if (pathname !== '/template2') {
+            push('/');
+          }
           console.log('personal err', e);
         });
     }, personalTimer);
