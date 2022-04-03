@@ -1,6 +1,9 @@
 import {IMLPersonalData, IPersonalData} from 'core/context';
 import axios from 'axios';
 
+import {BASE_URL_REST, IS_MOCKUP} from "core/utils/env";
+
+console.log('BASE_URL_REST:',  BASE_URL_REST)
 export interface ITemplate3Service {
   getPersonalData: () => Promise<IPersonalData>;
 }
@@ -51,13 +54,14 @@ export const Template3Service = (): ITemplate3Service => {
 
   return {
     getPersonalData: async (): Promise<IPersonalData> => {
-      // // mock
-      // if (true) {
-      //   const dataFromFetch = Math.round(Math.random() * 7);
-      //   return Promise.resolve(dataConverter(mockPersonalData[7]));
-      // }
 
-      const {status, data} = await axios.get(`http://192.168.1.168:8001/genderage`);
+      if (IS_MOCKUP) {
+        // mock
+        const random = Math.round(Math.random() * 7);
+        return Promise.resolve(dataConverter(mockPersonalData[random]));
+      }
+
+      const {status, data} = await axios.get(`${BASE_URL_REST}/genderage`);
       if (status === 200) {
         console.log(data);
         return Promise.resolve(dataConverter(data));
