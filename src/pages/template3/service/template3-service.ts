@@ -24,13 +24,13 @@ export const Template3Service = (): ITemplate3Service => {
       case 'empty':
         return {} as IPersonalData;
       case 'young':
-        age = 30;
+        age = 2;
         break;
       case 'middle_range':
-        age = 40;
+        age = 36;
         break;
       case 'old':
-        age = 50;
+        age = 51;
         break;
     }
     switch (data.gender) {

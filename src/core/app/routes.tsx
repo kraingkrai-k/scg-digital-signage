@@ -45,7 +45,7 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
       Template3Service()
         .getPersonalData()
         .then((x) => {
-          if (x?.age) {
+          if (x?.age && x.age !== 0) {
             push('/template3', x);
           } else {
             push('/');

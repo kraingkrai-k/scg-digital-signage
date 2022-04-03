@@ -49,7 +49,7 @@ export const sectionPersonal: ISectionPersonal[] = [
     meta: 'male over 50',
     type: 'images',
     sex: 'M',
-    age: 49,
+    age: 51,
     size: 3,
     source: [
       {floor: 1, zone: 'z5', item: M_Over_50_1},
@@ -63,7 +63,7 @@ export const sectionPersonal: ISectionPersonal[] = [
     meta: 'male 35-50',
     type: 'images',
     sex: 'M',
-    age: 34,
+    age: 35,
     size: 2,
     source: [
       {floor: 1, zone: 'z5', item: M_35_50_1},
@@ -91,7 +91,7 @@ export const sectionPersonal: ISectionPersonal[] = [
     meta: 'female over 50',
     type: 'images',
     sex: 'F',
-    age: 49,
+    age: 51,
     size: 3,
     source: [
       {floor: 1, zone: 'z4', item: F_Over_50_1},
@@ -105,7 +105,7 @@ export const sectionPersonal: ISectionPersonal[] = [
     meta: 'female 35-50',
     type: 'images',
     sex: 'F',
-    age: 34,
+    age: 35,
     size: 3,
     source: [
       {floor: 1, zone: 'z4', item: F_35_50_1},
