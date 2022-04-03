@@ -105,9 +105,9 @@ export const ModalBodySolution: React.FC<{data: IListSolution; isZone?: boolean}
             overflowY: 'scroll',
           }}
         >
-          <Box sx={{display: 'flex', gap: 3, alignItems: 'center'}}>
-            {!isZone ? <SvgIcon component={data.icon} inheritViewBox sx={{width: '18%', height: '18%'}} /> : <></>}
-
+          <Box sx={{display: 'flex', alignItems: 'center', overflowX: 'hiddle'}}>
+            {/* {!isZone ? <SvgIcon component={data.icon} inheritViewBox sx={{width: '18%', height: '18%'}} /> : <></>} */}
+            {!isZone ? <img alt={data.text} src={data.icon} width="100px" height="100px" /> : <></>}
             <Box sx={{display: 'grid', justifyItems: 'baseline'}}>
               <Title30 sx={{color: COLORS.red}}>{data.text}</Title30>
 
@@ -126,7 +126,8 @@ export const ModalBodySolution: React.FC<{data: IListSolution; isZone?: boolean}
                   desktop: '150px',
                 },
                 width: '100%',
-                mt: '7%',
+                mt: '2%',
+                // mt: '7%',
                 mb: '8%',
               }}
             />
