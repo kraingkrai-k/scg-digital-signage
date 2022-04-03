@@ -51,7 +51,10 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
             push('/');
           }
         })
-        .catch((e) => console.log('personal err', e));
+        .catch((e) => {
+          push('/');
+          console.log('personal err', e);
+        });
     }, personalTimer);
   };
 

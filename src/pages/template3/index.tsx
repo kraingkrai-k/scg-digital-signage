@@ -107,7 +107,7 @@ const Template3: React.FC = (): React.ReactElement => {
         </Title45>
       </XPTemplate>
 
-      <Carousel height="32vh" animation="slide" indicators={false} autoPlay={false}>
+      <Carousel height="32vh" animation="slide" indicators={false} autoPlay={true} interval={5000}>
         {personal?.source?.map?.((x: any, i: number) => (
           <Box
             key={i}
