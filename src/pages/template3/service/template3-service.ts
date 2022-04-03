@@ -18,7 +18,7 @@ const mockPersonalData = [
 
 export const Template3Service = (): ITemplate3Service => {
   const dataConverter = (data: IMLPersonalData) => {
-    let age = 30;
+    let age = 0;
     let sex = 'F';
     switch (data.age) {
       case 'empty':
@@ -30,7 +30,7 @@ export const Template3Service = (): ITemplate3Service => {
         age = 36;
         break;
       case 'old':
-        age = 51;
+        age = 52;
         break;
     }
     switch (data.gender) {
@@ -54,7 +54,7 @@ export const Template3Service = (): ITemplate3Service => {
       // // mock
       // if (true) {
       //   const dataFromFetch = Math.round(Math.random() * 7);
-      //   return Promise.resolve(dataConverter(mockPersonalData[dataFromFetch]));
+      //   return Promise.resolve(dataConverter(mockPersonalData[7]));
       // }
 
       const {status, data} = await axios.get(`http://192.168.1.168:8001/genderage`);
