@@ -15,7 +15,7 @@ import {flashSaleData} from 'pages/template3/model/flash-sale-data';
 const Template1: React.FC = (): React.ReactElement => {
   const {push} = useHistory();
 
-  const handlerProductClick = () => push('/template2');
+  const handlerProductClick = () => push('/interactive');
   const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
 
   useEffect(() => {
