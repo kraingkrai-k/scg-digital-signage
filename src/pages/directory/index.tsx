@@ -24,6 +24,7 @@ const Directory: React.FC = (): React.ReactElement => {
   const [floor, setFloor] = useState<number>(1);
   const [zone, setZone] = useState<number>(-1);
   const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
+  const [flashSaleShow, setFlashSaleShow] = useState<boolean>(false);
 
   let directory_timer: {current: NodeJS.Timer | null} = useRef(null);
 
@@ -83,10 +84,10 @@ const Directory: React.FC = (): React.ReactElement => {
       }}
     >
       <Box sx={{height: '10%', position: 'relative'}}>
-        <NavVideoBar {...flashSale} />
+        <NavVideoBar {...flashSale} setFlashSaleShow={setFlashSaleShow} />
       </Box>
 
-      <XPDirectory>
+      <XPDirectory flashSaleShow={flashSaleShow}>
         <Title40>
           “ เลือกโซนที่สนใจจาก <span style={{color: COLORS.red}}>แผนผัง</span>
         </Title40>

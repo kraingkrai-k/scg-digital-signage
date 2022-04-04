@@ -22,6 +22,7 @@ const Interactive: React.FC = (): React.ReactElement => {
   const {push} = useHistory();
 
   const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
+  const [flashSaleShow, setFlashSaleShow] = useState<boolean>(false);
 
   let interactive_timer: {current: NodeJS.Timer | null} = useRef(null);
 
@@ -65,10 +66,10 @@ const Interactive: React.FC = (): React.ReactElement => {
       }}
     >
       <Box sx={{height: '10%', position: 'relative'}}>
-        <NavVideoBar {...flashSale} />
+        <NavVideoBar {...flashSale} setFlashSaleShow={setFlashSaleShow} />
       </Box>
 
-      <XPInteractive>
+      <XPInteractive flashSaleShow={flashSaleShow}>
         <Title45>
           “ น้อง XP <span style={{color: COLORS.red}}>เลือกสินค้าและบริการ</span>
         </Title45>

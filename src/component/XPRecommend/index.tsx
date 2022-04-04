@@ -35,20 +35,20 @@ export const XPTemplate: React.FC<IXPTemplate> = ({children, flashSaleShow}): Re
         sx={{
           width: {
             monitor43: '30%',
-            desktop: flashSaleShow ? '24%' : '30%',
+            desktop: flashSaleShow ? '18%' : '30%',
           },
           height: {
             monitor43: '35%',
-            desktop: flashSaleShow ? '24%' : '35%',
+            desktop: flashSaleShow ? '18%' : '35%',
           },
           right: {
             monitor43: 0,
-            desktop: flashSaleShow ? '4%' : '3%',
+            desktop: flashSaleShow ? '8%' : '3%',
           },
           position: 'absolute',
           top: {
             monitor43: 0,
-            desktop: flashSaleShow ? '5%' : '-2%',
+            desktop: flashSaleShow ? '9.5%' : '-2%',
           },
           zIndex: 1,
         }}
@@ -59,7 +59,7 @@ export const XPTemplate: React.FC<IXPTemplate> = ({children, flashSaleShow}): Re
   </Box>
 );
 
-export const XPInteractive: React.FC = ({children}): React.ReactElement => (
+export const XPInteractive: React.FC<IXPTemplate> = ({children, flashSaleShow}): React.ReactElement => (
   <Box
     sx={{
       backgroundImage: `url(${BGFooter})`,
@@ -83,20 +83,20 @@ export const XPInteractive: React.FC = ({children}): React.ReactElement => (
         sx={{
           width: {
             monitor43: '30%',
-            desktop: '30%',
+            desktop: flashSaleShow ? '18%' : '30%',
           },
           height: {
             monitor43: '35%',
-            desktop: '25%',
+            desktop: flashSaleShow ? '18%' : '25%',
           },
           position: 'absolute',
           right: {
             monitor43: '4%',
-            desktop: '3%',
+            desktop: flashSaleShow ? '8%' : '3%',
           },
           top: {
             monitor43: 0,
-            desktop: '7%',
+            desktop: flashSaleShow ? '11.5%' : '7%',
           },
           zIndex: 1,
         }}
@@ -107,7 +107,7 @@ export const XPInteractive: React.FC = ({children}): React.ReactElement => (
   </Box>
 );
 
-export const XPDirectory: React.FC = ({children}): React.ReactElement => (
+export const XPDirectory: React.FC<IXPTemplate> = ({children, flashSaleShow}): React.ReactElement => (
   <Box
     sx={{
       backgroundImage: `url(${BGFooter})`,
@@ -131,16 +131,20 @@ export const XPDirectory: React.FC = ({children}): React.ReactElement => (
         sx={{
           width: {
             monitor43: '30%',
-            desktop: '25%',
+            desktop: flashSaleShow ? '18%' : '25%',
           },
           height: {
             monitor43: '35%',
-            desktop: '30%',
+            desktop: flashSaleShow ? '18%' : '30%',
           },
           position: 'absolute',
           right: {
             monitor43: 0,
-            desktop: '5%',
+            desktop: flashSaleShow ? '10%' : '5%',
+          },
+          top: {
+            monitor43: 0,
+            desktop: flashSaleShow ? '10%' : 0,
           },
           zIndex: 1,
         }}
