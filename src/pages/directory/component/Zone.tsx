@@ -29,10 +29,7 @@ const Zone: React.FC<IZone> = ({zone, onClick}): React.ReactElement => {
           monitor43: '5%',
           desktop: '5%',
         },
-        pb: {
-          monitor43: '5%',
-          desktop: '5%',
-        },
+        pb: '4%'
       }}
     >
       <Title20
@@ -48,7 +45,7 @@ const Zone: React.FC<IZone> = ({zone, onClick}): React.ReactElement => {
         sx={{
           display: 'grid',
           justifyItems: 'center',
-          gap: 2,
+          // gap: ,
           gridTemplateColumns: 'repeat(3, 1fr)',
           textAlign: 'center',
         }}
@@ -72,10 +69,8 @@ const Zone: React.FC<IZone> = ({zone, onClick}): React.ReactElement => {
                   desktop: '80px',
                 },
                 p: 1,
-                borderRadius: {
-                  monitor43: '12px',
-                  desktop: '12px',
-                },
+                mb: 2,
+                borderRadius: '12px',
                 background: acitve ? COLORS.red : COLORS.white,
                 color: acitve ? COLORS.white : COLORS.balck,
               }}

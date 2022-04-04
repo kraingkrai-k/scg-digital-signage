@@ -35,14 +35,8 @@ type IState = {
 
 const sizePlan = {
   ml: '4%',
-  width: {
-    monitor43: '1500px',
-    desktop: '100%',
-  },
-  height: {
-    monitor43: '1500px',
-    desktop: '80%',
-  },
+  width: '100%',
+  height: '95%'
 };
 
 const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.ReactElement => {
@@ -93,10 +87,19 @@ const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.Re
 
   return (
     <Box
+      // sx={{
+      //   display: 'grid',
+      //   width: '100%',
+      //   justifyItems: 'end',
+      //   // gap: 4,
+      //   gridTemplateColumns: 'repeat(2, 1fr)',
+      //   mt: '3%',
+      // }}
       sx={{
-        display: 'grid',
-        justifyItems: 'center',
-        gap: 4,
+        display: 'flex',
+        width: '100%',
+        justifyItems: 'end',
+        gap: 6,
         gridTemplateColumns: 'repeat(2, 1fr)',
         mt: '3%',
       }}
@@ -104,7 +107,7 @@ const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.Re
       <MyModal onOK={handlerOKModal} onCancel={handlerCloseModal} visible={modal.visible}>
         <ModalBodySolution data={modal.data} isZone={true} />
       </MyModal>
-      <Box sx={{width: '100%', mt: '10%'}}>
+      <Box sx={{width: '100%', mt: '7%'}}>
         {/* workaround keep dom element */}
         <Box sx={{width: '100%', height: '100%', display: floor === 1 ? 'auto' : 'none'}}>
           <SvgIcon component={CURRENT_ZONE ? FloorPlan1_No : FloorPlan1} inheritViewBox sx={{...sizePlan}} />
@@ -122,7 +125,7 @@ const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.Re
         <MetaFooter />
       </Box>
 
-      <Box sx={{width: '90%'}}>
+      <Box sx={{width: '60%', mr: '20px'}}>
         <Zone zone={zone} onClick={handlerZoneClick} />
       </Box>
     </Box>
