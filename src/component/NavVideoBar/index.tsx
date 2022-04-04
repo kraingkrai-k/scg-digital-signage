@@ -45,7 +45,7 @@ const NavVideoBar: React.FC<INavVideoBar> = ({video, setFlashSaleShow}): React.R
       }}
     >
       {fade ? (
-        <Fade in={fade} unmountOnExit timeout={{enter: 3000}}>
+        <Fade in={fade} unmountOnExit timeout={{enter: 3000}} style={{height: '100%', width: '100%'}}>
           <MyComponent source={video} loop={true} onEnded={() => {}} />
         </Fade>
       ) : (
@@ -89,7 +89,7 @@ export const NavVideoBarTemp1: React.FC<INavVideoBar> = ({video}): React.ReactEl
       }}
     >
       {fade ? (
-        <Fade in={fade} unmountOnExit timeout={{enter: 3000}}>
+        <Fade in={fade} unmountOnExit timeout={{enter: 3000}} style={{height: '100%', width: '100%'}}>
           <MyComponentTemp1 source={video} loop={true} onEnded={() => {}} />
         </Fade>
       ) : (
