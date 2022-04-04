@@ -30,6 +30,7 @@ const Template3: React.FC = (): React.ReactElement => {
   const [personal, serPersonal] = useState<ISectionPersonal>({} as ISectionPersonal);
   const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
   const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
+  const [flashSaleShow, setFlashSaleShow] = useState<boolean>(false);
 
   const handlerPromotionClick = (x: ISectionPromotion) => {
     serPromotion(x);
@@ -89,10 +90,10 @@ const Template3: React.FC = (): React.ReactElement => {
       </MyModal>
 
       <Box sx={{height: '10%', position: 'relative'}}>
-        <NavVideoBar {...flashSale} />
+        <NavVideoBar {...flashSale} setFlashSaleShow={setFlashSaleShow} />
       </Box>
 
-      <XPTemplate>
+      <XPTemplate flashSaleShow={flashSaleShow}>
         <Title45>
           “ น้อง XP <span style={{color: COLORS.red}}>เลือกสินค้าและบริการ</span>
         </Title45>

@@ -24,6 +24,7 @@ const Template2: React.FC = (): React.ReactElement => {
   const [visible, setVisible] = useState<boolean>(false);
   const [promotion, serPromotion] = useState<ISectionPromotion>({} as ISectionPromotion);
   const [flashSale, setFlashSale] = useState<INavVideoBar>({} as INavVideoBar);
+  const [flashSaleShow, setFlashSaleShow] = useState<boolean>(false);
 
   useEffect(() => {
     const findFlashSale = flashSaleData.find((x) => dayjs().isBetween(x.start, x.end));
@@ -39,7 +40,7 @@ const Template2: React.FC = (): React.ReactElement => {
 
   const handlerProductClick = () => push('/interactive');
 
-  const handlerVideoEnded = () => push('/')
+  const handlerVideoEnded = () => push('/');
 
   const handlerCloseModal = () => {
     setVisible(false);
@@ -65,10 +66,10 @@ const Template2: React.FC = (): React.ReactElement => {
       </MyModal>
 
       <Box sx={{height: '10%', position: 'relative'}}>
-        <NavVideoBar {...flashSale} />
+        <NavVideoBar {...flashSale} setFlashSaleShow={setFlashSaleShow} />
       </Box>
 
-      <XPTemplate>
+      <XPTemplate flashSaleShow={flashSaleShow}>
         <Title45>
           “ มาตรงนี้ให้ <span style={{color: COLORS.red}}>น้อง XP</span>
         </Title45>

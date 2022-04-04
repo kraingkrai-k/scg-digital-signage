@@ -8,6 +8,7 @@ import NavbarShape from 'component/NavbarShape';
 
 export interface INavVideoBar {
   video?: any;
+  setFlashSaleShow?: (x: boolean) => void;
 }
 
 const MyComponent = React.forwardRef((props: any, ref: any) => {
@@ -21,16 +22,18 @@ const MyComponent = React.forwardRef((props: any, ref: any) => {
   );
 });
 
-const NavVideoBar: React.FC<INavVideoBar> = ({video}): React.ReactElement => {
+const NavVideoBar: React.FC<INavVideoBar> = ({video, setFlashSaleShow}): React.ReactElement => {
   const [fade, setFade] = useState<boolean>(false);
 
   useEffect(() => {
     if (video) {
       setTimeout(() => {
         setFade(true);
+        setFlashSaleShow && setFlashSaleShow(true);
       }, 5000);
     } else {
       setFade(false);
+      setFlashSaleShow && setFlashSaleShow(false);
     }
   }, [video]);
 
