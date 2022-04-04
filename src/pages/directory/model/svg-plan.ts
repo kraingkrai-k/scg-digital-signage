@@ -1,3 +1,4 @@
+import {ZONE} from 'core/utils/env';
 import {IListSolution} from 'pages/interactive/model/listSolution';
 
 import F1_Z1 from 'assets/zoneImages/f1_z1.png';
@@ -16,7 +17,7 @@ import F3_Z11 from 'assets/zoneImages/f3_z11.png';
 import F3_Z12 from 'assets/zoneImages/f3_z12.png';
 import F3_Z13 from 'assets/zoneImages/f3_z13.png';
 
-// plan right
+// plan B
 import P_F1_Z1 from 'assets/floorImages/p_f1_z1.png';
 import P_F1_Z2 from 'assets/floorImages/p_f1_z2.png';
 import P_F1_Z3 from 'assets/floorImages/p_f1_z3.png';
@@ -25,6 +26,15 @@ import P_F1_Z5 from 'assets/floorImages/p_f1_z5.png';
 import P_F1_Z6 from 'assets/floorImages/p_f1_z6.png';
 import P_F1_Z7 from 'assets/floorImages/p_f1_z7.png';
 
+// plan A
+import P_F1_Z1_A from 'assets/floorImages/p_f1_z1_a.png';
+import P_F1_Z2_A from 'assets/floorImages/p_f1_z2_a.png';
+import P_F1_Z3_A from 'assets/floorImages/p_f1_z3_a.png';
+import P_F1_Z4_A from 'assets/floorImages/p_f1_z4_a.png';
+import P_F1_Z5_A from 'assets/floorImages/p_f1_z5_a.png';
+import P_F1_Z6_A from 'assets/floorImages/p_f1_z6_a.png';
+import P_F1_Z7_A from 'assets/floorImages/p_f1_z7_a.png';
+
 import P_F2_Z8 from 'assets/floorImages/p_f2_z8.png';
 import P_F2_Z9 from 'assets/floorImages/p_f2_z9.png';
 import P_F2_Z10 from 'assets/floorImages/p_f2_z10.png';
@@ -32,6 +42,8 @@ import P_F2_Z10 from 'assets/floorImages/p_f2_z10.png';
 import P_F3_Z11 from 'assets/floorImages/p_f3_z11.png';
 import P_F3_Z12 from 'assets/floorImages/p_f3_z12.png';
 import P_F3_Z13 from 'assets/floorImages/p_f3_z13.png';
+
+const CURRENT_ZONE = ZONE === 'A';
 
 export const bodyPlan: {[key: string]: IListSolution} = {
   z1: {
@@ -48,7 +60,7 @@ export const bodyPlan: {[key: string]: IListSolution} = {
       'พื้นลดแรงกระแทก',
       'สินค้าเพื่อสุขภาพ และสินค้า Hygienic',
     ],
-    svgPlan: P_F1_Z1,
+    svgPlan: CURRENT_ZONE ? P_F1_Z1_A : P_F1_Z1,
     detail: `     นวัตกรรมเพื่อบ้านสำหรับผู้ที่ให้ความสำคัญเรื่องสุขภาพ  พร้อมออกแบบที่อยู่อาศัยกลุ่ม Smart Elderly  ตอบโจทย์เรื่องการอยู่อาศัยที่ดีขึ้นและปลอดภัย`,
   },
   z2: {
@@ -58,7 +70,7 @@ export const bodyPlan: {[key: string]: IListSolution} = {
     image: F1_Z2,
     qrCode: 'z2.html',
     listDetail: ['Specialty Coffee จาก Espresso Man'],
-    svgPlan: P_F1_Z2,
+    svgPlan: CURRENT_ZONE ? P_F1_Z2_A : P_F1_Z2,
     detail: `     ลิ้มลอง Specialty Coffee จาก Espresso Man กาแฟชั้นดี พร้อมบาริสต้าชั้นเยี่ยม ที่จะนำให้ทุกคนดื่มด่ำทั้งรสและกลิ่นจากกาแฟได้อย่างลงตัว`,
   },
   z3: {
@@ -68,7 +80,7 @@ export const bodyPlan: {[key: string]: IListSolution} = {
     image: F1_Z3,
     qrCode: 'z3.html',
     listDetail: ['นัดหมายปรึกษาสถาปนิก', 'บริการออกแบบบ้าน', 'แบบบ้านสำเร็จรูป'],
-    svgPlan: P_F1_Z3,
+    svgPlan: CURRENT_ZONE ? P_F1_Z3_A : P_F1_Z3,
     detail: `     บริการทีมสถาปนิกผู้เชี่ยวชาญของเอสซีจี ที่ให้คำปรึกษาทุกเรื่องบ้าน พร้อมบริการออกแบบบ้านให้ลงตัวเหมาะกับรูปแบบการใช้ชิวิต `,
   },
   z4: {
@@ -78,7 +90,7 @@ export const bodyPlan: {[key: string]: IListSolution} = {
     image: F1_Z4,
     qrCode: 'z4.html',
     listDetail: ['สินค้าตกแต่งบ้าน', 'สินค้า Smart Gadget'],
-    svgPlan: P_F1_Z4,
+    svgPlan: CURRENT_ZONE ? P_F1_Z4_A : P_F1_Z4,
     detail: `     สินค้าเพื่อบ้าน และของตกแต่งบ้านเพื่อเติมเต็มไอเดียตกแต่งบ้าน ด้วยสินค้าจากแบรนด์ไทยและต่างประเทศ`,
   },
   z5: {
@@ -95,7 +107,7 @@ export const bodyPlan: {[key: string]: IListSolution} = {
       'หน้าต่าง & ผ้าม่าน',
       'เครื่องใช้ และตกแต่งภายในบ้าน',
     ],
-    svgPlan: P_F1_Z5,
+    svgPlan: CURRENT_ZONE ? P_F1_Z5_A : P_F1_Z5,
     detail: `     สินค้ากลุ่ม House Brand Product เช่น ครัวสำเร็จรูป ห้องน้ำ พื้น ประตู หน้าต่าง และกลุ่มเครื่องใช้ ที่หลากหลาย`,
   },
   z6: {
@@ -112,7 +124,7 @@ export const bodyPlan: {[key: string]: IListSolution} = {
       'ราวกันตก',
       'เฟอร์นิเจอร์ outdoor/ ศาลา',
     ],
-    svgPlan: P_F1_Z6,
+    svgPlan: CURRENT_ZONE ? P_F1_Z6_A : P_F1_Z6,
     detail: `     บริการงานปรับภูมิทัศน์นอกบ้าน   ตั้งแต่การปรับปรุงพื้นที่ Landscape ปิดโพรงใต้บ้าน ต่อเติมพื้นที่ ออกแบบตกแต่งสวน พร้อมบริการติดตั้งครบวงจร `,
   },
   z7: {
@@ -133,7 +145,7 @@ export const bodyPlan: {[key: string]: IListSolution} = {
       'วัสดุบล็อคปูพื้น ปูผนัง',
       'โรงรถ กันสาด ระแนงบังตา',
     ],
-    svgPlan: P_F1_Z7,
+    svgPlan: CURRENT_ZONE ? P_F1_Z7_A : P_F1_Z7,
     detail: `     บริการงานติดตั้ง ต่อเติม ซ่อมแซมจาก SCG   ในทุกส่วนของบ้าน เช่น งานหลังคา ,ระบบผนัง/ฝ้า/พื้น , ระบบระบายอากาศ Active Airflow, ระบบบ้านกันเสียง,ระบบบ้านสมาร์ท พร้อม SCG Solar Roof Solutions  เพื่อให้การอยู่อาศัยที่ดีขึ้นด้วยนวัตกรรม `,
   },
   z9: {
