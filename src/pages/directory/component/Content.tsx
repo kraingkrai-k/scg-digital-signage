@@ -112,7 +112,7 @@ const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.Re
         {/* workaround keep dom element */}
         <Box sx={{width: '100%', height: '100%', display: floor === 1 ? 'auto' : 'none', position: 'relative'}}>
           <SvgIcon component={CURRENT_ZONE ? FloorPlan1_No : FloorPlan1} inheritViewBox sx={{...sizePlan}} />
-          {CURRENT_ZONE && <IconPinHere sx={{width: '56px', height: '69px', position: 'absolute', top: '45%', left: '60%'}} />}
+          {CURRENT_ZONE && <IconPinHere sx={{width: '56px', height: '69px', position: 'absolute', top: '44%', left: '60%'}} />}
         </Box>
 
         <Box sx={{width: '100%', height: '100%', display: floor === 2 ? 'auto' : 'none'}}>
