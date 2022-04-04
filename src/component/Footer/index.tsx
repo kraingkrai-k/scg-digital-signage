@@ -38,22 +38,10 @@ const Footer: React.FC = (): React.ReactElement => {
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           position: 'absolute',
-          width: {
-            monitor43: '280px',
-            desktop: '190px',
-          },
-          height: {
-            monitor43: '200px',
-            desktop: '160px',
-          },
-          ml: {
-            monitorr43: '2%',
-            desktop: '4%',
-          },
-          bottom: {
-            monitor43: '1.8%',
-            desktop: '1.4%',
-          },
+          width: '220px',
+          height: '220px',
+          ml: '2%',
+          bottom: 0,
         }}
       />
 
