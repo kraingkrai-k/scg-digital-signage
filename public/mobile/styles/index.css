@@ -68,3 +68,26 @@ body {
     width: 80px;
     height: 80px;
 }
+
+.wrapMetaText {
+    display: grid; 
+    margin-top: 24px;
+    align-items: center;
+    text-align: center;
+    line-height: 1;
+}
+
+.extra {
+    font-size: 38px;
+    margin-bottom: 8px;
+    font-weight: 700
+}
+
+.italic {
+    font-style: italic; 
+    font-weight: 700;
+}
+
+.red {
+    color: #EC1C24;
+}
