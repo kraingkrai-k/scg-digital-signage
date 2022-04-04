@@ -102,7 +102,7 @@ const Tabs: React.FC<ITabs> = ({floor, setFloor}): React.ReactElement => {
                 <Tab
                     active={floor === 2}
                     floor={2}
-                    title={`"Cotto Life\nกระเบื้อง สุขภัณฑ์`}
+                    title={`Cotto Life\nกระเบื้อง สุขภัณฑ์`}
                     onClick={setFloor}
                 />
                 <Tab
