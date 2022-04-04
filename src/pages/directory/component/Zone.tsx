@@ -75,7 +75,7 @@ const Zone: React.FC<IZone> = ({zone, onClick}): React.ReactElement => {
                 color: acitve ? COLORS.white : COLORS.balck,
               }}
             >
-              <Title17 sx={{whiteSpace: 'break-spaces'}}>{x.text}</Title17>
+              <Title17 sx={{whiteSpace: 'break-spaces', lineHeight: 1.4}}>{x.text}</Title17>
             </Box>
           );
         })}

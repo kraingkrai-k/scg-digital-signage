@@ -17,6 +17,7 @@ import Zone from './Zone';
 import {IListSolution} from 'pages/interactive/model/listSolution';
 import {bodyPlan} from '../model/svg-plan';
 import {useEffect} from 'react';
+import {IconPinHere} from 'assets/icon/Icon';
 
 const CURRENT_ZONE = ZONE === 'A';
 
@@ -36,7 +37,7 @@ type IState = {
 const sizePlan = {
   ml: '4%',
   width: '100%',
-  height: '95%'
+  height: '95%',
 };
 
 const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.ReactElement => {
@@ -109,8 +110,9 @@ const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.Re
       </MyModal>
       <Box sx={{width: '100%', mt: '7%'}}>
         {/* workaround keep dom element */}
-        <Box sx={{width: '100%', height: '100%', display: floor === 1 ? 'auto' : 'none'}}>
+        <Box sx={{width: '100%', height: '100%', display: floor === 1 ? 'auto' : 'none', position: 'relative'}}>
           <SvgIcon component={CURRENT_ZONE ? FloorPlan1_No : FloorPlan1} inheritViewBox sx={{...sizePlan}} />
+          {CURRENT_ZONE && <IconPinHere sx={{width: '56px', height: '69px', position: 'absolute', top: '45%', left: '60%'}} />}
         </Box>
 
         <Box sx={{width: '100%', height: '100%', display: floor === 2 ? 'auto' : 'none'}}>
