@@ -3,9 +3,11 @@ import Box from '@mui/material/Box';
 import SvgIcon from '@mui/material/SvgIcon';
 
 import {ReactComponent as FloorPlan1} from 'assets/images/floorPlan1.svg';
+import {ReactComponent as FloorPlan1_No} from 'assets/images/floorPlan1_No.svg';
 import {ReactComponent as FloorPlan2} from 'assets/images/floorPlan2.svg';
 import {ReactComponent as FloorPlan3} from 'assets/images/floorPlan3.svg';
 import MyModal, {ModalBodySolution} from 'component/Modal';
+import {ZONE} from 'core/utils/env';
 
 import MetaFooter from './MetaFooter';
 import useMapSvg from '../hooks/uesMapSvg';
@@ -15,6 +17,8 @@ import Zone from './Zone';
 import {IListSolution} from 'pages/interactive/model/listSolution';
 import {bodyPlan} from '../model/svg-plan';
 import {useEffect} from 'react';
+
+const CURRENT_ZONE = ZONE === 'A';
 
 interface IContent {
   floor: number;
@@ -103,7 +107,7 @@ const Content: React.FC<IContent> = ({floor, setFloor, zone, setZone}): React.Re
       <Box sx={{width: '100%', mt: '10%'}}>
         {/* workaround keep dom element */}
         <Box sx={{width: '100%', height: '100%', display: floor === 1 ? 'auto' : 'none'}}>
-          <SvgIcon component={FloorPlan1} inheritViewBox sx={{...sizePlan}} />
+          <SvgIcon component={CURRENT_ZONE ? FloorPlan1_No : FloorPlan1} inheritViewBox sx={{...sizePlan}} />
         </Box>
 
         <Box sx={{width: '100%', height: '100%', display: floor === 2 ? 'auto' : 'none'}}>
