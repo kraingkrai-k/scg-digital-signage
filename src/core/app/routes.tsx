@@ -52,9 +52,7 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
             return;
           }
           if (x?.age && x.age !== 0) {
-            if (pathname === '/template2') {
-              push('/template3', x);
-            }
+            push('/template3', x);
           } else {
             if (pathname !== '/template2') {
               push('/');
