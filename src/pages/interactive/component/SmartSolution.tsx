@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Box from '@mui/material/Box';
-import SvgIcon from '@mui/material/SvgIcon';
+// import SvgIcon from '@mui/material/SvgIcon';
 
 import {Title30, Title20, Title17} from 'component/common/Font.styles';
 import MyModal, {ModalBodySolution} from 'component/Modal';

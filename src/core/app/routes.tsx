@@ -15,7 +15,7 @@ const needMinHeight = 1;
 const needMinWidth = 1080;
 
 const personalTimer = 3000;
-const personalWhiteListRoute = ['/', '/template2', '/template3'];
+const personalWhiteListRoute = ['/template2', '/template3'];
 
 const Routes: React.FunctionComponent = (): React.ReactElement => {
   const {push} = useHistory();
@@ -52,7 +52,9 @@ const Routes: React.FunctionComponent = (): React.ReactElement => {
             return;
           }
           if (x?.age && x.age !== 0) {
-            push('/template3', x);
+            if (pathname === '/template2') {
+              push('/template3', x);
+            }
           } else {
             if (pathname !== '/template2') {
               push('/');
